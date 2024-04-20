@@ -60,7 +60,7 @@ export class <%~ config.apiClassName %><SecurityDataType extends unknown><% if (
   <%~ moduleName %> = {
   <% for (const route of combinedRoutes) { %>
 
-  <%~ includeFile('./procedure-call.ejs', { ...it, route }) %>
+  <%~ includeFile('./procedure-call.ejs', { ...it, route, moduleName }) %>
 
   <% } %>
   }

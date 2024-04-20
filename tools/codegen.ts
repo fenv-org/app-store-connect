@@ -32,6 +32,7 @@ async function main(): Promise<void> {
       '--unwrap-response-data',
       '--templates',
       'tools/templates',
+      '--clean-output',
     ];
     await $`deno ${args}`;
   } finally {

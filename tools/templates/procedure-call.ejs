@@ -1,5 +1,5 @@
 <%
-const { utils, route, config } = it;
+const { utils, route, config, moduleName } = it;
 const { requestBodyInfo, responseBodyInfo, specificArgNameResolver } = route;
 const { _, getInlineParseContent, getParseContent, parseSchema, getComponentByRef, require } = utils;
 const { parameters, path, method, payload, query, formData, security, requestParams } = route.request;
@@ -78,6 +78,12 @@ const describeReturnType = () => {
     }
 }
 
+const removePrefix = (name) => {
+    const prefix = moduleName;
+    return name.replace(new RegExp(`^${prefix}`), '');
+}
+
+const operationName = _.camelCase(removePrefix(route.routeName.usage));
 %>
 /**
 <%~ routeDocs.description %>
@@ -87,7 +93,7 @@ const describeReturnType = () => {
 <%~ routeDocs.lines %>
 
  */
-<%~ route.routeName.usage %><%~ route.namespace ? ': ' : ' = ' %>(<%~ wrapperArgs %>)<%~ config.toJS ? `: ${describeReturnType()}` : "" %> =>
+ <%~ operationName %><%~ route.namespace ? ': ' : ' = ' %>(<%~ wrapperArgs %>)<%~ config.toJS ? `: ${describeReturnType()}` : "" %> =>
     <%~ config.singleHttpClient ? 'this.http.request' : 'this.request' %><<%~ type %>, <%~ errorType %>>({
         path: `<%~ path %>`,
         method: '<%~ _.upperCase(method) %>',

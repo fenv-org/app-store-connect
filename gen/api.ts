@@ -15632,7 +15632,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/actors
      * @secure
      */
-    actorsGetCollection: (
+    getCollection: (
       query: {
         /** filter by id(s) */
         "filter[id]": string[];
@@ -15663,7 +15663,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/actors/{id}
      * @secure
      */
-    actorsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type actors */
@@ -15689,11 +15689,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/ageRatingDeclarations/{id}
      * @secure
      */
-    ageRatingDeclarationsUpdateInstance: (
-      id: string,
-      data: AgeRatingDeclarationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AgeRatingDeclarationUpdateRequest, params: RequestParams = {}) =>
       this.request<AgeRatingDeclarationResponse, ErrorResponse>({
         path: `/v1/ageRatingDeclarations/${id}`,
         method: "PATCH",
@@ -15713,7 +15709,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/alternativeDistributionDomains
      * @secure
      */
-    alternativeDistributionDomainsGetCollection: (
+    getCollection: (
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionDomains */
         "fields[alternativeDistributionDomains]"?: ("createdDate" | "domain" | "referenceName")[];
@@ -15742,10 +15738,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/alternativeDistributionDomains
      * @secure
      */
-    alternativeDistributionDomainsCreateInstance: (
-      data: AlternativeDistributionDomainCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AlternativeDistributionDomainCreateRequest, params: RequestParams = {}) =>
       this.request<AlternativeDistributionDomainResponse, ErrorResponse>({
         path: `/v1/alternativeDistributionDomains`,
         method: "POST",
@@ -15764,7 +15757,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/alternativeDistributionDomains/{id}
      * @secure
      */
-    alternativeDistributionDomainsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionDomains */
@@ -15789,7 +15782,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/alternativeDistributionDomains/{id}
      * @secure
      */
-    alternativeDistributionDomainsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/alternativeDistributionDomains/${id}`,
         method: "DELETE",
@@ -15806,10 +15799,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/alternativeDistributionKeys
      * @secure
      */
-    alternativeDistributionKeysCreateInstance: (
-      data: AlternativeDistributionKeyCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AlternativeDistributionKeyCreateRequest, params: RequestParams = {}) =>
       this.request<AlternativeDistributionKeyResponse, ErrorResponse>({
         path: `/v1/alternativeDistributionKeys`,
         method: "POST",
@@ -15828,7 +15818,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/alternativeDistributionKeys/{id}
      * @secure
      */
-    alternativeDistributionKeysGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionKeys */
@@ -15853,7 +15843,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/alternativeDistributionKeys/{id}
      * @secure
      */
-    alternativeDistributionKeysDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/alternativeDistributionKeys/${id}`,
         method: "DELETE",
@@ -15870,7 +15860,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/alternativeDistributionPackageDeltas/{id}
      * @secure
      */
-    alternativeDistributionPackageDeltasGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionPackageDeltas */
@@ -15901,7 +15891,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/alternativeDistributionPackageVariants/{id}
      * @secure
      */
-    alternativeDistributionPackageVariantsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionPackageVariants */
@@ -15932,7 +15922,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/alternativeDistributionPackageVersions/{id}
      * @secure
      */
-    alternativeDistributionPackageVersionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionPackageVersions */
@@ -15992,7 +15982,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/alternativeDistributionPackageVersions/{id}/deltas
      * @secure
      */
-    alternativeDistributionPackageVersionsDeltasGetToManyRelated: (
+    deltasGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionPackageDeltas */
@@ -16027,7 +16017,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/alternativeDistributionPackageVersions/{id}/variants
      * @secure
      */
-    alternativeDistributionPackageVersionsVariantsGetToManyRelated: (
+    variantsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionPackageVariants */
@@ -16063,10 +16053,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/alternativeDistributionPackages
      * @secure
      */
-    alternativeDistributionPackagesCreateInstance: (
-      data: AlternativeDistributionPackageCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AlternativeDistributionPackageCreateRequest, params: RequestParams = {}) =>
       this.request<AlternativeDistributionPackageResponse, ErrorResponse>({
         path: `/v1/alternativeDistributionPackages`,
         method: "POST",
@@ -16085,7 +16072,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/alternativeDistributionPackages/{id}
      * @secure
      */
-    alternativeDistributionPackagesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionPackages */
@@ -16128,7 +16115,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/alternativeDistributionPackages/{id}/versions
      * @secure
      */
-    alternativeDistributionPackagesVersionsGetToManyRelated: (
+    versionsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'state' */
@@ -16198,7 +16185,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/analyticsReportInstances/{id}
      * @secure
      */
-    analyticsReportInstancesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type analyticsReportInstances */
@@ -16225,7 +16212,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/analyticsReportInstances/{id}/segments
      * @secure
      */
-    analyticsReportInstancesSegmentsGetToManyRelated: (
+    segmentsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type analyticsReportSegments */
@@ -16256,7 +16243,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/analyticsReportRequests
      * @secure
      */
-    analyticsReportRequestsCreateInstance: (data: AnalyticsReportRequestCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AnalyticsReportRequestCreateRequest, params: RequestParams = {}) =>
       this.request<AnalyticsReportRequestResponse, ErrorResponse>({
         path: `/v1/analyticsReportRequests`,
         method: "POST",
@@ -16275,7 +16262,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/analyticsReportRequests/{id}
      * @secure
      */
-    analyticsReportRequestsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type analyticsReportRequests */
@@ -16309,7 +16296,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/analyticsReportRequests/{id}
      * @secure
      */
-    analyticsReportRequestsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/analyticsReportRequests/${id}`,
         method: "DELETE",
@@ -16325,7 +16312,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/analyticsReportRequests/{id}/reports
      * @secure
      */
-    analyticsReportRequestsReportsGetToManyRelated: (
+    reportsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'category' */
@@ -16360,7 +16347,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/analyticsReportSegments/{id}
      * @secure
      */
-    analyticsReportSegmentsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type analyticsReportSegments */
@@ -16386,7 +16373,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/analyticsReports/{id}
      * @secure
      */
-    analyticsReportsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type analyticsReports */
@@ -16413,7 +16400,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/analyticsReports/{id}/instances
      * @secure
      */
-    analyticsReportsInstancesGetToManyRelated: (
+    instancesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'granularity' */
@@ -16448,7 +16435,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v2/appAvailabilities
      * @secure
      */
-    appAvailabilitiesV2CreateInstance: (data: AppAvailabilityV2CreateRequest, params: RequestParams = {}) =>
+    v2CreateInstance: (data: AppAvailabilityV2CreateRequest, params: RequestParams = {}) =>
       this.request<AppAvailabilityV2Response, ErrorResponse>({
         path: `/v2/appAvailabilities`,
         method: "POST",
@@ -16467,7 +16454,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/appAvailabilities/{id}
      * @secure
      */
-    appAvailabilitiesV2GetInstance: (
+    v2GetInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appAvailabilities */
@@ -16509,7 +16496,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appAvailabilitiesCreateInstance: (data: AppAvailabilityCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppAvailabilityCreateRequest, params: RequestParams = {}) =>
       this.request<AppAvailabilityResponse, ErrorResponse>({
         path: `/v1/appAvailabilities`,
         method: "POST",
@@ -16529,7 +16516,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appAvailabilitiesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appAvailabilities */
@@ -16563,7 +16550,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/appAvailabilities/{id}/territoryAvailabilities
      * @secure
      */
-    appAvailabilitiesV2TerritoryAvailabilitiesGetToManyRelated: (
+    v2TerritoryAvailabilitiesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type territoryAvailabilities */
@@ -16605,7 +16592,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appAvailabilitiesAvailableTerritoriesGetToManyRelated: (
+    availableTerritoriesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type territories */
@@ -16636,7 +16623,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCategories
      * @secure
      */
-    appCategoriesGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'platforms' */
         "filter[platforms]"?: ("IOS" | "MAC_OS" | "TV_OS" | "VISION_OS")[];
@@ -16676,7 +16663,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCategories/{id}
      * @secure
      */
-    appCategoriesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCategories */
@@ -16708,7 +16695,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCategories/{id}/parent
      * @secure
      */
-    appCategoriesParentGetToOneRelated: (
+    parentGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCategories */
@@ -16733,7 +16720,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCategories/{id}/subcategories
      * @secure
      */
-    appCategoriesSubcategoriesGetToManyRelated: (
+    subcategoriesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCategories */
@@ -16764,10 +16751,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appClipAdvancedExperienceImages
      * @secure
      */
-    appClipAdvancedExperienceImagesCreateInstance: (
-      data: AppClipAdvancedExperienceImageCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppClipAdvancedExperienceImageCreateRequest, params: RequestParams = {}) =>
       this.request<AppClipAdvancedExperienceImageResponse, ErrorResponse>({
         path: `/v1/appClipAdvancedExperienceImages`,
         method: "POST",
@@ -16786,7 +16770,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipAdvancedExperienceImages/{id}
      * @secure
      */
-    appClipAdvancedExperienceImagesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClipAdvancedExperienceImages */
@@ -16819,11 +16803,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appClipAdvancedExperienceImages/{id}
      * @secure
      */
-    appClipAdvancedExperienceImagesUpdateInstance: (
-      id: string,
-      data: AppClipAdvancedExperienceImageUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppClipAdvancedExperienceImageUpdateRequest, params: RequestParams = {}) =>
       this.request<AppClipAdvancedExperienceImageResponse, ErrorResponse>({
         path: `/v1/appClipAdvancedExperienceImages/${id}`,
         method: "PATCH",
@@ -16843,10 +16823,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appClipAdvancedExperiences
      * @secure
      */
-    appClipAdvancedExperiencesCreateInstance: (
-      data: AppClipAdvancedExperienceCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppClipAdvancedExperienceCreateRequest, params: RequestParams = {}) =>
       this.request<AppClipAdvancedExperienceResponse, ErrorResponse>({
         path: `/v1/appClipAdvancedExperiences`,
         method: "POST",
@@ -16865,7 +16842,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipAdvancedExperiences/{id}
      * @secure
      */
-    appClipAdvancedExperiencesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClipAdvancedExperiences */
@@ -16911,11 +16888,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appClipAdvancedExperiences/{id}
      * @secure
      */
-    appClipAdvancedExperiencesUpdateInstance: (
-      id: string,
-      data: AppClipAdvancedExperienceUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppClipAdvancedExperienceUpdateRequest, params: RequestParams = {}) =>
       this.request<AppClipAdvancedExperienceResponse, ErrorResponse>({
         path: `/v1/appClipAdvancedExperiences/${id}`,
         method: "PATCH",
@@ -16935,10 +16908,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appClipAppStoreReviewDetails
      * @secure
      */
-    appClipAppStoreReviewDetailsCreateInstance: (
-      data: AppClipAppStoreReviewDetailCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppClipAppStoreReviewDetailCreateRequest, params: RequestParams = {}) =>
       this.request<AppClipAppStoreReviewDetailResponse, ErrorResponse>({
         path: `/v1/appClipAppStoreReviewDetails`,
         method: "POST",
@@ -16957,7 +16927,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipAppStoreReviewDetails/{id}
      * @secure
      */
-    appClipAppStoreReviewDetailsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClipAppStoreReviewDetails */
@@ -16984,11 +16954,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appClipAppStoreReviewDetails/{id}
      * @secure
      */
-    appClipAppStoreReviewDetailsUpdateInstance: (
-      id: string,
-      data: AppClipAppStoreReviewDetailUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppClipAppStoreReviewDetailUpdateRequest, params: RequestParams = {}) =>
       this.request<AppClipAppStoreReviewDetailResponse, ErrorResponse>({
         path: `/v1/appClipAppStoreReviewDetails/${id}`,
         method: "PATCH",
@@ -17008,10 +16974,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appClipDefaultExperienceLocalizations
      * @secure
      */
-    appClipDefaultExperienceLocalizationsCreateInstance: (
-      data: AppClipDefaultExperienceLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppClipDefaultExperienceLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<AppClipDefaultExperienceLocalizationResponse, ErrorResponse>({
         path: `/v1/appClipDefaultExperienceLocalizations`,
         method: "POST",
@@ -17030,7 +16993,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipDefaultExperienceLocalizations/{id}
      * @secure
      */
-    appClipDefaultExperienceLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClipDefaultExperienceLocalizations */
@@ -17073,11 +17036,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appClipDefaultExperienceLocalizations/{id}
      * @secure
      */
-    appClipDefaultExperienceLocalizationsUpdateInstance: (
-      id: string,
-      data: AppClipDefaultExperienceLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppClipDefaultExperienceLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<AppClipDefaultExperienceLocalizationResponse, ErrorResponse>({
         path: `/v1/appClipDefaultExperienceLocalizations/${id}`,
         method: "PATCH",
@@ -17096,7 +17055,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appClipDefaultExperienceLocalizations/{id}
      * @secure
      */
-    appClipDefaultExperienceLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appClipDefaultExperienceLocalizations/${id}`,
         method: "DELETE",
@@ -17112,7 +17071,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipDefaultExperienceLocalizations/{id}/appClipHeaderImage
      * @secure
      */
-    appClipDefaultExperienceLocalizationsAppClipHeaderImageGetToOneRelated: (
+    appClipHeaderImageGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClipHeaderImages */
@@ -17156,10 +17115,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appClipDefaultExperiences
      * @secure
      */
-    appClipDefaultExperiencesCreateInstance: (
-      data: AppClipDefaultExperienceCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppClipDefaultExperienceCreateRequest, params: RequestParams = {}) =>
       this.request<AppClipDefaultExperienceResponse, ErrorResponse>({
         path: `/v1/appClipDefaultExperiences`,
         method: "POST",
@@ -17178,7 +17134,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipDefaultExperiences/{id}
      * @secure
      */
-    appClipDefaultExperiencesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClipDefaultExperiences */
@@ -17257,11 +17213,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appClipDefaultExperiences/{id}
      * @secure
      */
-    appClipDefaultExperiencesUpdateInstance: (
-      id: string,
-      data: AppClipDefaultExperienceUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppClipDefaultExperienceUpdateRequest, params: RequestParams = {}) =>
       this.request<AppClipDefaultExperienceResponse, ErrorResponse>({
         path: `/v1/appClipDefaultExperiences/${id}`,
         method: "PATCH",
@@ -17280,7 +17232,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appClipDefaultExperiences/{id}
      * @secure
      */
-    appClipDefaultExperiencesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appClipDefaultExperiences/${id}`,
         method: "DELETE",
@@ -17296,7 +17248,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipDefaultExperiences/{id}/appClipAppStoreReviewDetail
      * @secure
      */
-    appClipDefaultExperiencesAppClipAppStoreReviewDetailGetToOneRelated: (
+    appClipAppStoreReviewDetailGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClipAppStoreReviewDetails */
@@ -17332,7 +17284,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipDefaultExperiences/{id}/appClipDefaultExperienceLocalizations
      * @secure
      */
-    appClipDefaultExperiencesAppClipDefaultExperienceLocalizationsGetToManyRelated: (
+    appClipDefaultExperienceLocalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'locale' */
@@ -17391,7 +17343,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipDefaultExperiences/{id}/relationships/releaseWithAppStoreVersion
      * @secure
      */
-    appClipDefaultExperiencesReleaseWithAppStoreVersionGetToOneRelationship: (id: string, params: RequestParams = {}) =>
+    releaseWithAppStoreVersionGetToOneRelationship: (id: string, params: RequestParams = {}) =>
       this.request<AppClipDefaultExperienceReleaseWithAppStoreVersionLinkageResponse, ErrorResponse>({
         path: `/v1/appClipDefaultExperiences/${id}/relationships/releaseWithAppStoreVersion`,
         method: "GET",
@@ -17408,7 +17360,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appClipDefaultExperiences/{id}/relationships/releaseWithAppStoreVersion
      * @secure
      */
-    appClipDefaultExperiencesReleaseWithAppStoreVersionUpdateToOneRelationship: (
+    releaseWithAppStoreVersionUpdateToOneRelationship: (
       id: string,
       data: AppClipDefaultExperienceReleaseWithAppStoreVersionLinkageRequest,
       params: RequestParams = {},
@@ -17430,7 +17382,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipDefaultExperiences/{id}/releaseWithAppStoreVersion
      * @secure
      */
-    appClipDefaultExperiencesReleaseWithAppStoreVersionGetToOneRelated: (
+    releaseWithAppStoreVersionGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ageRatingDeclarations */
@@ -17682,7 +17634,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appClipHeaderImages
      * @secure
      */
-    appClipHeaderImagesCreateInstance: (data: AppClipHeaderImageCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppClipHeaderImageCreateRequest, params: RequestParams = {}) =>
       this.request<AppClipHeaderImageResponse, ErrorResponse>({
         path: `/v1/appClipHeaderImages`,
         method: "POST",
@@ -17701,7 +17653,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClipHeaderImages/{id}
      * @secure
      */
-    appClipHeaderImagesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClipHeaderImages */
@@ -17737,11 +17689,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appClipHeaderImages/{id}
      * @secure
      */
-    appClipHeaderImagesUpdateInstance: (
-      id: string,
-      data: AppClipHeaderImageUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppClipHeaderImageUpdateRequest, params: RequestParams = {}) =>
       this.request<AppClipHeaderImageResponse, ErrorResponse>({
         path: `/v1/appClipHeaderImages/${id}`,
         method: "PATCH",
@@ -17760,7 +17708,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appClipHeaderImages/{id}
      * @secure
      */
-    appClipHeaderImagesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appClipHeaderImages/${id}`,
         method: "DELETE",
@@ -17777,7 +17725,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClips/{id}
      * @secure
      */
-    appClipsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClips */
@@ -17834,7 +17782,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClips/{id}/appClipAdvancedExperiences
      * @secure
      */
-    appClipsAppClipAdvancedExperiencesGetToManyRelated: (
+    appClipAdvancedExperiencesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'action' */
@@ -17905,7 +17853,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appClips/{id}/appClipDefaultExperiences
      * @secure
      */
-    appClipsAppClipDefaultExperiencesGetToManyRelated: (
+    appClipDefaultExperiencesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by existence or non-existence of related 'releaseWithAppStoreVersion' */
@@ -17994,10 +17942,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appCustomProductPageLocalizations
      * @secure
      */
-    appCustomProductPageLocalizationsCreateInstance: (
-      data: AppCustomProductPageLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppCustomProductPageLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<AppCustomProductPageLocalizationResponse, ErrorResponse>({
         path: `/v1/appCustomProductPageLocalizations`,
         method: "POST",
@@ -18016,7 +17961,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCustomProductPageLocalizations/{id}
      * @secure
      */
-    appCustomProductPageLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCustomProductPageLocalizations */
@@ -18075,11 +18020,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appCustomProductPageLocalizations/{id}
      * @secure
      */
-    appCustomProductPageLocalizationsUpdateInstance: (
-      id: string,
-      data: AppCustomProductPageLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppCustomProductPageLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<AppCustomProductPageLocalizationResponse, ErrorResponse>({
         path: `/v1/appCustomProductPageLocalizations/${id}`,
         method: "PATCH",
@@ -18098,7 +18039,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appCustomProductPageLocalizations/{id}
      * @secure
      */
-    appCustomProductPageLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appCustomProductPageLocalizations/${id}`,
         method: "DELETE",
@@ -18114,7 +18055,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCustomProductPageLocalizations/{id}/appPreviewSets
      * @secure
      */
-    appCustomProductPageLocalizationsAppPreviewSetsGetToManyRelated: (
+    appPreviewSetsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'previewType' */
@@ -18227,7 +18168,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCustomProductPageLocalizations/{id}/appScreenshotSets
      * @secure
      */
-    appCustomProductPageLocalizationsAppScreenshotSetsGetToManyRelated: (
+    appScreenshotSetsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'screenshotDisplayType' */
@@ -18356,10 +18297,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appCustomProductPageVersions
      * @secure
      */
-    appCustomProductPageVersionsCreateInstance: (
-      data: AppCustomProductPageVersionCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppCustomProductPageVersionCreateRequest, params: RequestParams = {}) =>
       this.request<AppCustomProductPageVersionResponse, ErrorResponse>({
         path: `/v1/appCustomProductPageVersions`,
         method: "POST",
@@ -18378,7 +18316,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCustomProductPageVersions/{id}
      * @secure
      */
-    appCustomProductPageVersionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCustomProductPageVersions */
@@ -18423,7 +18361,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCustomProductPageVersions/{id}/appCustomProductPageLocalizations
      * @secure
      */
-    appCustomProductPageVersionsAppCustomProductPageLocalizationsGetToManyRelated: (
+    appCustomProductPageLocalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'locale' */
@@ -18497,7 +18435,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appCustomProductPages
      * @secure
      */
-    appCustomProductPagesCreateInstance: (data: AppCustomProductPageCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppCustomProductPageCreateRequest, params: RequestParams = {}) =>
       this.request<AppCustomProductPageResponse, ErrorResponse>({
         path: `/v1/appCustomProductPages`,
         method: "POST",
@@ -18516,7 +18454,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCustomProductPages/{id}
      * @secure
      */
-    appCustomProductPagesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCustomProductPages */
@@ -18563,11 +18501,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appCustomProductPages/{id}
      * @secure
      */
-    appCustomProductPagesUpdateInstance: (
-      id: string,
-      data: AppCustomProductPageUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppCustomProductPageUpdateRequest, params: RequestParams = {}) =>
       this.request<AppCustomProductPageResponse, ErrorResponse>({
         path: `/v1/appCustomProductPages/${id}`,
         method: "PATCH",
@@ -18586,7 +18520,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appCustomProductPages/{id}
      * @secure
      */
-    appCustomProductPagesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appCustomProductPages/${id}`,
         method: "DELETE",
@@ -18602,7 +18536,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appCustomProductPages/{id}/appCustomProductPageVersions
      * @secure
      */
-    appCustomProductPagesAppCustomProductPageVersionsGetToManyRelated: (
+    appCustomProductPageVersionsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'state' */
@@ -18674,10 +18608,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appEncryptionDeclarationDocuments
      * @secure
      */
-    appEncryptionDeclarationDocumentsCreateInstance: (
-      data: AppEncryptionDeclarationDocumentCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppEncryptionDeclarationDocumentCreateRequest, params: RequestParams = {}) =>
       this.request<AppEncryptionDeclarationDocumentResponse, ErrorResponse>({
         path: `/v1/appEncryptionDeclarationDocuments`,
         method: "POST",
@@ -18696,7 +18627,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEncryptionDeclarationDocuments/{id}
      * @secure
      */
-    appEncryptionDeclarationDocumentsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEncryptionDeclarationDocuments */
@@ -18731,11 +18662,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appEncryptionDeclarationDocuments/{id}
      * @secure
      */
-    appEncryptionDeclarationDocumentsUpdateInstance: (
-      id: string,
-      data: AppEncryptionDeclarationDocumentUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppEncryptionDeclarationDocumentUpdateRequest, params: RequestParams = {}) =>
       this.request<AppEncryptionDeclarationDocumentResponse, ErrorResponse>({
         path: `/v1/appEncryptionDeclarationDocuments/${id}`,
         method: "PATCH",
@@ -18755,7 +18682,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEncryptionDeclarations
      * @secure
      */
-    appEncryptionDeclarationsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'platform' */
         "filter[platform]"?: ("IOS" | "MAC_OS" | "TV_OS" | "VISION_OS")[];
@@ -18877,7 +18804,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEncryptionDeclarations/{id}
      * @secure
      */
-    appEncryptionDeclarationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEncryptionDeclarations */
@@ -18989,7 +18916,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEncryptionDeclarations/{id}/app
      * @secure
      */
-    appEncryptionDeclarationsAppGetToOneRelated: (
+    appGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -19062,7 +18989,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEncryptionDeclarations/{id}/appEncryptionDeclarationDocument
      * @secure
      */
-    appEncryptionDeclarationsAppEncryptionDeclarationDocumentGetToOneRelated: (
+    appEncryptionDeclarationDocumentGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEncryptionDeclarationDocuments */
@@ -19098,7 +19025,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appEncryptionDeclarationsBuildsCreateToManyRelationship: (
+    buildsCreateToManyRelationship: (
       id: string,
       data: AppEncryptionDeclarationBuildsLinkagesRequest,
       params: RequestParams = {},
@@ -19121,7 +19048,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appEventLocalizations
      * @secure
      */
-    appEventLocalizationsCreateInstance: (data: AppEventLocalizationCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppEventLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<AppEventLocalizationResponse, ErrorResponse>({
         path: `/v1/appEventLocalizations`,
         method: "POST",
@@ -19140,7 +19067,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEventLocalizations/{id}
      * @secure
      */
-    appEventLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEventLocalizations */
@@ -19210,11 +19137,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appEventLocalizations/{id}
      * @secure
      */
-    appEventLocalizationsUpdateInstance: (
-      id: string,
-      data: AppEventLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppEventLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<AppEventLocalizationResponse, ErrorResponse>({
         path: `/v1/appEventLocalizations/${id}`,
         method: "PATCH",
@@ -19233,7 +19156,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appEventLocalizations/{id}
      * @secure
      */
-    appEventLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appEventLocalizations/${id}`,
         method: "DELETE",
@@ -19249,7 +19172,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEventLocalizations/{id}/appEventScreenshots
      * @secure
      */
-    appEventLocalizationsAppEventScreenshotsGetToManyRelated: (
+    appEventScreenshotsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEventScreenshots */
@@ -19301,7 +19224,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEventLocalizations/{id}/appEventVideoClips
      * @secure
      */
-    appEventLocalizationsAppEventVideoClipsGetToManyRelated: (
+    appEventVideoClipsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEventVideoClips */
@@ -19355,7 +19278,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appEventScreenshots
      * @secure
      */
-    appEventScreenshotsCreateInstance: (data: AppEventScreenshotCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppEventScreenshotCreateRequest, params: RequestParams = {}) =>
       this.request<AppEventScreenshotResponse, ErrorResponse>({
         path: `/v1/appEventScreenshots`,
         method: "POST",
@@ -19374,7 +19297,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEventScreenshots/{id}
      * @secure
      */
-    appEventScreenshotsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEventScreenshots */
@@ -19411,11 +19334,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appEventScreenshots/{id}
      * @secure
      */
-    appEventScreenshotsUpdateInstance: (
-      id: string,
-      data: AppEventScreenshotUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppEventScreenshotUpdateRequest, params: RequestParams = {}) =>
       this.request<AppEventScreenshotResponse, ErrorResponse>({
         path: `/v1/appEventScreenshots/${id}`,
         method: "PATCH",
@@ -19434,7 +19353,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appEventScreenshots/{id}
      * @secure
      */
-    appEventScreenshotsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appEventScreenshots/${id}`,
         method: "DELETE",
@@ -19451,7 +19370,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appEventVideoClips
      * @secure
      */
-    appEventVideoClipsCreateInstance: (data: AppEventVideoClipCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppEventVideoClipCreateRequest, params: RequestParams = {}) =>
       this.request<AppEventVideoClipResponse, ErrorResponse>({
         path: `/v1/appEventVideoClips`,
         method: "POST",
@@ -19470,7 +19389,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEventVideoClips/{id}
      * @secure
      */
-    appEventVideoClipsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEventVideoClips */
@@ -19508,7 +19427,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appEventVideoClips/{id}
      * @secure
      */
-    appEventVideoClipsUpdateInstance: (id: string, data: AppEventVideoClipUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: AppEventVideoClipUpdateRequest, params: RequestParams = {}) =>
       this.request<AppEventVideoClipResponse, ErrorResponse>({
         path: `/v1/appEventVideoClips/${id}`,
         method: "PATCH",
@@ -19527,7 +19446,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appEventVideoClips/{id}
      * @secure
      */
-    appEventVideoClipsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appEventVideoClips/${id}`,
         method: "DELETE",
@@ -19544,7 +19463,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appEvents
      * @secure
      */
-    appEventsCreateInstance: (data: AppEventCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppEventCreateRequest, params: RequestParams = {}) =>
       this.request<AppEventResponse, ErrorResponse>({
         path: `/v1/appEvents`,
         method: "POST",
@@ -19563,7 +19482,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEvents/{id}
      * @secure
      */
-    appEventsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEvents */
@@ -19618,7 +19537,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appEvents/{id}
      * @secure
      */
-    appEventsUpdateInstance: (id: string, data: AppEventUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: AppEventUpdateRequest, params: RequestParams = {}) =>
       this.request<AppEventResponse, ErrorResponse>({
         path: `/v1/appEvents/${id}`,
         method: "PATCH",
@@ -19637,7 +19556,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appEvents/{id}
      * @secure
      */
-    appEventsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appEvents/${id}`,
         method: "DELETE",
@@ -19653,7 +19572,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appEvents/{id}/localizations
      * @secure
      */
-    appEventsLocalizationsGetToManyRelated: (
+    localizationsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEventScreenshots */
@@ -19744,7 +19663,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appInfoLocalizations
      * @secure
      */
-    appInfoLocalizationsCreateInstance: (data: AppInfoLocalizationCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppInfoLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<AppInfoLocalizationResponse, ErrorResponse>({
         path: `/v1/appInfoLocalizations`,
         method: "POST",
@@ -19763,7 +19682,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appInfoLocalizations/{id}
      * @secure
      */
-    appInfoLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appInfoLocalizations */
@@ -19798,11 +19717,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appInfoLocalizations/{id}
      * @secure
      */
-    appInfoLocalizationsUpdateInstance: (
-      id: string,
-      data: AppInfoLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppInfoLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<AppInfoLocalizationResponse, ErrorResponse>({
         path: `/v1/appInfoLocalizations/${id}`,
         method: "PATCH",
@@ -19821,7 +19736,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appInfoLocalizations/{id}
      * @secure
      */
-    appInfoLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appInfoLocalizations/${id}`,
         method: "DELETE",
@@ -19838,7 +19753,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appInfos/{id}
      * @secure
      */
-    appInfosGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appInfos */
@@ -19929,7 +19844,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appInfos/{id}
      * @secure
      */
-    appInfosUpdateInstance: (id: string, data: AppInfoUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: AppInfoUpdateRequest, params: RequestParams = {}) =>
       this.request<AppInfoResponse, ErrorResponse>({
         path: `/v1/appInfos/${id}`,
         method: "PATCH",
@@ -19948,7 +19863,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appInfos/{id}/ageRatingDeclaration
      * @secure
      */
-    appInfosAgeRatingDeclarationGetToOneRelated: (
+    ageRatingDeclarationGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ageRatingDeclarations */
@@ -19992,7 +19907,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appInfos/{id}/appInfoLocalizations
      * @secure
      */
-    appInfosAppInfoLocalizationsGetToManyRelated: (
+    appInfoLocalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'locale' */
@@ -20052,7 +19967,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appInfos/{id}/primaryCategory
      * @secure
      */
-    appInfosPrimaryCategoryGetToOneRelated: (
+    primaryCategoryGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCategories */
@@ -20084,7 +19999,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appInfos/{id}/primarySubcategoryOne
      * @secure
      */
-    appInfosPrimarySubcategoryOneGetToOneRelated: (
+    primarySubcategoryOneGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCategories */
@@ -20116,7 +20031,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appInfos/{id}/primarySubcategoryTwo
      * @secure
      */
-    appInfosPrimarySubcategoryTwoGetToOneRelated: (
+    primarySubcategoryTwoGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCategories */
@@ -20148,7 +20063,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appInfos/{id}/secondaryCategory
      * @secure
      */
-    appInfosSecondaryCategoryGetToOneRelated: (
+    secondaryCategoryGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCategories */
@@ -20180,7 +20095,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appInfos/{id}/secondarySubcategoryOne
      * @secure
      */
-    appInfosSecondarySubcategoryOneGetToOneRelated: (
+    secondarySubcategoryOneGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCategories */
@@ -20212,7 +20127,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appInfos/{id}/secondarySubcategoryTwo
      * @secure
      */
-    appInfosSecondarySubcategoryTwoGetToOneRelated: (
+    secondarySubcategoryTwoGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appCategories */
@@ -20246,7 +20161,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPreOrdersCreateInstance: (data: AppPreOrderCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppPreOrderCreateRequest, params: RequestParams = {}) =>
       this.request<AppPreOrderResponse, ErrorResponse>({
         path: `/v1/appPreOrders`,
         method: "POST",
@@ -20266,7 +20181,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPreOrdersGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPreOrders */
@@ -20294,7 +20209,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPreOrdersUpdateInstance: (id: string, data: AppPreOrderUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: AppPreOrderUpdateRequest, params: RequestParams = {}) =>
       this.request<AppPreOrderResponse, ErrorResponse>({
         path: `/v1/appPreOrders/${id}`,
         method: "PATCH",
@@ -20314,7 +20229,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPreOrdersDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appPreOrders/${id}`,
         method: "DELETE",
@@ -20331,7 +20246,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appPreviewSets
      * @secure
      */
-    appPreviewSetsCreateInstance: (data: AppPreviewSetCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppPreviewSetCreateRequest, params: RequestParams = {}) =>
       this.request<AppPreviewSetResponse, ErrorResponse>({
         path: `/v1/appPreviewSets`,
         method: "POST",
@@ -20350,7 +20265,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appPreviewSets/{id}
      * @secure
      */
-    appPreviewSetsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPreviewSets */
@@ -20407,7 +20322,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appPreviewSets/{id}
      * @secure
      */
-    appPreviewSetsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appPreviewSets/${id}`,
         method: "DELETE",
@@ -20423,7 +20338,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appPreviewSets/{id}/relationships/appPreviews
      * @secure
      */
-    appPreviewSetsAppPreviewsGetToManyRelationship: (
+    appPreviewsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -20451,7 +20366,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appPreviewSets/{id}/relationships/appPreviews
      * @secure
      */
-    appPreviewSetsAppPreviewsReplaceToManyRelationship: (
+    appPreviewsReplaceToManyRelationship: (
       id: string,
       data: AppPreviewSetAppPreviewsLinkagesRequest,
       params: RequestParams = {},
@@ -20473,7 +20388,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appPreviewSets/{id}/appPreviews
      * @secure
      */
-    appPreviewSetsAppPreviewsGetToManyRelated: (
+    appPreviewsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPreviews */
@@ -20526,7 +20441,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appPreviews
      * @secure
      */
-    appPreviewsCreateInstance: (data: AppPreviewCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppPreviewCreateRequest, params: RequestParams = {}) =>
       this.request<AppPreviewResponse, ErrorResponse>({
         path: `/v1/appPreviews`,
         method: "POST",
@@ -20545,7 +20460,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appPreviews/{id}
      * @secure
      */
-    appPreviewsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPreviews */
@@ -20584,7 +20499,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appPreviews/{id}
      * @secure
      */
-    appPreviewsUpdateInstance: (id: string, data: AppPreviewUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: AppPreviewUpdateRequest, params: RequestParams = {}) =>
       this.request<AppPreviewResponse, ErrorResponse>({
         path: `/v1/appPreviews/${id}`,
         method: "PATCH",
@@ -20603,7 +20518,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appPreviews/{id}
      * @secure
      */
-    appPreviewsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appPreviews/${id}`,
         method: "DELETE",
@@ -20620,7 +20535,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v3/appPricePoints/{id}
      * @secure
      */
-    appPricePointsV3GetInstance: (
+    v3GetInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPricePoints */
@@ -20648,7 +20563,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPricePointsGetCollection: (
+    getCollection: (
       query?: {
         /**
          * filter by id(s) of related 'priceTier'
@@ -20689,7 +20604,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPricePointsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPricePoints */
@@ -20718,7 +20633,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v3/appPricePoints/{id}/equalizations
      * @secure
      */
-    appPricePointsV3EqualizationsGetToManyRelated: (
+    v3EqualizationsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'territory' */
@@ -20805,7 +20720,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPricePointsTerritoryGetToOneRelated: (
+    territoryGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type territories */
@@ -20831,7 +20746,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appPriceSchedules
      * @secure
      */
-    appPriceSchedulesCreateInstance: (data: AppPriceScheduleCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppPriceScheduleCreateRequest, params: RequestParams = {}) =>
       this.request<AppPriceScheduleResponse, ErrorResponse>({
         path: `/v1/appPriceSchedules`,
         method: "POST",
@@ -20850,7 +20765,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appPriceSchedules/{id}
      * @secure
      */
-    appPriceSchedulesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPriceSchedules */
@@ -20891,7 +20806,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appPriceSchedules/{id}/automaticPrices
      * @secure
      */
-    appPriceSchedulesAutomaticPricesGetToManyRelated: (
+    automaticPricesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'endDate' */
@@ -20933,7 +20848,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appPriceSchedules/{id}/baseTerritory
      * @secure
      */
-    appPriceSchedulesBaseTerritoryGetToOneRelated: (
+    baseTerritoryGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type territories */
@@ -20958,7 +20873,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appPriceSchedules/{id}/manualPrices
      * @secure
      */
-    appPriceSchedulesManualPricesGetToManyRelated: (
+    manualPricesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'endDate' */
@@ -21002,7 +20917,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPriceTiersGetCollection: (
+    getCollection: (
       query?: {
         /** filter by id(s) */
         "filter[id]"?: string[];
@@ -21047,7 +20962,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPriceTiersGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPriceTiers */
@@ -21086,7 +21001,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPriceTiersPricePointsGetToManyRelated: (
+    pricePointsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'territory' */
@@ -21126,7 +21041,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appPricesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPrices */
@@ -21154,7 +21069,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appScreenshotSets
      * @secure
      */
-    appScreenshotSetsCreateInstance: (data: AppScreenshotSetCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppScreenshotSetCreateRequest, params: RequestParams = {}) =>
       this.request<AppScreenshotSetResponse, ErrorResponse>({
         path: `/v1/appScreenshotSets`,
         method: "POST",
@@ -21173,7 +21088,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appScreenshotSets/{id}
      * @secure
      */
-    appScreenshotSetsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appScreenshotSets */
@@ -21229,7 +21144,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appScreenshotSets/{id}
      * @secure
      */
-    appScreenshotSetsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appScreenshotSets/${id}`,
         method: "DELETE",
@@ -21245,7 +21160,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appScreenshotSets/{id}/relationships/appScreenshots
      * @secure
      */
-    appScreenshotSetsAppScreenshotsGetToManyRelationship: (
+    appScreenshotsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -21273,7 +21188,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appScreenshotSets/{id}/relationships/appScreenshots
      * @secure
      */
-    appScreenshotSetsAppScreenshotsReplaceToManyRelationship: (
+    appScreenshotsReplaceToManyRelationship: (
       id: string,
       data: AppScreenshotSetAppScreenshotsLinkagesRequest,
       params: RequestParams = {},
@@ -21295,7 +21210,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appScreenshotSets/{id}/appScreenshots
      * @secure
      */
-    appScreenshotSetsAppScreenshotsGetToManyRelated: (
+    appScreenshotsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appScreenshotSets */
@@ -21347,7 +21262,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appScreenshots
      * @secure
      */
-    appScreenshotsCreateInstance: (data: AppScreenshotCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppScreenshotCreateRequest, params: RequestParams = {}) =>
       this.request<AppScreenshotResponse, ErrorResponse>({
         path: `/v1/appScreenshots`,
         method: "POST",
@@ -21366,7 +21281,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appScreenshots/{id}
      * @secure
      */
-    appScreenshotsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appScreenshots */
@@ -21404,7 +21319,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appScreenshots/{id}
      * @secure
      */
-    appScreenshotsUpdateInstance: (id: string, data: AppScreenshotUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: AppScreenshotUpdateRequest, params: RequestParams = {}) =>
       this.request<AppScreenshotResponse, ErrorResponse>({
         path: `/v1/appScreenshots/${id}`,
         method: "PATCH",
@@ -21423,7 +21338,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appScreenshots/{id}
      * @secure
      */
-    appScreenshotsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appScreenshots/${id}`,
         method: "DELETE",
@@ -21440,10 +21355,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appStoreReviewAttachments
      * @secure
      */
-    appStoreReviewAttachmentsCreateInstance: (
-      data: AppStoreReviewAttachmentCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppStoreReviewAttachmentCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreReviewAttachmentResponse, ErrorResponse>({
         path: `/v1/appStoreReviewAttachments`,
         method: "POST",
@@ -21462,7 +21374,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreReviewAttachments/{id}
      * @secure
      */
-    appStoreReviewAttachmentsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreReviewAttachments */
@@ -21497,11 +21409,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appStoreReviewAttachments/{id}
      * @secure
      */
-    appStoreReviewAttachmentsUpdateInstance: (
-      id: string,
-      data: AppStoreReviewAttachmentUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppStoreReviewAttachmentUpdateRequest, params: RequestParams = {}) =>
       this.request<AppStoreReviewAttachmentResponse, ErrorResponse>({
         path: `/v1/appStoreReviewAttachments/${id}`,
         method: "PATCH",
@@ -21520,7 +21428,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appStoreReviewAttachments/{id}
      * @secure
      */
-    appStoreReviewAttachmentsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appStoreReviewAttachments/${id}`,
         method: "DELETE",
@@ -21537,7 +21445,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appStoreReviewDetails
      * @secure
      */
-    appStoreReviewDetailsCreateInstance: (data: AppStoreReviewDetailCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppStoreReviewDetailCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreReviewDetailResponse, ErrorResponse>({
         path: `/v1/appStoreReviewDetails`,
         method: "POST",
@@ -21556,7 +21464,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreReviewDetails/{id}
      * @secure
      */
-    appStoreReviewDetailsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreReviewDetails */
@@ -21609,11 +21517,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appStoreReviewDetails/{id}
      * @secure
      */
-    appStoreReviewDetailsUpdateInstance: (
-      id: string,
-      data: AppStoreReviewDetailUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppStoreReviewDetailUpdateRequest, params: RequestParams = {}) =>
       this.request<AppStoreReviewDetailResponse, ErrorResponse>({
         path: `/v1/appStoreReviewDetails/${id}`,
         method: "PATCH",
@@ -21632,7 +21536,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreReviewDetails/{id}/appStoreReviewAttachments
      * @secure
      */
-    appStoreReviewDetailsAppStoreReviewAttachmentsGetToManyRelated: (
+    appStoreReviewAttachmentsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreReviewDetails */
@@ -21686,10 +21590,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appStoreVersionExperimentTreatmentLocalizations
      * @secure
      */
-    appStoreVersionExperimentTreatmentLocalizationsCreateInstance: (
-      data: AppStoreVersionExperimentTreatmentLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppStoreVersionExperimentTreatmentLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionExperimentTreatmentLocalizationResponse, ErrorResponse>({
         path: `/v1/appStoreVersionExperimentTreatmentLocalizations`,
         method: "POST",
@@ -21708,7 +21609,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersionExperimentTreatmentLocalizations/{id}
      * @secure
      */
-    appStoreVersionExperimentTreatmentLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersionExperimentTreatmentLocalizations */
@@ -21766,7 +21667,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appStoreVersionExperimentTreatmentLocalizations/{id}
      * @secure
      */
-    appStoreVersionExperimentTreatmentLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appStoreVersionExperimentTreatmentLocalizations/${id}`,
         method: "DELETE",
@@ -21782,7 +21683,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersionExperimentTreatmentLocalizations/{id}/appPreviewSets
      * @secure
      */
-    appStoreVersionExperimentTreatmentLocalizationsAppPreviewSetsGetToManyRelated: (
+    appPreviewSetsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'previewType' */
@@ -21895,7 +21796,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersionExperimentTreatmentLocalizations/{id}/appScreenshotSets
      * @secure
      */
-    appStoreVersionExperimentTreatmentLocalizationsAppScreenshotSetsGetToManyRelated: (
+    appScreenshotSetsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'screenshotDisplayType' */
@@ -22024,10 +21925,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appStoreVersionExperimentTreatments
      * @secure
      */
-    appStoreVersionExperimentTreatmentsCreateInstance: (
-      data: AppStoreVersionExperimentTreatmentCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppStoreVersionExperimentTreatmentCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionExperimentTreatmentResponse, ErrorResponse>({
         path: `/v1/appStoreVersionExperimentTreatments`,
         method: "POST",
@@ -22046,7 +21944,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersionExperimentTreatments/{id}
      * @secure
      */
-    appStoreVersionExperimentTreatmentsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersionExperimentTreatments */
@@ -22097,11 +21995,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appStoreVersionExperimentTreatments/{id}
      * @secure
      */
-    appStoreVersionExperimentTreatmentsUpdateInstance: (
-      id: string,
-      data: AppStoreVersionExperimentTreatmentUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppStoreVersionExperimentTreatmentUpdateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionExperimentTreatmentResponse, ErrorResponse>({
         path: `/v1/appStoreVersionExperimentTreatments/${id}`,
         method: "PATCH",
@@ -22120,7 +22014,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appStoreVersionExperimentTreatments/{id}
      * @secure
      */
-    appStoreVersionExperimentTreatmentsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appStoreVersionExperimentTreatments/${id}`,
         method: "DELETE",
@@ -22136,7 +22030,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersionExperimentTreatments/{id}/appStoreVersionExperimentTreatmentLocalizations
      * @secure
      */
-    appStoreVersionExperimentTreatmentsAppStoreVersionExperimentTreatmentLocalizationsGetToManyRelated: (
+    appStoreVersionExperimentTreatmentLocalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'locale' */
@@ -22212,10 +22106,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v2/appStoreVersionExperiments
      * @secure
      */
-    appStoreVersionExperimentsV2CreateInstance: (
-      data: AppStoreVersionExperimentV2CreateRequest,
-      params: RequestParams = {},
-    ) =>
+    v2CreateInstance: (data: AppStoreVersionExperimentV2CreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionExperimentV2Response, ErrorResponse>({
         path: `/v2/appStoreVersionExperiments`,
         method: "POST",
@@ -22234,7 +22125,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/appStoreVersionExperiments/{id}
      * @secure
      */
-    appStoreVersionExperimentsV2GetInstance: (
+    v2GetInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersionExperiments */
@@ -22294,11 +22185,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v2/appStoreVersionExperiments/{id}
      * @secure
      */
-    appStoreVersionExperimentsV2UpdateInstance: (
-      id: string,
-      data: AppStoreVersionExperimentV2UpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    v2UpdateInstance: (id: string, data: AppStoreVersionExperimentV2UpdateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionExperimentV2Response, ErrorResponse>({
         path: `/v2/appStoreVersionExperiments/${id}`,
         method: "PATCH",
@@ -22317,7 +22204,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v2/appStoreVersionExperiments/{id}
      * @secure
      */
-    appStoreVersionExperimentsV2DeleteInstance: (id: string, params: RequestParams = {}) =>
+    v2DeleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v2/appStoreVersionExperiments/${id}`,
         method: "DELETE",
@@ -22334,10 +22221,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appStoreVersionExperimentsCreateInstance: (
-      data: AppStoreVersionExperimentCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppStoreVersionExperimentCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionExperimentResponse, ErrorResponse>({
         path: `/v1/appStoreVersionExperiments`,
         method: "POST",
@@ -22357,7 +22241,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appStoreVersionExperimentsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersionExperiments */
@@ -22410,11 +22294,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appStoreVersionExperimentsUpdateInstance: (
-      id: string,
-      data: AppStoreVersionExperimentUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppStoreVersionExperimentUpdateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionExperimentResponse, ErrorResponse>({
         path: `/v1/appStoreVersionExperiments/${id}`,
         method: "PATCH",
@@ -22434,7 +22314,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appStoreVersionExperimentsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appStoreVersionExperiments/${id}`,
         method: "DELETE",
@@ -22450,7 +22330,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/appStoreVersionExperiments/{id}/appStoreVersionExperimentTreatments
      * @secure
      */
-    appStoreVersionExperimentsV2AppStoreVersionExperimentTreatmentsGetToManyRelated: (
+    v2AppStoreVersionExperimentTreatmentsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersionExperiments */
@@ -22523,7 +22403,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appStoreVersionExperimentsAppStoreVersionExperimentTreatmentsGetToManyRelated: (
+    appStoreVersionExperimentTreatmentsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersionExperiments */
@@ -22596,10 +22476,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appStoreVersionLocalizations
      * @secure
      */
-    appStoreVersionLocalizationsCreateInstance: (
-      data: AppStoreVersionLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppStoreVersionLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionLocalizationResponse, ErrorResponse>({
         path: `/v1/appStoreVersionLocalizations`,
         method: "POST",
@@ -22618,7 +22495,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersionLocalizations/{id}
      * @secure
      */
-    appStoreVersionLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersionLocalizations */
@@ -22682,11 +22559,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appStoreVersionLocalizations/{id}
      * @secure
      */
-    appStoreVersionLocalizationsUpdateInstance: (
-      id: string,
-      data: AppStoreVersionLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppStoreVersionLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionLocalizationResponse, ErrorResponse>({
         path: `/v1/appStoreVersionLocalizations/${id}`,
         method: "PATCH",
@@ -22705,7 +22578,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appStoreVersionLocalizations/{id}
      * @secure
      */
-    appStoreVersionLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appStoreVersionLocalizations/${id}`,
         method: "DELETE",
@@ -22721,7 +22594,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersionLocalizations/{id}/appPreviewSets
      * @secure
      */
-    appStoreVersionLocalizationsAppPreviewSetsGetToManyRelated: (
+    appPreviewSetsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'previewType' */
@@ -22834,7 +22707,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersionLocalizations/{id}/appScreenshotSets
      * @secure
      */
-    appStoreVersionLocalizationsAppScreenshotSetsGetToManyRelated: (
+    appScreenshotSetsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'screenshotDisplayType' */
@@ -22963,10 +22836,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appStoreVersionPhasedReleases
      * @secure
      */
-    appStoreVersionPhasedReleasesCreateInstance: (
-      data: AppStoreVersionPhasedReleaseCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppStoreVersionPhasedReleaseCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionPhasedReleaseResponse, ErrorResponse>({
         path: `/v1/appStoreVersionPhasedReleases`,
         method: "POST",
@@ -22985,11 +22855,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appStoreVersionPhasedReleases/{id}
      * @secure
      */
-    appStoreVersionPhasedReleasesUpdateInstance: (
-      id: string,
-      data: AppStoreVersionPhasedReleaseUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: AppStoreVersionPhasedReleaseUpdateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionPhasedReleaseResponse, ErrorResponse>({
         path: `/v1/appStoreVersionPhasedReleases/${id}`,
         method: "PATCH",
@@ -23008,7 +22874,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appStoreVersionPhasedReleases/{id}
      * @secure
      */
-    appStoreVersionPhasedReleasesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appStoreVersionPhasedReleases/${id}`,
         method: "DELETE",
@@ -23025,10 +22891,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appStoreVersionPromotions
      * @secure
      */
-    appStoreVersionPromotionsCreateInstance: (
-      data: AppStoreVersionPromotionCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppStoreVersionPromotionCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionPromotionResponse, ErrorResponse>({
         path: `/v1/appStoreVersionPromotions`,
         method: "POST",
@@ -23048,10 +22911,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appStoreVersionReleaseRequests
      * @secure
      */
-    appStoreVersionReleaseRequestsCreateInstance: (
-      data: AppStoreVersionReleaseRequestCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppStoreVersionReleaseRequestCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionReleaseRequestResponse, ErrorResponse>({
         path: `/v1/appStoreVersionReleaseRequests`,
         method: "POST",
@@ -23072,10 +22932,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appStoreVersionSubmissionsCreateInstance: (
-      data: AppStoreVersionSubmissionCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: AppStoreVersionSubmissionCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionSubmissionResponse, ErrorResponse>({
         path: `/v1/appStoreVersionSubmissions`,
         method: "POST",
@@ -23095,7 +22952,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appStoreVersionSubmissionsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appStoreVersionSubmissions/${id}`,
         method: "DELETE",
@@ -23112,7 +22969,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/appStoreVersions
      * @secure
      */
-    appStoreVersionsCreateInstance: (data: AppStoreVersionCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: AppStoreVersionCreateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionResponse, ErrorResponse>({
         path: `/v1/appStoreVersions`,
         method: "POST",
@@ -23131,7 +22988,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}
      * @secure
      */
-    appStoreVersionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersions */
@@ -23348,7 +23205,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appStoreVersions/{id}
      * @secure
      */
-    appStoreVersionsUpdateInstance: (id: string, data: AppStoreVersionUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: AppStoreVersionUpdateRequest, params: RequestParams = {}) =>
       this.request<AppStoreVersionResponse, ErrorResponse>({
         path: `/v1/appStoreVersions/${id}`,
         method: "PATCH",
@@ -23367,7 +23224,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/appStoreVersions/{id}
      * @secure
      */
-    appStoreVersionsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appStoreVersions/${id}`,
         method: "DELETE",
@@ -23384,7 +23241,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appStoreVersionsAgeRatingDeclarationGetToOneRelated: (
+    ageRatingDeclarationGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ageRatingDeclarations */
@@ -23428,7 +23285,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/alternativeDistributionPackage
      * @secure
      */
-    appStoreVersionsAlternativeDistributionPackageGetToOneRelated: (
+    alternativeDistributionPackageGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionPackages */
@@ -23471,7 +23328,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/relationships/appClipDefaultExperience
      * @secure
      */
-    appStoreVersionsAppClipDefaultExperienceGetToOneRelationship: (id: string, params: RequestParams = {}) =>
+    appClipDefaultExperienceGetToOneRelationship: (id: string, params: RequestParams = {}) =>
       this.request<AppStoreVersionAppClipDefaultExperienceLinkageResponse, ErrorResponse>({
         path: `/v1/appStoreVersions/${id}/relationships/appClipDefaultExperience`,
         method: "GET",
@@ -23488,7 +23345,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appStoreVersions/{id}/relationships/appClipDefaultExperience
      * @secure
      */
-    appStoreVersionsAppClipDefaultExperienceUpdateToOneRelationship: (
+    appClipDefaultExperienceUpdateToOneRelationship: (
       id: string,
       data: AppStoreVersionAppClipDefaultExperienceLinkageRequest,
       params: RequestParams = {},
@@ -23510,7 +23367,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/appClipDefaultExperience
      * @secure
      */
-    appStoreVersionsAppClipDefaultExperienceGetToOneRelated: (
+    appClipDefaultExperienceGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClips */
@@ -23591,7 +23448,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/appStoreReviewDetail
      * @secure
      */
-    appStoreVersionsAppStoreReviewDetailGetToOneRelated: (
+    appStoreReviewDetailGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreReviewDetails */
@@ -23671,7 +23528,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appStoreVersionsAppStoreVersionExperimentsGetToManyRelated: (
+    appStoreVersionExperimentsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'state' */
@@ -23766,7 +23623,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/appStoreVersionExperimentsV2
      * @secure
      */
-    appStoreVersionsAppStoreVersionExperimentsV2GetToManyRelated: (
+    appStoreVersionExperimentsV2GetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'state' */
@@ -23919,7 +23776,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/appStoreVersionLocalizations
      * @secure
      */
-    appStoreVersionsAppStoreVersionLocalizationsGetToManyRelated: (
+    appStoreVersionLocalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'locale' */
@@ -24016,7 +23873,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/appStoreVersionPhasedRelease
      * @secure
      */
-    appStoreVersionsAppStoreVersionPhasedReleaseGetToOneRelated: (
+    appStoreVersionPhasedReleaseGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersionPhasedReleases */
@@ -24048,7 +23905,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appStoreVersionsAppStoreVersionSubmissionGetToOneRelated: (
+    appStoreVersionSubmissionGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersionSubmissions */
@@ -24101,7 +23958,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/relationships/build
      * @secure
      */
-    appStoreVersionsBuildGetToOneRelationship: (id: string, params: RequestParams = {}) =>
+    buildGetToOneRelationship: (id: string, params: RequestParams = {}) =>
       this.request<AppStoreVersionBuildLinkageResponse, ErrorResponse>({
         path: `/v1/appStoreVersions/${id}/relationships/build`,
         method: "GET",
@@ -24118,11 +23975,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/appStoreVersions/{id}/relationships/build
      * @secure
      */
-    appStoreVersionsBuildUpdateToOneRelationship: (
-      id: string,
-      data: AppStoreVersionBuildLinkageRequest,
-      params: RequestParams = {},
-    ) =>
+    buildUpdateToOneRelationship: (id: string, data: AppStoreVersionBuildLinkageRequest, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/appStoreVersions/${id}/relationships/build`,
         method: "PATCH",
@@ -24140,7 +23993,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/build
      * @secure
      */
-    appStoreVersionsBuildGetToOneRelated: (
+    buildGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type builds */
@@ -24190,7 +24043,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/customerReviews
      * @secure
      */
-    appStoreVersionsCustomerReviewsGetToManyRelated: (
+    customerReviewsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'rating' */
@@ -24473,7 +24326,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/appStoreVersions/{id}/routingAppCoverage
      * @secure
      */
-    appStoreVersionsRoutingAppCoverageGetToOneRelated: (
+    routingAppCoverageGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type routingAppCoverages */
@@ -24507,7 +24360,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps
      * @secure
      */
-    appsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'appStoreVersions.appStoreState' */
         filterAppStoreVersionsAppStoreState?: (
@@ -25084,7 +24937,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}
      * @secure
      */
-    appsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -25597,7 +25450,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/apps/{id}
      * @secure
      */
-    appsUpdateInstance: (id: string, data: AppUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: AppUpdateRequest, params: RequestParams = {}) =>
       this.request<AppResponse, ErrorResponse>({
         path: `/v1/apps/${id}`,
         method: "PATCH",
@@ -25616,7 +25469,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/alternativeDistributionKey
      * @secure
      */
-    appsAlternativeDistributionKeyGetToOneRelated: (
+    alternativeDistributionKeyGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type alternativeDistributionKeys */
@@ -25641,7 +25494,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/analyticsReportRequests
      * @secure
      */
-    appsAnalyticsReportRequestsGetToManyRelated: (
+    analyticsReportRequestsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'accessType' */
@@ -25683,7 +25536,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appsAppAvailabilityGetToOneRelated: (
+    appAvailabilityGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appAvailabilities */
@@ -25767,7 +25620,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/appClips
      * @secure
      */
-    appsAppClipsGetToManyRelated: (
+    appClipsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'bundleId' */
@@ -25865,7 +25718,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/appCustomProductPages
      * @secure
      */
-    appsAppCustomProductPagesGetToManyRelated: (
+    appCustomProductPagesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'visible' */
@@ -25969,7 +25822,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/appEncryptionDeclarations
      * @secure
      */
-    appsAppEncryptionDeclarationsGetToManyRelated: (
+    appEncryptionDeclarationsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'platform' */
@@ -26117,7 +25970,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/appEvents
      * @secure
      */
-    appsAppEventsGetToManyRelated: (
+    appEventsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'eventState' */
@@ -26192,7 +26045,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/appInfos
      * @secure
      */
-    appsAppInfosGetToManyRelated: (
+    appInfosGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ageRatingDeclarations */
@@ -26338,7 +26191,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/appPricePoints
      * @secure
      */
-    appsAppPricePointsGetToManyRelated: (
+    appPricePointsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'territory' */
@@ -26424,7 +26277,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/appPriceSchedule
      * @secure
      */
-    appsAppPriceScheduleGetToOneRelated: (
+    appPriceScheduleGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPrices */
@@ -26515,7 +26368,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/appStoreVersionExperimentsV2
      * @secure
      */
-    appsAppStoreVersionExperimentsV2GetToManyRelated: (
+    appStoreVersionExperimentsV2GetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'state' */
@@ -26668,7 +26521,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/appStoreVersions
      * @secure
      */
-    appsAppStoreVersionsGetToManyRelated: (
+    appStoreVersionsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'appStoreState' */
@@ -26972,7 +26825,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appsAvailableTerritoriesGetToManyRelated: (
+    availableTerritoriesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type territories */
@@ -27002,7 +26855,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/betaAppLocalizations
      * @secure
      */
-    appsBetaAppLocalizationsGetToManyRelated: (
+    betaAppLocalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaAppLocalizations */
@@ -27040,7 +26893,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/betaAppReviewDetail
      * @secure
      */
-    appsBetaAppReviewDetailGetToOneRelated: (
+    betaAppReviewDetailGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaAppReviewDetails */
@@ -27075,7 +26928,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/betaGroups
      * @secure
      */
-    appsBetaGroupsGetToManyRelated: (
+    betaGroupsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaGroups */
@@ -27120,7 +26973,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/betaLicenseAgreement
      * @secure
      */
-    appsBetaLicenseAgreementGetToOneRelated: (
+    betaLicenseAgreementGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaLicenseAgreements */
@@ -27145,7 +26998,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/apps/{id}/relationships/betaTesters
      * @secure
      */
-    appsBetaTestersDeleteToManyRelationship: (
+    betaTestersDeleteToManyRelationship: (
       id: string,
       data: AppBetaTestersLinkagesRequest,
       params: RequestParams = {},
@@ -27167,7 +27020,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/builds
      * @secure
      */
-    appsBuildsGetToManyRelated: (
+    buildsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type builds */
@@ -27222,7 +27075,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/ciProduct
      * @secure
      */
-    appsCiProductGetToOneRelated: (
+    ciProductGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciProducts */
@@ -27336,7 +27189,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/customerReviews
      * @secure
      */
-    appsCustomerReviewsGetToManyRelated: (
+    customerReviewsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'rating' */
@@ -27619,7 +27472,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/endUserLicenseAgreement
      * @secure
      */
-    appsEndUserLicenseAgreementGetToOneRelated: (
+    endUserLicenseAgreementGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type endUserLicenseAgreements */
@@ -27644,7 +27497,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/gameCenterDetail
      * @secure
      */
-    appsGameCenterDetailGetToOneRelated: (
+    gameCenterDetailGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterAchievementReleases */
@@ -27844,7 +27697,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appsGameCenterEnabledVersionsGetToManyRelated: (
+    gameCenterEnabledVersionsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'platform' */
@@ -27947,7 +27800,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appsInAppPurchasesGetToManyRelated: (
+    inAppPurchasesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'inAppPurchaseType' */
@@ -28053,7 +27906,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/inAppPurchasesV2
      * @secure
      */
-    appsInAppPurchasesV2GetToManyRelated: (
+    inAppPurchasesV2GetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'inAppPurchaseType' */
@@ -28175,7 +28028,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/marketplaceSearchDetail
      * @secure
      */
-    appsMarketplaceSearchDetailGetToOneRelated: (
+    marketplaceSearchDetailGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type marketplaceSearchDetails */
@@ -28200,7 +28053,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/perfPowerMetrics
      * @secure
      */
-    appsPerfPowerMetricsGetToManyRelated: (
+    perfPowerMetricsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'deviceType' */
@@ -28230,7 +28083,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appsPreOrderGetToOneRelated: (
+    preOrderGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPreOrders */
@@ -28255,7 +28108,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/preReleaseVersions
      * @secure
      */
-    appsPreReleaseVersionsGetToManyRelated: (
+    preReleaseVersionsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type preReleaseVersions */
@@ -28286,7 +28139,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appsPricePointsGetToManyRelated: (
+    pricePointsGetToManyRelated: (
       id: string,
       query?: {
         /**
@@ -28380,7 +28233,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    appsPricesGetToManyRelated: (
+    pricesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appPriceTiers */
@@ -28464,7 +28317,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/relationships/promotedPurchases
      * @secure
      */
-    appsPromotedPurchasesGetToManyRelationship: (
+    promotedPurchasesGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -28492,7 +28345,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/apps/{id}/relationships/promotedPurchases
      * @secure
      */
-    appsPromotedPurchasesReplaceToManyRelationship: (
+    promotedPurchasesReplaceToManyRelationship: (
       id: string,
       data: AppPromotedPurchasesLinkagesRequest,
       params: RequestParams = {},
@@ -28514,7 +28367,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/promotedPurchases
      * @secure
      */
-    appsPromotedPurchasesGetToManyRelated: (
+    promotedPurchasesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type promotedPurchases */
@@ -28610,7 +28463,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/reviewSubmissions
      * @secure
      */
-    appsReviewSubmissionsGetToManyRelated: (
+    reviewSubmissionsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'platform' */
@@ -28760,7 +28613,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/subscriptionGracePeriod
      * @secure
      */
-    appsSubscriptionGracePeriodGetToOneRelated: (
+    subscriptionGracePeriodGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionGracePeriods */
@@ -28785,7 +28638,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/subscriptionGroups
      * @secure
      */
-    appsSubscriptionGroupsGetToManyRelated: (
+    subscriptionGroupsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'referenceName' */
@@ -28872,7 +28725,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/apps/{id}/metrics/betaTesterUsages
      * @secure
      */
-    appsBetaTesterUsagesGetMetrics: (
+    betaTesterUsagesGetMetrics: (
       id: string,
       query?: {
         /**
@@ -28907,10 +28760,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaAppClipInvocationLocalizations
      * @secure
      */
-    betaAppClipInvocationLocalizationsCreateInstance: (
-      data: BetaAppClipInvocationLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: BetaAppClipInvocationLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<BetaAppClipInvocationLocalizationResponse, ErrorResponse>({
         path: `/v1/betaAppClipInvocationLocalizations`,
         method: "POST",
@@ -28929,11 +28779,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/betaAppClipInvocationLocalizations/{id}
      * @secure
      */
-    betaAppClipInvocationLocalizationsUpdateInstance: (
-      id: string,
-      data: BetaAppClipInvocationLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: BetaAppClipInvocationLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<BetaAppClipInvocationLocalizationResponse, ErrorResponse>({
         path: `/v1/betaAppClipInvocationLocalizations/${id}`,
         method: "PATCH",
@@ -28952,7 +28798,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaAppClipInvocationLocalizations/{id}
      * @secure
      */
-    betaAppClipInvocationLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaAppClipInvocationLocalizations/${id}`,
         method: "DELETE",
@@ -28969,7 +28815,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaAppClipInvocations
      * @secure
      */
-    betaAppClipInvocationsCreateInstance: (data: BetaAppClipInvocationCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: BetaAppClipInvocationCreateRequest, params: RequestParams = {}) =>
       this.request<BetaAppClipInvocationResponse, ErrorResponse>({
         path: `/v1/betaAppClipInvocations`,
         method: "POST",
@@ -28988,7 +28834,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaAppClipInvocations/{id}
      * @secure
      */
-    betaAppClipInvocationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaAppClipInvocations */
@@ -29020,11 +28866,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/betaAppClipInvocations/{id}
      * @secure
      */
-    betaAppClipInvocationsUpdateInstance: (
-      id: string,
-      data: BetaAppClipInvocationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: BetaAppClipInvocationUpdateRequest, params: RequestParams = {}) =>
       this.request<BetaAppClipInvocationResponse, ErrorResponse>({
         path: `/v1/betaAppClipInvocations/${id}`,
         method: "PATCH",
@@ -29043,7 +28885,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaAppClipInvocations/{id}
      * @secure
      */
-    betaAppClipInvocationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaAppClipInvocations/${id}`,
         method: "DELETE",
@@ -29060,7 +28902,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaAppLocalizations
      * @secure
      */
-    betaAppLocalizationsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'locale' */
         "filter[locale]"?: string[];
@@ -29153,7 +28995,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaAppLocalizations
      * @secure
      */
-    betaAppLocalizationsCreateInstance: (data: BetaAppLocalizationCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: BetaAppLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<BetaAppLocalizationResponse, ErrorResponse>({
         path: `/v1/betaAppLocalizations`,
         method: "POST",
@@ -29172,7 +29014,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaAppLocalizations/{id}
      * @secure
      */
-    betaAppLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaAppLocalizations */
@@ -29257,11 +29099,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/betaAppLocalizations/{id}
      * @secure
      */
-    betaAppLocalizationsUpdateInstance: (
-      id: string,
-      data: BetaAppLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: BetaAppLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<BetaAppLocalizationResponse, ErrorResponse>({
         path: `/v1/betaAppLocalizations/${id}`,
         method: "PATCH",
@@ -29280,7 +29118,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaAppLocalizations/{id}
      * @secure
      */
-    betaAppLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaAppLocalizations/${id}`,
         method: "DELETE",
@@ -29296,7 +29134,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaAppLocalizations/{id}/app
      * @secure
      */
-    betaAppLocalizationsAppGetToOneRelated: (
+    appGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -29370,7 +29208,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaAppReviewDetails
      * @secure
      */
-    betaAppReviewDetailsGetCollection: (
+    getCollection: (
       query: {
         /** filter by id(s) of related 'app' */
         "filter[app]": string[];
@@ -29463,7 +29301,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaAppReviewDetails/{id}
      * @secure
      */
-    betaAppReviewDetailsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaAppReviewDetails */
@@ -29550,11 +29388,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/betaAppReviewDetails/{id}
      * @secure
      */
-    betaAppReviewDetailsUpdateInstance: (
-      id: string,
-      data: BetaAppReviewDetailUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: BetaAppReviewDetailUpdateRequest, params: RequestParams = {}) =>
       this.request<BetaAppReviewDetailResponse, ErrorResponse>({
         path: `/v1/betaAppReviewDetails/${id}`,
         method: "PATCH",
@@ -29573,7 +29407,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaAppReviewDetails/{id}/app
      * @secure
      */
-    betaAppReviewDetailsAppGetToOneRelated: (
+    appGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -29647,7 +29481,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaAppReviewSubmissions
      * @secure
      */
-    betaAppReviewSubmissionsGetCollection: (
+    getCollection: (
       query: {
         /** filter by attribute 'betaReviewState' */
         "filter[betaReviewState]"?: ("WAITING_FOR_REVIEW" | "IN_REVIEW" | "REJECTED" | "APPROVED")[];
@@ -29709,7 +29543,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaAppReviewSubmissions
      * @secure
      */
-    betaAppReviewSubmissionsCreateInstance: (data: BetaAppReviewSubmissionCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: BetaAppReviewSubmissionCreateRequest, params: RequestParams = {}) =>
       this.request<BetaAppReviewSubmissionResponse, ErrorResponse>({
         path: `/v1/betaAppReviewSubmissions`,
         method: "POST",
@@ -29728,7 +29562,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaAppReviewSubmissions/{id}
      * @secure
      */
-    betaAppReviewSubmissionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaAppReviewSubmissions */
@@ -29782,7 +29616,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaAppReviewSubmissions/{id}/build
      * @secure
      */
-    betaAppReviewSubmissionsBuildGetToOneRelated: (
+    buildGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type builds */
@@ -29833,7 +29667,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaBuildLocalizations
      * @secure
      */
-    betaBuildLocalizationsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'locale' */
         "filter[locale]"?: string[];
@@ -29895,7 +29729,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaBuildLocalizations
      * @secure
      */
-    betaBuildLocalizationsCreateInstance: (data: BetaBuildLocalizationCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: BetaBuildLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<BetaBuildLocalizationResponse, ErrorResponse>({
         path: `/v1/betaBuildLocalizations`,
         method: "POST",
@@ -29914,7 +29748,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaBuildLocalizations/{id}
      * @secure
      */
-    betaBuildLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaBuildLocalizations */
@@ -29968,11 +29802,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/betaBuildLocalizations/{id}
      * @secure
      */
-    betaBuildLocalizationsUpdateInstance: (
-      id: string,
-      data: BetaBuildLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: BetaBuildLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<BetaBuildLocalizationResponse, ErrorResponse>({
         path: `/v1/betaBuildLocalizations/${id}`,
         method: "PATCH",
@@ -29991,7 +29821,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaBuildLocalizations/{id}
      * @secure
      */
-    betaBuildLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaBuildLocalizations/${id}`,
         method: "DELETE",
@@ -30007,7 +29837,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaBuildLocalizations/{id}/build
      * @secure
      */
-    betaBuildLocalizationsBuildGetToOneRelated: (
+    buildGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type builds */
@@ -30058,7 +29888,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaGroups
      * @secure
      */
-    betaGroupsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'isInternalGroup' */
         "filter[isInternalGroup]"?: string[];
@@ -30228,7 +30058,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaGroups
      * @secure
      */
-    betaGroupsCreateInstance: (data: BetaGroupCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: BetaGroupCreateRequest, params: RequestParams = {}) =>
       this.request<BetaGroupResponse, ErrorResponse>({
         path: `/v1/betaGroups`,
         method: "POST",
@@ -30247,7 +30077,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaGroups/{id}
      * @secure
      */
-    betaGroupsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaGroups */
@@ -30386,7 +30216,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/betaGroups/{id}
      * @secure
      */
-    betaGroupsUpdateInstance: (id: string, data: BetaGroupUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: BetaGroupUpdateRequest, params: RequestParams = {}) =>
       this.request<BetaGroupResponse, ErrorResponse>({
         path: `/v1/betaGroups/${id}`,
         method: "PATCH",
@@ -30405,7 +30235,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaGroups/{id}
      * @secure
      */
-    betaGroupsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaGroups/${id}`,
         method: "DELETE",
@@ -30421,7 +30251,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaGroups/{id}/app
      * @secure
      */
-    betaGroupsAppGetToOneRelated: (
+    appGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -30494,7 +30324,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaGroups/{id}/relationships/betaTesters
      * @secure
      */
-    betaGroupsBetaTestersGetToManyRelationship: (
+    betaTestersGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -30522,7 +30352,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaGroups/{id}/relationships/betaTesters
      * @secure
      */
-    betaGroupsBetaTestersCreateToManyRelationship: (
+    betaTestersCreateToManyRelationship: (
       id: string,
       data: BetaGroupBetaTestersLinkagesRequest,
       params: RequestParams = {},
@@ -30544,7 +30374,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaGroups/{id}/relationships/betaTesters
      * @secure
      */
-    betaGroupsBetaTestersDeleteToManyRelationship: (
+    betaTestersDeleteToManyRelationship: (
       id: string,
       data: BetaGroupBetaTestersLinkagesRequest,
       params: RequestParams = {},
@@ -30566,7 +30396,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaGroups/{id}/betaTesters
      * @secure
      */
-    betaGroupsBetaTestersGetToManyRelated: (
+    betaTestersGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaTesters */
@@ -30604,7 +30434,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaGroups/{id}/relationships/builds
      * @secure
      */
-    betaGroupsBuildsGetToManyRelationship: (
+    buildsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -30632,11 +30462,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaGroups/{id}/relationships/builds
      * @secure
      */
-    betaGroupsBuildsCreateToManyRelationship: (
-      id: string,
-      data: BetaGroupBuildsLinkagesRequest,
-      params: RequestParams = {},
-    ) =>
+    buildsCreateToManyRelationship: (id: string, data: BetaGroupBuildsLinkagesRequest, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaGroups/${id}/relationships/builds`,
         method: "POST",
@@ -30654,11 +30480,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaGroups/{id}/relationships/builds
      * @secure
      */
-    betaGroupsBuildsDeleteToManyRelationship: (
-      id: string,
-      data: BetaGroupBuildsLinkagesRequest,
-      params: RequestParams = {},
-    ) =>
+    buildsDeleteToManyRelationship: (id: string, data: BetaGroupBuildsLinkagesRequest, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaGroups/${id}/relationships/builds`,
         method: "DELETE",
@@ -30676,7 +30498,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaGroups/{id}/builds
      * @secure
      */
-    betaGroupsBuildsGetToManyRelated: (
+    buildsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type builds */
@@ -30731,7 +30553,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaGroups/{id}/metrics/betaTesterUsages
      * @secure
      */
-    betaGroupsBetaTesterUsagesGetMetrics: (
+    betaTesterUsagesGetMetrics: (
       id: string,
       query?: {
         /**
@@ -30766,7 +30588,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaLicenseAgreements
      * @secure
      */
-    betaLicenseAgreementsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by id(s) of related 'app' */
         "filter[app]"?: string[];
@@ -30849,7 +30671,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaLicenseAgreements/{id}
      * @secure
      */
-    betaLicenseAgreementsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaLicenseAgreements */
@@ -30926,11 +30748,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/betaLicenseAgreements/{id}
      * @secure
      */
-    betaLicenseAgreementsUpdateInstance: (
-      id: string,
-      data: BetaLicenseAgreementUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: BetaLicenseAgreementUpdateRequest, params: RequestParams = {}) =>
       this.request<BetaLicenseAgreementResponse, ErrorResponse>({
         path: `/v1/betaLicenseAgreements/${id}`,
         method: "PATCH",
@@ -30949,7 +30767,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaLicenseAgreements/{id}/app
      * @secure
      */
-    betaLicenseAgreementsAppGetToOneRelated: (
+    appGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -31023,7 +30841,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaTesterInvitations
      * @secure
      */
-    betaTesterInvitationsCreateInstance: (data: BetaTesterInvitationCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: BetaTesterInvitationCreateRequest, params: RequestParams = {}) =>
       this.request<BetaTesterInvitationResponse, ErrorResponse>({
         path: `/v1/betaTesterInvitations`,
         method: "POST",
@@ -31043,7 +30861,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaTesters
      * @secure
      */
-    betaTestersGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'email' */
         "filter[email]"?: string[];
@@ -31218,7 +31036,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaTesters
      * @secure
      */
-    betaTestersCreateInstance: (data: BetaTesterCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: BetaTesterCreateRequest, params: RequestParams = {}) =>
       this.request<BetaTesterResponse, ErrorResponse>({
         path: `/v1/betaTesters`,
         method: "POST",
@@ -31237,7 +31055,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaTesters/{id}
      * @secure
      */
-    betaTestersGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaTesters */
@@ -31381,7 +31199,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaTesters/{id}
      * @secure
      */
-    betaTestersDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaTesters/${id}`,
         method: "DELETE",
@@ -31397,7 +31215,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaTesters/{id}/relationships/apps
      * @secure
      */
-    betaTestersAppsGetToManyRelationship: (
+    appsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -31425,11 +31243,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaTesters/{id}/relationships/apps
      * @secure
      */
-    betaTestersAppsDeleteToManyRelationship: (
-      id: string,
-      data: BetaTesterAppsLinkagesRequest,
-      params: RequestParams = {},
-    ) =>
+    appsDeleteToManyRelationship: (id: string, data: BetaTesterAppsLinkagesRequest, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaTesters/${id}/relationships/apps`,
         method: "DELETE",
@@ -31447,7 +31261,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaTesters/{id}/apps
      * @secure
      */
-    betaTestersAppsGetToManyRelated: (
+    appsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -31525,7 +31339,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaTesters/{id}/relationships/betaGroups
      * @secure
      */
-    betaTestersBetaGroupsGetToManyRelationship: (
+    betaGroupsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -31553,7 +31367,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaTesters/{id}/relationships/betaGroups
      * @secure
      */
-    betaTestersBetaGroupsCreateToManyRelationship: (
+    betaGroupsCreateToManyRelationship: (
       id: string,
       data: BetaTesterBetaGroupsLinkagesRequest,
       params: RequestParams = {},
@@ -31575,7 +31389,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaTesters/{id}/relationships/betaGroups
      * @secure
      */
-    betaTestersBetaGroupsDeleteToManyRelationship: (
+    betaGroupsDeleteToManyRelationship: (
       id: string,
       data: BetaTesterBetaGroupsLinkagesRequest,
       params: RequestParams = {},
@@ -31597,7 +31411,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaTesters/{id}/betaGroups
      * @secure
      */
-    betaTestersBetaGroupsGetToManyRelated: (
+    betaGroupsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaGroups */
@@ -31642,7 +31456,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaTesters/{id}/relationships/builds
      * @secure
      */
-    betaTestersBuildsGetToManyRelationship: (
+    buildsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -31670,11 +31484,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/betaTesters/{id}/relationships/builds
      * @secure
      */
-    betaTestersBuildsCreateToManyRelationship: (
-      id: string,
-      data: BetaTesterBuildsLinkagesRequest,
-      params: RequestParams = {},
-    ) =>
+    buildsCreateToManyRelationship: (id: string, data: BetaTesterBuildsLinkagesRequest, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaTesters/${id}/relationships/builds`,
         method: "POST",
@@ -31692,11 +31502,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/betaTesters/{id}/relationships/builds
      * @secure
      */
-    betaTestersBuildsDeleteToManyRelationship: (
-      id: string,
-      data: BetaTesterBuildsLinkagesRequest,
-      params: RequestParams = {},
-    ) =>
+    buildsDeleteToManyRelationship: (id: string, data: BetaTesterBuildsLinkagesRequest, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/betaTesters/${id}/relationships/builds`,
         method: "DELETE",
@@ -31714,7 +31520,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaTesters/{id}/builds
      * @secure
      */
-    betaTestersBuildsGetToManyRelated: (
+    buildsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type builds */
@@ -31769,7 +31575,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/betaTesters/{id}/metrics/betaTesterUsages
      * @secure
      */
-    betaTestersBetaTesterUsagesGetMetrics: (
+    betaTesterUsagesGetMetrics: (
       id: string,
       query: {
         /**
@@ -31802,7 +31608,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/buildBetaDetails
      * @secure
      */
-    buildBetaDetailsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by id(s) of related 'build' */
         "filter[build]"?: string[];
@@ -31864,7 +31670,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/buildBetaDetails/{id}
      * @secure
      */
-    buildBetaDetailsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type buildBetaDetails */
@@ -31918,7 +31724,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/buildBetaDetails/{id}
      * @secure
      */
-    buildBetaDetailsUpdateInstance: (id: string, data: BuildBetaDetailUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: BuildBetaDetailUpdateRequest, params: RequestParams = {}) =>
       this.request<BuildBetaDetailResponse, ErrorResponse>({
         path: `/v1/buildBetaDetails/${id}`,
         method: "PATCH",
@@ -31937,7 +31743,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/buildBetaDetails/{id}/build
      * @secure
      */
-    buildBetaDetailsBuildGetToOneRelated: (
+    buildGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type builds */
@@ -31988,7 +31794,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/buildBetaNotifications
      * @secure
      */
-    buildBetaNotificationsCreateInstance: (data: BuildBetaNotificationCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: BuildBetaNotificationCreateRequest, params: RequestParams = {}) =>
       this.request<BuildBetaNotificationResponse, ErrorResponse>({
         path: `/v1/buildBetaNotifications`,
         method: "POST",
@@ -32008,7 +31814,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds
      * @secure
      */
-    buildsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'betaAppReviewSubmission.betaReviewState' */
         filterBetaAppReviewSubmissionBetaReviewState?: ("WAITING_FOR_REVIEW" | "IN_REVIEW" | "REJECTED" | "APPROVED")[];
@@ -32256,7 +32062,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}
      * @secure
      */
-    buildsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type builds */
@@ -32465,7 +32271,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/builds/{id}
      * @secure
      */
-    buildsUpdateInstance: (id: string, data: BuildUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: BuildUpdateRequest, params: RequestParams = {}) =>
       this.request<BuildResponse, ErrorResponse>({
         path: `/v1/builds/${id}`,
         method: "PATCH",
@@ -32484,7 +32290,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/app
      * @secure
      */
-    buildsAppGetToOneRelated: (
+    appGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -32557,7 +32363,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/relationships/appEncryptionDeclaration
      * @secure
      */
-    buildsAppEncryptionDeclarationGetToOneRelationship: (id: string, params: RequestParams = {}) =>
+    appEncryptionDeclarationGetToOneRelationship: (id: string, params: RequestParams = {}) =>
       this.request<BuildAppEncryptionDeclarationLinkageResponse, ErrorResponse>({
         path: `/v1/builds/${id}/relationships/appEncryptionDeclaration`,
         method: "GET",
@@ -32574,7 +32380,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/builds/{id}/relationships/appEncryptionDeclaration
      * @secure
      */
-    buildsAppEncryptionDeclarationUpdateToOneRelationship: (
+    appEncryptionDeclarationUpdateToOneRelationship: (
       id: string,
       data: BuildAppEncryptionDeclarationLinkageRequest,
       params: RequestParams = {},
@@ -32596,7 +32402,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/appEncryptionDeclaration
      * @secure
      */
-    buildsAppEncryptionDeclarationGetToOneRelated: (
+    appEncryptionDeclarationGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appEncryptionDeclarations */
@@ -32639,7 +32445,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/appStoreVersion
      * @secure
      */
-    buildsAppStoreVersionGetToOneRelated: (
+    appStoreVersionGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ageRatingDeclarations */
@@ -32890,7 +32696,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/betaAppReviewSubmission
      * @secure
      */
-    buildsBetaAppReviewSubmissionGetToOneRelated: (
+    betaAppReviewSubmissionGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaAppReviewSubmissions */
@@ -32915,7 +32721,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/betaBuildLocalizations
      * @secure
      */
-    buildsBetaBuildLocalizationsGetToManyRelated: (
+    betaBuildLocalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaBuildLocalizations */
@@ -32945,7 +32751,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/builds/{id}/relationships/betaGroups
      * @secure
      */
-    buildsBetaGroupsCreateToManyRelationship: (
+    betaGroupsCreateToManyRelationship: (
       id: string,
       data: BuildBetaGroupsLinkagesRequest,
       params: RequestParams = {},
@@ -32967,7 +32773,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/builds/{id}/relationships/betaGroups
      * @secure
      */
-    buildsBetaGroupsDeleteToManyRelationship: (
+    betaGroupsDeleteToManyRelationship: (
       id: string,
       data: BuildBetaGroupsLinkagesRequest,
       params: RequestParams = {},
@@ -32989,7 +32795,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/buildBetaDetail
      * @secure
      */
-    buildsBuildBetaDetailGetToOneRelated: (
+    buildBetaDetailGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type buildBetaDetails */
@@ -33043,7 +32849,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/diagnosticSignatures
      * @secure
      */
-    buildsDiagnosticSignaturesGetToManyRelated: (
+    diagnosticSignaturesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'diagnosticType' */
@@ -33075,7 +32881,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/icons
      * @secure
      */
-    buildsIconsGetToManyRelated: (
+    iconsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type buildIcons */
@@ -33105,7 +32911,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/relationships/individualTesters
      * @secure
      */
-    buildsIndividualTestersGetToManyRelationship: (
+    individualTestersGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -33133,7 +32939,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/builds/{id}/relationships/individualTesters
      * @secure
      */
-    buildsIndividualTestersCreateToManyRelationship: (
+    individualTestersCreateToManyRelationship: (
       id: string,
       data: BuildIndividualTestersLinkagesRequest,
       params: RequestParams = {},
@@ -33155,7 +32961,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/builds/{id}/relationships/individualTesters
      * @secure
      */
-    buildsIndividualTestersDeleteToManyRelationship: (
+    individualTestersDeleteToManyRelationship: (
       id: string,
       data: BuildIndividualTestersLinkagesRequest,
       params: RequestParams = {},
@@ -33177,7 +32983,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/individualTesters
      * @secure
      */
-    buildsIndividualTestersGetToManyRelated: (
+    individualTestersGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaTesters */
@@ -33215,7 +33021,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/perfPowerMetrics
      * @secure
      */
-    buildsPerfPowerMetricsGetToManyRelated: (
+    perfPowerMetricsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'deviceType' */
@@ -33244,7 +33050,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/preReleaseVersion
      * @secure
      */
-    buildsPreReleaseVersionGetToOneRelated: (
+    preReleaseVersionGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type preReleaseVersions */
@@ -33269,7 +33075,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/builds/{id}/metrics/betaBuildUsages
      * @secure
      */
-    buildsBetaBuildUsagesGetMetrics: (
+    betaBuildUsagesGetMetrics: (
       id: string,
       query?: {
         /**
@@ -33298,7 +33104,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/bundleIdCapabilities
      * @secure
      */
-    bundleIdCapabilitiesCreateInstance: (data: BundleIdCapabilityCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: BundleIdCapabilityCreateRequest, params: RequestParams = {}) =>
       this.request<BundleIdCapabilityResponse, ErrorResponse>({
         path: `/v1/bundleIdCapabilities`,
         method: "POST",
@@ -33317,11 +33123,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/bundleIdCapabilities/{id}
      * @secure
      */
-    bundleIdCapabilitiesUpdateInstance: (
-      id: string,
-      data: BundleIdCapabilityUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: BundleIdCapabilityUpdateRequest, params: RequestParams = {}) =>
       this.request<BundleIdCapabilityResponse, ErrorResponse>({
         path: `/v1/bundleIdCapabilities/${id}`,
         method: "PATCH",
@@ -33340,7 +33142,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/bundleIdCapabilities/{id}
      * @secure
      */
-    bundleIdCapabilitiesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/bundleIdCapabilities/${id}`,
         method: "DELETE",
@@ -33357,7 +33159,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/bundleIds
      * @secure
      */
-    bundleIdsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'identifier' */
         "filter[identifier]"?: string[];
@@ -33495,7 +33297,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/bundleIds
      * @secure
      */
-    bundleIdsCreateInstance: (data: BundleIdCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: BundleIdCreateRequest, params: RequestParams = {}) =>
       this.request<BundleIdResponse, ErrorResponse>({
         path: `/v1/bundleIds`,
         method: "POST",
@@ -33514,7 +33316,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/bundleIds/{id}
      * @secure
      */
-    bundleIdsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type bundleIds */
@@ -33625,7 +33427,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/bundleIds/{id}
      * @secure
      */
-    bundleIdsUpdateInstance: (id: string, data: BundleIdUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: BundleIdUpdateRequest, params: RequestParams = {}) =>
       this.request<BundleIdResponse, ErrorResponse>({
         path: `/v1/bundleIds/${id}`,
         method: "PATCH",
@@ -33644,7 +33446,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/bundleIds/{id}
      * @secure
      */
-    bundleIdsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/bundleIds/${id}`,
         method: "DELETE",
@@ -33660,7 +33462,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/bundleIds/{id}/app
      * @secure
      */
-    bundleIdsAppGetToOneRelated: (
+    appGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -33733,7 +33535,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/bundleIds/{id}/bundleIdCapabilities
      * @secure
      */
-    bundleIdsBundleIdCapabilitiesGetToManyRelated: (
+    bundleIdCapabilitiesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type bundleIdCapabilities */
@@ -33763,7 +33565,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/bundleIds/{id}/profiles
      * @secure
      */
-    bundleIdsProfilesGetToManyRelated: (
+    profilesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type profiles */
@@ -33806,7 +33608,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/certificates
      * @secure
      */
-    certificatesGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'certificateType' */
         "filter[certificateType]"?: (
@@ -33875,7 +33677,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/certificates
      * @secure
      */
-    certificatesCreateInstance: (data: CertificateCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: CertificateCreateRequest, params: RequestParams = {}) =>
       this.request<CertificateResponse, ErrorResponse>({
         path: `/v1/certificates`,
         method: "POST",
@@ -33894,7 +33696,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/certificates/{id}
      * @secure
      */
-    certificatesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type certificates */
@@ -33928,7 +33730,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/certificates/{id}
      * @secure
      */
-    certificatesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/certificates/${id}`,
         method: "DELETE",
@@ -33945,7 +33747,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciArtifacts/{id}
      * @secure
      */
-    ciArtifactsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciArtifacts */
@@ -33971,7 +33773,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciBuildActions/{id}
      * @secure
      */
-    ciBuildActionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciBuildActions */
@@ -34048,7 +33850,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciBuildActions/{id}/artifacts
      * @secure
      */
-    ciBuildActionsArtifactsGetToManyRelated: (
+    artifactsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciArtifacts */
@@ -34078,7 +33880,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciBuildActions/{id}/buildRun
      * @secure
      */
-    ciBuildActionsBuildRunGetToOneRelated: (
+    buildRunGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type scmGitReferences */
@@ -34211,7 +34013,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciBuildActions/{id}/issues
      * @secure
      */
-    ciBuildActionsIssuesGetToManyRelated: (
+    issuesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciIssues */
@@ -34241,7 +34043,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciBuildActions/{id}/testResults
      * @secure
      */
-    ciBuildActionsTestResultsGetToManyRelated: (
+    testResultsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciTestResults */
@@ -34279,7 +34081,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/ciBuildRuns
      * @secure
      */
-    ciBuildRunsCreateInstance: (data: CiBuildRunCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: CiBuildRunCreateRequest, params: RequestParams = {}) =>
       this.request<CiBuildRunResponse, ErrorResponse>({
         path: `/v1/ciBuildRuns`,
         method: "POST",
@@ -34298,7 +34100,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciBuildRuns/{id}
      * @secure
      */
-    ciBuildRunsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciBuildRuns */
@@ -34394,7 +34196,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciBuildRuns/{id}/actions
      * @secure
      */
-    ciBuildRunsActionsGetToManyRelated: (
+    actionsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciBuildRuns */
@@ -34463,7 +34265,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciBuildRuns/{id}/builds
      * @secure
      */
-    ciBuildRunsBuildsGetToManyRelated: (
+    buildsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'betaAppReviewSubmission.betaReviewState' */
@@ -34750,7 +34552,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciIssues/{id}
      * @secure
      */
-    ciIssuesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciIssues */
@@ -34776,7 +34578,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciMacOsVersions
      * @secure
      */
-    ciMacOsVersionsGetCollection: (
+    getCollection: (
       query?: {
         /** the fields to include for returned resources of type ciMacOsVersions */
         "fields[ciMacOsVersions]"?: ("name" | "version" | "xcodeVersions")[];
@@ -34814,7 +34616,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciMacOsVersions/{id}
      * @secure
      */
-    ciMacOsVersionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciMacOsVersions */
@@ -34848,7 +34650,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciMacOsVersions/{id}/xcodeVersions
      * @secure
      */
-    ciMacOsVersionsXcodeVersionsGetToManyRelated: (
+    xcodeVersionsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciXcodeVersions */
@@ -34888,7 +34690,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciProducts
      * @secure
      */
-    ciProductsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'productType' */
         "filter[productType]"?: ("APP" | "FRAMEWORK")[];
@@ -35047,7 +34849,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciProducts/{id}
      * @secure
      */
-    ciProductsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciProducts */
@@ -35198,7 +35000,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/ciProducts/{id}
      * @secure
      */
-    ciProductsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/ciProducts/${id}`,
         method: "DELETE",
@@ -35214,7 +35016,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciProducts/{id}/additionalRepositories
      * @secure
      */
-    ciProductsAdditionalRepositoriesGetToManyRelated: (
+    additionalRepositoriesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) */
@@ -35262,7 +35064,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciProducts/{id}/app
      * @secure
      */
-    ciProductsAppGetToOneRelated: (
+    appGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaAppReviewDetails */
@@ -35729,7 +35531,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciProducts/{id}/buildRuns
      * @secure
      */
-    ciProductsBuildRunsGetToManyRelated: (
+    buildRunsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'builds' */
@@ -35871,7 +35673,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciProducts/{id}/primaryRepositories
      * @secure
      */
-    ciProductsPrimaryRepositoriesGetToManyRelated: (
+    primaryRepositoriesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) */
@@ -35919,7 +35721,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciProducts/{id}/workflows
      * @secure
      */
-    ciProductsWorkflowsGetToManyRelated: (
+    workflowsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciXcodeVersions */
@@ -36001,7 +35803,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciTestResults/{id}
      * @secure
      */
-    ciTestResultsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciTestResults */
@@ -36034,7 +35836,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/ciWorkflows
      * @secure
      */
-    ciWorkflowsCreateInstance: (data: CiWorkflowCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: CiWorkflowCreateRequest, params: RequestParams = {}) =>
       this.request<CiWorkflowResponse, ErrorResponse>({
         path: `/v1/ciWorkflows`,
         method: "POST",
@@ -36053,7 +35855,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciWorkflows/{id}
      * @secure
      */
-    ciWorkflowsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciWorkflows */
@@ -36137,7 +35939,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/ciWorkflows/{id}
      * @secure
      */
-    ciWorkflowsUpdateInstance: (id: string, data: CiWorkflowUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: CiWorkflowUpdateRequest, params: RequestParams = {}) =>
       this.request<CiWorkflowResponse, ErrorResponse>({
         path: `/v1/ciWorkflows/${id}`,
         method: "PATCH",
@@ -36156,7 +35958,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/ciWorkflows/{id}
      * @secure
      */
-    ciWorkflowsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/ciWorkflows/${id}`,
         method: "DELETE",
@@ -36172,7 +35974,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciWorkflows/{id}/buildRuns
      * @secure
      */
-    ciWorkflowsBuildRunsGetToManyRelated: (
+    buildRunsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'builds' */
@@ -36314,7 +36116,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciWorkflows/{id}/repository
      * @secure
      */
-    ciWorkflowsRepositoryGetToOneRelated: (
+    repositoryGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type scmGitReferences */
@@ -36356,7 +36158,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciXcodeVersions
      * @secure
      */
-    ciXcodeVersionsGetCollection: (
+    getCollection: (
       query?: {
         /** the fields to include for returned resources of type ciXcodeVersions */
         "fields[ciXcodeVersions]"?: ("macOsVersions" | "name" | "testDestinations" | "version")[];
@@ -36394,7 +36196,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciXcodeVersions/{id}
      * @secure
      */
-    ciXcodeVersionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciXcodeVersions */
@@ -36428,7 +36230,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/ciXcodeVersions/{id}/macOsVersions
      * @secure
      */
-    ciXcodeVersionsMacOsVersionsGetToManyRelated: (
+    macOsVersionsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ciXcodeVersions */
@@ -36468,7 +36270,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/customerReviewResponses
      * @secure
      */
-    customerReviewResponsesCreateInstance: (data: CustomerReviewResponseV1CreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: CustomerReviewResponseV1CreateRequest, params: RequestParams = {}) =>
       this.request<CustomerReviewResponseV1Response, ErrorResponse>({
         path: `/v1/customerReviewResponses`,
         method: "POST",
@@ -36487,7 +36289,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/customerReviewResponses/{id}
      * @secure
      */
-    customerReviewResponsesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type customerReviewResponses */
@@ -36514,7 +36316,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/customerReviewResponses/{id}
      * @secure
      */
-    customerReviewResponsesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/customerReviewResponses/${id}`,
         method: "DELETE",
@@ -36531,7 +36333,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/customerReviews/{id}
      * @secure
      */
-    customerReviewsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type customerReviews */
@@ -36568,7 +36370,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/customerReviews/{id}/response
      * @secure
      */
-    customerReviewsResponseGetToOneRelated: (
+    responseGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type customerReviews */
@@ -36606,7 +36408,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/devices
      * @secure
      */
-    devicesGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'name' */
         "filter[name]"?: string[];
@@ -36647,7 +36449,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/devices
      * @secure
      */
-    devicesCreateInstance: (data: DeviceCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: DeviceCreateRequest, params: RequestParams = {}) =>
       this.request<DeviceResponse, ErrorResponse>({
         path: `/v1/devices`,
         method: "POST",
@@ -36666,7 +36468,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/devices/{id}
      * @secure
      */
-    devicesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type devices */
@@ -36691,7 +36493,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/devices/{id}
      * @secure
      */
-    devicesUpdateInstance: (id: string, data: DeviceUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: DeviceUpdateRequest, params: RequestParams = {}) =>
       this.request<DeviceResponse, ErrorResponse>({
         path: `/v1/devices/${id}`,
         method: "PATCH",
@@ -36711,10 +36513,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/endAppAvailabilityPreOrders
      * @secure
      */
-    endAppAvailabilityPreOrdersCreateInstance: (
-      data: EndAppAvailabilityPreOrderCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: EndAppAvailabilityPreOrderCreateRequest, params: RequestParams = {}) =>
       this.request<EndAppAvailabilityPreOrderResponse, ErrorResponse>({
         path: `/v1/endAppAvailabilityPreOrders`,
         method: "POST",
@@ -36734,7 +36533,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/endUserLicenseAgreements
      * @secure
      */
-    endUserLicenseAgreementsCreateInstance: (data: EndUserLicenseAgreementCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: EndUserLicenseAgreementCreateRequest, params: RequestParams = {}) =>
       this.request<EndUserLicenseAgreementResponse, ErrorResponse>({
         path: `/v1/endUserLicenseAgreements`,
         method: "POST",
@@ -36753,7 +36552,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/endUserLicenseAgreements/{id}
      * @secure
      */
-    endUserLicenseAgreementsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type endUserLicenseAgreements */
@@ -36787,11 +36586,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/endUserLicenseAgreements/{id}
      * @secure
      */
-    endUserLicenseAgreementsUpdateInstance: (
-      id: string,
-      data: EndUserLicenseAgreementUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: EndUserLicenseAgreementUpdateRequest, params: RequestParams = {}) =>
       this.request<EndUserLicenseAgreementResponse, ErrorResponse>({
         path: `/v1/endUserLicenseAgreements/${id}`,
         method: "PATCH",
@@ -36810,7 +36605,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/endUserLicenseAgreements/{id}
      * @secure
      */
-    endUserLicenseAgreementsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/endUserLicenseAgreements/${id}`,
         method: "DELETE",
@@ -36826,7 +36621,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/endUserLicenseAgreements/{id}/territories
      * @secure
      */
-    endUserLicenseAgreementsTerritoriesGetToManyRelated: (
+    territoriesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type territories */
@@ -36857,7 +36652,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/financeReports
      * @secure
      */
-    financeReportsGetCollection: (
+    getCollection: (
       query: {
         /** filter by attribute 'regionCode' */
         "filter[regionCode]": string[];
@@ -36887,10 +36682,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterAchievementImages
      * @secure
      */
-    gameCenterAchievementImagesCreateInstance: (
-      data: GameCenterAchievementImageCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterAchievementImageCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterAchievementImageResponse, ErrorResponse>({
         path: `/v1/gameCenterAchievementImages`,
         method: "POST",
@@ -36909,7 +36701,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAchievementImages/{id}
      * @secure
      */
-    gameCenterAchievementImagesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterAchievementImages */
@@ -36944,11 +36736,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterAchievementImages/{id}
      * @secure
      */
-    gameCenterAchievementImagesUpdateInstance: (
-      id: string,
-      data: GameCenterAchievementImageUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterAchievementImageUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterAchievementImageResponse, ErrorResponse>({
         path: `/v1/gameCenterAchievementImages/${id}`,
         method: "PATCH",
@@ -36967,7 +36755,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterAchievementImages/{id}
      * @secure
      */
-    gameCenterAchievementImagesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterAchievementImages/${id}`,
         method: "DELETE",
@@ -36984,10 +36772,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterAchievementLocalizations
      * @secure
      */
-    gameCenterAchievementLocalizationsCreateInstance: (
-      data: GameCenterAchievementLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterAchievementLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterAchievementLocalizationResponse, ErrorResponse>({
         path: `/v1/gameCenterAchievementLocalizations`,
         method: "POST",
@@ -37006,7 +36791,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAchievementLocalizations/{id}
      * @secure
      */
-    gameCenterAchievementLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterAchievementLocalizations */
@@ -37064,11 +36849,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterAchievementLocalizations/{id}
      * @secure
      */
-    gameCenterAchievementLocalizationsUpdateInstance: (
-      id: string,
-      data: GameCenterAchievementLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterAchievementLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterAchievementLocalizationResponse, ErrorResponse>({
         path: `/v1/gameCenterAchievementLocalizations/${id}`,
         method: "PATCH",
@@ -37087,7 +36868,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterAchievementLocalizations/{id}
      * @secure
      */
-    gameCenterAchievementLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterAchievementLocalizations/${id}`,
         method: "DELETE",
@@ -37103,7 +36884,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAchievementLocalizations/{id}/gameCenterAchievement
      * @secure
      */
-    gameCenterAchievementLocalizationsGameCenterAchievementGetToOneRelated: (
+    gameCenterAchievementGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterAchievementReleases */
@@ -37187,7 +36968,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAchievementLocalizations/{id}/gameCenterAchievementImage
      * @secure
      */
-    gameCenterAchievementLocalizationsGameCenterAchievementImageGetToOneRelated: (
+    gameCenterAchievementImageGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterAchievementImages */
@@ -37232,10 +37013,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterAchievementReleases
      * @secure
      */
-    gameCenterAchievementReleasesCreateInstance: (
-      data: GameCenterAchievementReleaseCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterAchievementReleaseCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterAchievementReleaseResponse, ErrorResponse>({
         path: `/v1/gameCenterAchievementReleases`,
         method: "POST",
@@ -37254,7 +37032,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAchievementReleases/{id}
      * @secure
      */
-    gameCenterAchievementReleasesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterAchievementReleases */
@@ -37281,7 +37059,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterAchievementReleases/{id}
      * @secure
      */
-    gameCenterAchievementReleasesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterAchievementReleases/${id}`,
         method: "DELETE",
@@ -37298,7 +37076,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterAchievements
      * @secure
      */
-    gameCenterAchievementsCreateInstance: (data: GameCenterAchievementCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: GameCenterAchievementCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterAchievementResponse, ErrorResponse>({
         path: `/v1/gameCenterAchievements`,
         method: "POST",
@@ -37317,7 +37095,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAchievements/{id}
      * @secure
      */
-    gameCenterAchievementsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterAchievements */
@@ -37377,11 +37155,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterAchievements/{id}
      * @secure
      */
-    gameCenterAchievementsUpdateInstance: (
-      id: string,
-      data: GameCenterAchievementUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterAchievementUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterAchievementResponse, ErrorResponse>({
         path: `/v1/gameCenterAchievements/${id}`,
         method: "PATCH",
@@ -37400,7 +37174,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterAchievements/{id}
      * @secure
      */
-    gameCenterAchievementsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterAchievements/${id}`,
         method: "DELETE",
@@ -37416,7 +37190,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAchievements/{id}/relationships/groupAchievement
      * @secure
      */
-    gameCenterAchievementsGroupAchievementGetToOneRelationship: (id: string, params: RequestParams = {}) =>
+    groupAchievementGetToOneRelationship: (id: string, params: RequestParams = {}) =>
       this.request<GameCenterAchievementGroupAchievementLinkageResponse, ErrorResponse>({
         path: `/v1/gameCenterAchievements/${id}/relationships/groupAchievement`,
         method: "GET",
@@ -37433,7 +37207,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterAchievements/{id}/relationships/groupAchievement
      * @secure
      */
-    gameCenterAchievementsGroupAchievementUpdateToOneRelationship: (
+    groupAchievementUpdateToOneRelationship: (
       id: string,
       data: GameCenterAchievementGroupAchievementLinkageRequest,
       params: RequestParams = {},
@@ -37455,7 +37229,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAchievements/{id}/groupAchievement
      * @secure
      */
-    gameCenterAchievementsGroupAchievementGetToOneRelated: (
+    groupAchievementGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterAchievementReleases */
@@ -37539,7 +37313,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAchievements/{id}/localizations
      * @secure
      */
-    gameCenterAchievementsLocalizationsGetToManyRelated: (
+    localizationsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterAchievementImages */
@@ -37602,7 +37376,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAchievements/{id}/releases
      * @secure
      */
-    gameCenterAchievementsReleasesGetToManyRelated: (
+    releasesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'live' */
@@ -37669,7 +37443,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterAppVersions
      * @secure
      */
-    gameCenterAppVersionsCreateInstance: (data: GameCenterAppVersionCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: GameCenterAppVersionCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterAppVersionResponse, ErrorResponse>({
         path: `/v1/gameCenterAppVersions`,
         method: "POST",
@@ -37688,7 +37462,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAppVersions/{id}
      * @secure
      */
-    gameCenterAppVersionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterAppVersions */
@@ -37746,11 +37520,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterAppVersions/{id}
      * @secure
      */
-    gameCenterAppVersionsUpdateInstance: (
-      id: string,
-      data: GameCenterAppVersionUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterAppVersionUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterAppVersionResponse, ErrorResponse>({
         path: `/v1/gameCenterAppVersions/${id}`,
         method: "PATCH",
@@ -37769,7 +37539,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAppVersions/{id}/appStoreVersion
      * @secure
      */
-    gameCenterAppVersionsAppStoreVersionGetToOneRelated: (
+    appStoreVersionGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type ageRatingDeclarations */
@@ -38020,7 +37790,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAppVersions/{id}/relationships/compatibilityVersions
      * @secure
      */
-    gameCenterAppVersionsCompatibilityVersionsGetToManyRelationship: (
+    compatibilityVersionsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -38048,7 +37818,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterAppVersions/{id}/relationships/compatibilityVersions
      * @secure
      */
-    gameCenterAppVersionsCompatibilityVersionsCreateToManyRelationship: (
+    compatibilityVersionsCreateToManyRelationship: (
       id: string,
       data: GameCenterAppVersionCompatibilityVersionsLinkagesRequest,
       params: RequestParams = {},
@@ -38070,7 +37840,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterAppVersions/{id}/relationships/compatibilityVersions
      * @secure
      */
-    gameCenterAppVersionsCompatibilityVersionsDeleteToManyRelationship: (
+    compatibilityVersionsDeleteToManyRelationship: (
       id: string,
       data: GameCenterAppVersionCompatibilityVersionsLinkagesRequest,
       params: RequestParams = {},
@@ -38092,7 +37862,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterAppVersions/{id}/compatibilityVersions
      * @secure
      */
-    gameCenterAppVersionsCompatibilityVersionsGetToManyRelated: (
+    compatibilityVersionsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'enabled' */
@@ -38158,7 +37928,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterDetails
      * @secure
      */
-    gameCenterDetailsCreateInstance: (data: GameCenterDetailCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: GameCenterDetailCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterDetailResponse, ErrorResponse>({
         path: `/v1/gameCenterDetails`,
         method: "POST",
@@ -38177,7 +37947,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}
      * @secure
      */
-    gameCenterDetailsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterDetails */
@@ -38326,7 +38096,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterDetails/{id}
      * @secure
      */
-    gameCenterDetailsUpdateInstance: (id: string, data: GameCenterDetailUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: GameCenterDetailUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterDetailResponse, ErrorResponse>({
         path: `/v1/gameCenterDetails/${id}`,
         method: "PATCH",
@@ -38345,7 +38115,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/achievementReleases
      * @secure
      */
-    gameCenterDetailsAchievementReleasesGetToManyRelated: (
+    achievementReleasesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'live' */
@@ -38411,7 +38181,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/relationships/gameCenterAchievements
      * @secure
      */
-    gameCenterDetailsGameCenterAchievementsGetToManyRelationship: (
+    gameCenterAchievementsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -38439,7 +38209,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterDetails/{id}/relationships/gameCenterAchievements
      * @secure
      */
-    gameCenterDetailsGameCenterAchievementsReplaceToManyRelationship: (
+    gameCenterAchievementsReplaceToManyRelationship: (
       id: string,
       data: GameCenterDetailGameCenterAchievementsLinkagesRequest,
       params: RequestParams = {},
@@ -38461,7 +38231,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/gameCenterAchievements
      * @secure
      */
-    gameCenterDetailsGameCenterAchievementsGetToManyRelated: (
+    gameCenterAchievementsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'archived' */
@@ -38556,7 +38326,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/gameCenterAppVersions
      * @secure
      */
-    gameCenterDetailsGameCenterAppVersionsGetToManyRelated: (
+    gameCenterAppVersionsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'enabled' */
@@ -38621,7 +38391,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/gameCenterGroup
      * @secure
      */
-    gameCenterDetailsGameCenterGroupGetToOneRelated: (
+    gameCenterGroupGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardSets */
@@ -38740,7 +38510,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/relationships/gameCenterLeaderboardSets
      * @secure
      */
-    gameCenterDetailsGameCenterLeaderboardSetsGetToManyRelationship: (
+    gameCenterLeaderboardSetsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -38768,7 +38538,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterDetails/{id}/relationships/gameCenterLeaderboardSets
      * @secure
      */
-    gameCenterDetailsGameCenterLeaderboardSetsReplaceToManyRelationship: (
+    gameCenterLeaderboardSetsReplaceToManyRelationship: (
       id: string,
       data: GameCenterDetailGameCenterLeaderboardSetsLinkagesRequest,
       params: RequestParams = {},
@@ -38790,7 +38560,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/gameCenterLeaderboardSets
      * @secure
      */
-    gameCenterDetailsGameCenterLeaderboardSetsGetToManyRelated: (
+    gameCenterLeaderboardSetsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'referenceName' */
@@ -38910,7 +38680,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/relationships/gameCenterLeaderboards
      * @secure
      */
-    gameCenterDetailsGameCenterLeaderboardsGetToManyRelationship: (
+    gameCenterLeaderboardsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -38938,7 +38708,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterDetails/{id}/relationships/gameCenterLeaderboards
      * @secure
      */
-    gameCenterDetailsGameCenterLeaderboardsReplaceToManyRelationship: (
+    gameCenterLeaderboardsReplaceToManyRelationship: (
       id: string,
       data: GameCenterDetailGameCenterLeaderboardsLinkagesRequest,
       params: RequestParams = {},
@@ -38960,7 +38730,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/gameCenterLeaderboards
      * @secure
      */
-    gameCenterDetailsGameCenterLeaderboardsGetToManyRelated: (
+    gameCenterLeaderboardsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'archived' */
@@ -39085,7 +38855,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/leaderboardReleases
      * @secure
      */
-    gameCenterDetailsLeaderboardReleasesGetToManyRelated: (
+    leaderboardReleasesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'live' */
@@ -39157,7 +38927,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/leaderboardSetReleases
      * @secure
      */
-    gameCenterDetailsLeaderboardSetReleasesGetToManyRelated: (
+    leaderboardSetReleasesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'live' */
@@ -39220,7 +38990,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/metrics/classicMatchmakingRequests
      * @secure
      */
-    gameCenterDetailsClassicMatchmakingRequestsGetMetrics: (
+    classicMatchmakingRequestsGetMetrics: (
       id: string,
       query: {
         /**
@@ -39265,7 +39035,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterDetails/{id}/metrics/ruleBasedMatchmakingRequests
      * @secure
      */
-    gameCenterDetailsRuleBasedMatchmakingRequestsGetMetrics: (
+    ruleBasedMatchmakingRequestsGetMetrics: (
       id: string,
       query: {
         /**
@@ -39311,7 +39081,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterGroups
      * @secure
      */
-    gameCenterGroupsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by id(s) of related 'gameCenterDetails' */
         "filter[gameCenterDetails]"?: string[];
@@ -39436,7 +39206,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterGroups
      * @secure
      */
-    gameCenterGroupsCreateInstance: (data: GameCenterGroupCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: GameCenterGroupCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterGroupResponse, ErrorResponse>({
         path: `/v1/gameCenterGroups`,
         method: "POST",
@@ -39455,7 +39225,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterGroups/{id}
      * @secure
      */
-    gameCenterGroupsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterGroups */
@@ -39574,7 +39344,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterGroups/{id}
      * @secure
      */
-    gameCenterGroupsUpdateInstance: (id: string, data: GameCenterGroupUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: GameCenterGroupUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterGroupResponse, ErrorResponse>({
         path: `/v1/gameCenterGroups/${id}`,
         method: "PATCH",
@@ -39593,7 +39363,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterGroups/{id}
      * @secure
      */
-    gameCenterGroupsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterGroups/${id}`,
         method: "DELETE",
@@ -39609,7 +39379,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterGroups/{id}/relationships/gameCenterAchievements
      * @secure
      */
-    gameCenterGroupsGameCenterAchievementsGetToManyRelationship: (
+    gameCenterAchievementsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -39637,7 +39407,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterGroups/{id}/relationships/gameCenterAchievements
      * @secure
      */
-    gameCenterGroupsGameCenterAchievementsReplaceToManyRelationship: (
+    gameCenterAchievementsReplaceToManyRelationship: (
       id: string,
       data: GameCenterGroupGameCenterAchievementsLinkagesRequest,
       params: RequestParams = {},
@@ -39659,7 +39429,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterGroups/{id}/gameCenterAchievements
      * @secure
      */
-    gameCenterGroupsGameCenterAchievementsGetToManyRelated: (
+    gameCenterAchievementsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'archived' */
@@ -39754,7 +39524,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterGroups/{id}/gameCenterDetails
      * @secure
      */
-    gameCenterGroupsGameCenterDetailsGetToManyRelated: (
+    gameCenterDetailsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'gameCenterAppVersions.enabled' */
@@ -39960,7 +39730,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterGroups/{id}/relationships/gameCenterLeaderboardSets
      * @secure
      */
-    gameCenterGroupsGameCenterLeaderboardSetsGetToManyRelationship: (
+    gameCenterLeaderboardSetsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -39988,7 +39758,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterGroups/{id}/relationships/gameCenterLeaderboardSets
      * @secure
      */
-    gameCenterGroupsGameCenterLeaderboardSetsReplaceToManyRelationship: (
+    gameCenterLeaderboardSetsReplaceToManyRelationship: (
       id: string,
       data: GameCenterGroupGameCenterLeaderboardSetsLinkagesRequest,
       params: RequestParams = {},
@@ -40010,7 +39780,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterGroups/{id}/gameCenterLeaderboardSets
      * @secure
      */
-    gameCenterGroupsGameCenterLeaderboardSetsGetToManyRelated: (
+    gameCenterLeaderboardSetsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'referenceName' */
@@ -40130,7 +39900,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterGroups/{id}/relationships/gameCenterLeaderboards
      * @secure
      */
-    gameCenterGroupsGameCenterLeaderboardsGetToManyRelationship: (
+    gameCenterLeaderboardsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -40158,7 +39928,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterGroups/{id}/relationships/gameCenterLeaderboards
      * @secure
      */
-    gameCenterGroupsGameCenterLeaderboardsReplaceToManyRelationship: (
+    gameCenterLeaderboardsReplaceToManyRelationship: (
       id: string,
       data: GameCenterGroupGameCenterLeaderboardsLinkagesRequest,
       params: RequestParams = {},
@@ -40180,7 +39950,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterGroups/{id}/gameCenterLeaderboards
      * @secure
      */
-    gameCenterGroupsGameCenterLeaderboardsGetToManyRelated: (
+    gameCenterLeaderboardsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'archived' */
@@ -40306,10 +40076,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboardEntrySubmissions
      * @secure
      */
-    gameCenterLeaderboardEntrySubmissionsCreateInstance: (
-      data: GameCenterLeaderboardEntrySubmissionCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterLeaderboardEntrySubmissionCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardEntrySubmissionResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardEntrySubmissions`,
         method: "POST",
@@ -40329,10 +40096,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboardImages
      * @secure
      */
-    gameCenterLeaderboardImagesCreateInstance: (
-      data: GameCenterLeaderboardImageCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterLeaderboardImageCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardImageResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardImages`,
         method: "POST",
@@ -40351,7 +40115,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardImages/{id}
      * @secure
      */
-    gameCenterLeaderboardImagesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardImages */
@@ -40386,11 +40150,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterLeaderboardImages/{id}
      * @secure
      */
-    gameCenterLeaderboardImagesUpdateInstance: (
-      id: string,
-      data: GameCenterLeaderboardImageUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterLeaderboardImageUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardImageResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardImages/${id}`,
         method: "PATCH",
@@ -40409,7 +40169,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterLeaderboardImages/{id}
      * @secure
      */
-    gameCenterLeaderboardImagesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardImages/${id}`,
         method: "DELETE",
@@ -40426,10 +40186,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboardLocalizations
      * @secure
      */
-    gameCenterLeaderboardLocalizationsCreateInstance: (
-      data: GameCenterLeaderboardLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterLeaderboardLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardLocalizationResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardLocalizations`,
         method: "POST",
@@ -40448,7 +40205,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardLocalizations/{id}
      * @secure
      */
-    gameCenterLeaderboardLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardLocalizations */
@@ -40493,11 +40250,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterLeaderboardLocalizations/{id}
      * @secure
      */
-    gameCenterLeaderboardLocalizationsUpdateInstance: (
-      id: string,
-      data: GameCenterLeaderboardLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterLeaderboardLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardLocalizationResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardLocalizations/${id}`,
         method: "PATCH",
@@ -40516,7 +40269,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterLeaderboardLocalizations/{id}
      * @secure
      */
-    gameCenterLeaderboardLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardLocalizations/${id}`,
         method: "DELETE",
@@ -40532,7 +40285,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardLocalizations/{id}/gameCenterLeaderboardImage
      * @secure
      */
-    gameCenterLeaderboardLocalizationsGameCenterLeaderboardImageGetToOneRelated: (
+    gameCenterLeaderboardImageGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardImages */
@@ -40578,10 +40331,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboardReleases
      * @secure
      */
-    gameCenterLeaderboardReleasesCreateInstance: (
-      data: GameCenterLeaderboardReleaseCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterLeaderboardReleaseCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardReleaseResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardReleases`,
         method: "POST",
@@ -40600,7 +40350,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardReleases/{id}
      * @secure
      */
-    gameCenterLeaderboardReleasesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardReleases */
@@ -40627,7 +40377,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterLeaderboardReleases/{id}
      * @secure
      */
-    gameCenterLeaderboardReleasesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardReleases/${id}`,
         method: "DELETE",
@@ -40644,10 +40394,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboardSetImages
      * @secure
      */
-    gameCenterLeaderboardSetImagesCreateInstance: (
-      data: GameCenterLeaderboardSetImageCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterLeaderboardSetImageCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardSetImageResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSetImages`,
         method: "POST",
@@ -40666,7 +40413,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSetImages/{id}
      * @secure
      */
-    gameCenterLeaderboardSetImagesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardSetImages */
@@ -40701,11 +40448,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterLeaderboardSetImages/{id}
      * @secure
      */
-    gameCenterLeaderboardSetImagesUpdateInstance: (
-      id: string,
-      data: GameCenterLeaderboardSetImageUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterLeaderboardSetImageUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardSetImageResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSetImages/${id}`,
         method: "PATCH",
@@ -40724,7 +40467,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterLeaderboardSetImages/{id}
      * @secure
      */
-    gameCenterLeaderboardSetImagesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSetImages/${id}`,
         method: "DELETE",
@@ -40741,10 +40484,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboardSetLocalizations
      * @secure
      */
-    gameCenterLeaderboardSetLocalizationsCreateInstance: (
-      data: GameCenterLeaderboardSetLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterLeaderboardSetLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardSetLocalizationResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSetLocalizations`,
         method: "POST",
@@ -40763,7 +40503,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSetLocalizations/{id}
      * @secure
      */
-    gameCenterLeaderboardSetLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardSetLocalizations */
@@ -40805,11 +40545,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterLeaderboardSetLocalizations/{id}
      * @secure
      */
-    gameCenterLeaderboardSetLocalizationsUpdateInstance: (
-      id: string,
-      data: GameCenterLeaderboardSetLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterLeaderboardSetLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardSetLocalizationResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSetLocalizations/${id}`,
         method: "PATCH",
@@ -40828,7 +40564,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterLeaderboardSetLocalizations/{id}
      * @secure
      */
-    gameCenterLeaderboardSetLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSetLocalizations/${id}`,
         method: "DELETE",
@@ -40844,7 +40580,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSetLocalizations/{id}/gameCenterLeaderboardSetImage
      * @secure
      */
-    gameCenterLeaderboardSetLocalizationsGameCenterLeaderboardSetImageGetToOneRelated: (
+    gameCenterLeaderboardSetImageGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardSetLocalizations */
@@ -40887,7 +40623,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSetMemberLocalizations
      * @secure
      */
-    gameCenterLeaderboardSetMemberLocalizationsGetCollection: (
+    getCollection: (
       query: {
         /** filter by id(s) of related 'gameCenterLeaderboard' */
         "filter[gameCenterLeaderboard]": string[];
@@ -40958,10 +40694,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboardSetMemberLocalizations
      * @secure
      */
-    gameCenterLeaderboardSetMemberLocalizationsCreateInstance: (
-      data: GameCenterLeaderboardSetMemberLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterLeaderboardSetMemberLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardSetMemberLocalizationResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSetMemberLocalizations`,
         method: "POST",
@@ -40980,7 +40713,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterLeaderboardSetMemberLocalizations/{id}
      * @secure
      */
-    gameCenterLeaderboardSetMemberLocalizationsUpdateInstance: (
+    updateInstance: (
       id: string,
       data: GameCenterLeaderboardSetMemberLocalizationUpdateRequest,
       params: RequestParams = {},
@@ -41003,7 +40736,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterLeaderboardSetMemberLocalizations/{id}
      * @secure
      */
-    gameCenterLeaderboardSetMemberLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSetMemberLocalizations/${id}`,
         method: "DELETE",
@@ -41019,7 +40752,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSetMemberLocalizations/{id}/gameCenterLeaderboard
      * @secure
      */
-    gameCenterLeaderboardSetMemberLocalizationsGameCenterLeaderboardGetToOneRelated: (
+    gameCenterLeaderboardGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardLocalizations */
@@ -41133,7 +40866,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSetMemberLocalizations/{id}/gameCenterLeaderboardSet
      * @secure
      */
-    gameCenterLeaderboardSetMemberLocalizationsGameCenterLeaderboardSetGetToOneRelated: (
+    gameCenterLeaderboardSetGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardSetLocalizations */
@@ -41245,10 +40978,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboardSetReleases
      * @secure
      */
-    gameCenterLeaderboardSetReleasesCreateInstance: (
-      data: GameCenterLeaderboardSetReleaseCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterLeaderboardSetReleaseCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardSetReleaseResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSetReleases`,
         method: "POST",
@@ -41267,7 +40997,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSetReleases/{id}
      * @secure
      */
-    gameCenterLeaderboardSetReleasesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardSetReleases */
@@ -41294,7 +41024,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterLeaderboardSetReleases/{id}
      * @secure
      */
-    gameCenterLeaderboardSetReleasesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSetReleases/${id}`,
         method: "DELETE",
@@ -41311,10 +41041,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboardSets
      * @secure
      */
-    gameCenterLeaderboardSetsCreateInstance: (
-      data: GameCenterLeaderboardSetCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterLeaderboardSetCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardSetResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSets`,
         method: "POST",
@@ -41333,7 +41060,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSets/{id}
      * @secure
      */
-    gameCenterLeaderboardSetsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardSets */
@@ -41420,11 +41147,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterLeaderboardSets/{id}
      * @secure
      */
-    gameCenterLeaderboardSetsUpdateInstance: (
-      id: string,
-      data: GameCenterLeaderboardSetUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterLeaderboardSetUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardSetResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSets/${id}`,
         method: "PATCH",
@@ -41443,7 +41166,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterLeaderboardSets/{id}
      * @secure
      */
-    gameCenterLeaderboardSetsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSets/${id}`,
         method: "DELETE",
@@ -41459,7 +41182,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSets/{id}/relationships/gameCenterLeaderboards
      * @secure
      */
-    gameCenterLeaderboardSetsGameCenterLeaderboardsGetToManyRelationship: (
+    gameCenterLeaderboardsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -41487,7 +41210,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboardSets/{id}/relationships/gameCenterLeaderboards
      * @secure
      */
-    gameCenterLeaderboardSetsGameCenterLeaderboardsCreateToManyRelationship: (
+    gameCenterLeaderboardsCreateToManyRelationship: (
       id: string,
       data: GameCenterLeaderboardSetGameCenterLeaderboardsLinkagesRequest,
       params: RequestParams = {},
@@ -41509,7 +41232,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterLeaderboardSets/{id}/relationships/gameCenterLeaderboards
      * @secure
      */
-    gameCenterLeaderboardSetsGameCenterLeaderboardsReplaceToManyRelationship: (
+    gameCenterLeaderboardsReplaceToManyRelationship: (
       id: string,
       data: GameCenterLeaderboardSetGameCenterLeaderboardsLinkagesRequest,
       params: RequestParams = {},
@@ -41531,7 +41254,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterLeaderboardSets/{id}/relationships/gameCenterLeaderboards
      * @secure
      */
-    gameCenterLeaderboardSetsGameCenterLeaderboardsDeleteToManyRelationship: (
+    gameCenterLeaderboardsDeleteToManyRelationship: (
       id: string,
       data: GameCenterLeaderboardSetGameCenterLeaderboardsLinkagesRequest,
       params: RequestParams = {},
@@ -41553,7 +41276,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSets/{id}/gameCenterLeaderboards
      * @secure
      */
-    gameCenterLeaderboardSetsGameCenterLeaderboardsGetToManyRelated: (
+    gameCenterLeaderboardsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'archived' */
@@ -41678,7 +41401,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSets/{id}/relationships/groupLeaderboardSet
      * @secure
      */
-    gameCenterLeaderboardSetsGroupLeaderboardSetGetToOneRelationship: (id: string, params: RequestParams = {}) =>
+    groupLeaderboardSetGetToOneRelationship: (id: string, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardSetGroupLeaderboardSetLinkageResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboardSets/${id}/relationships/groupLeaderboardSet`,
         method: "GET",
@@ -41695,7 +41418,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterLeaderboardSets/{id}/relationships/groupLeaderboardSet
      * @secure
      */
-    gameCenterLeaderboardSetsGroupLeaderboardSetUpdateToOneRelationship: (
+    groupLeaderboardSetUpdateToOneRelationship: (
       id: string,
       data: GameCenterLeaderboardSetGroupLeaderboardSetLinkageRequest,
       params: RequestParams = {},
@@ -41717,7 +41440,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSets/{id}/groupLeaderboardSet
      * @secure
      */
-    gameCenterLeaderboardSetsGroupLeaderboardSetGetToOneRelated: (
+    groupLeaderboardSetGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardSetLocalizations */
@@ -41828,7 +41551,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSets/{id}/localizations
      * @secure
      */
-    gameCenterLeaderboardSetsLocalizationsGetToManyRelated: (
+    localizationsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardSetLocalizations */
@@ -41886,7 +41609,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboardSets/{id}/releases
      * @secure
      */
-    gameCenterLeaderboardSetsReleasesGetToManyRelated: (
+    releasesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'live' */
@@ -41950,7 +41673,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterLeaderboards
      * @secure
      */
-    gameCenterLeaderboardsCreateInstance: (data: GameCenterLeaderboardCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: GameCenterLeaderboardCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboards`,
         method: "POST",
@@ -41969,7 +41692,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboards/{id}
      * @secure
      */
-    gameCenterLeaderboardsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboards */
@@ -42048,11 +41771,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterLeaderboards/{id}
      * @secure
      */
-    gameCenterLeaderboardsUpdateInstance: (
-      id: string,
-      data: GameCenterLeaderboardUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterLeaderboardUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboards/${id}`,
         method: "PATCH",
@@ -42071,7 +41790,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterLeaderboards/{id}
      * @secure
      */
-    gameCenterLeaderboardsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterLeaderboards/${id}`,
         method: "DELETE",
@@ -42087,7 +41806,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboards/{id}/relationships/groupLeaderboard
      * @secure
      */
-    gameCenterLeaderboardsGroupLeaderboardGetToOneRelationship: (id: string, params: RequestParams = {}) =>
+    groupLeaderboardGetToOneRelationship: (id: string, params: RequestParams = {}) =>
       this.request<GameCenterLeaderboardGroupLeaderboardLinkageResponse, ErrorResponse>({
         path: `/v1/gameCenterLeaderboards/${id}/relationships/groupLeaderboard`,
         method: "GET",
@@ -42104,7 +41823,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterLeaderboards/{id}/relationships/groupLeaderboard
      * @secure
      */
-    gameCenterLeaderboardsGroupLeaderboardUpdateToOneRelationship: (
+    groupLeaderboardUpdateToOneRelationship: (
       id: string,
       data: GameCenterLeaderboardGroupLeaderboardLinkageRequest,
       params: RequestParams = {},
@@ -42126,7 +41845,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboards/{id}/groupLeaderboard
      * @secure
      */
-    gameCenterLeaderboardsGroupLeaderboardGetToOneRelated: (
+    groupLeaderboardGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardLocalizations */
@@ -42240,7 +41959,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboards/{id}/localizations
      * @secure
      */
-    gameCenterLeaderboardsLocalizationsGetToManyRelated: (
+    localizationsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterLeaderboardLocalizations */
@@ -42310,7 +42029,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterLeaderboards/{id}/releases
      * @secure
      */
-    gameCenterLeaderboardsReleasesGetToManyRelated: (
+    releasesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'live' */
@@ -42383,7 +42102,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingQueues
      * @secure
      */
-    gameCenterMatchmakingQueuesGetCollection: (
+    getCollection: (
       query?: {
         /** the fields to include for returned resources of type gameCenterMatchmakingQueues */
         "fields[gameCenterMatchmakingQueues]"?: (
@@ -42419,10 +42138,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterMatchmakingQueues
      * @secure
      */
-    gameCenterMatchmakingQueuesCreateInstance: (
-      data: GameCenterMatchmakingQueueCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterMatchmakingQueueCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterMatchmakingQueueResponse, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingQueues`,
         method: "POST",
@@ -42441,7 +42157,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingQueues/{id}
      * @secure
      */
-    gameCenterMatchmakingQueuesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterMatchmakingQueues */
@@ -42473,11 +42189,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterMatchmakingQueues/{id}
      * @secure
      */
-    gameCenterMatchmakingQueuesUpdateInstance: (
-      id: string,
-      data: GameCenterMatchmakingQueueUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterMatchmakingQueueUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterMatchmakingQueueResponse, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingQueues/${id}`,
         method: "PATCH",
@@ -42496,7 +42208,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterMatchmakingQueues/{id}
      * @secure
      */
-    gameCenterMatchmakingQueuesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingQueues/${id}`,
         method: "DELETE",
@@ -42512,7 +42224,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingQueues/{id}/metrics/experimentMatchmakingQueueSizes
      * @secure
      */
-    gameCenterMatchmakingQueuesExperimentMatchmakingQueueSizesGetMetrics: (
+    experimentMatchmakingQueueSizesGetMetrics: (
       id: string,
       query: {
         /**
@@ -42553,7 +42265,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingQueues/{id}/metrics/experimentMatchmakingRequests
      * @secure
      */
-    gameCenterMatchmakingQueuesExperimentMatchmakingRequestsGetMetrics: (
+    experimentMatchmakingRequestsGetMetrics: (
       id: string,
       query: {
         /**
@@ -42600,7 +42312,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingQueues/{id}/metrics/matchmakingQueueSizes
      * @secure
      */
-    gameCenterMatchmakingQueuesMatchmakingQueueSizesGetMetrics: (
+    matchmakingQueueSizesGetMetrics: (
       id: string,
       query: {
         /**
@@ -42641,7 +42353,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingQueues/{id}/metrics/matchmakingRequests
      * @secure
      */
-    gameCenterMatchmakingQueuesMatchmakingRequestsGetMetrics: (
+    matchmakingRequestsGetMetrics: (
       id: string,
       query: {
         /**
@@ -42688,7 +42400,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingQueues/{id}/metrics/matchmakingSessions
      * @secure
      */
-    gameCenterMatchmakingQueuesMatchmakingSessionsGetMetrics: (
+    matchmakingSessionsGetMetrics: (
       id: string,
       query: {
         /**
@@ -42730,10 +42442,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterMatchmakingRuleSetTests
      * @secure
      */
-    gameCenterMatchmakingRuleSetTestsCreateInstance: (
-      data: GameCenterMatchmakingRuleSetTestCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterMatchmakingRuleSetTestCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterMatchmakingRuleSetTestResponse, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingRuleSetTests`,
         method: "POST",
@@ -42753,7 +42462,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingRuleSets
      * @secure
      */
-    gameCenterMatchmakingRuleSetsGetCollection: (
+    getCollection: (
       query?: {
         /** the fields to include for returned resources of type gameCenterMatchmakingRuleSets */
         "fields[gameCenterMatchmakingRuleSets]"?: (
@@ -42825,10 +42534,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterMatchmakingRuleSets
      * @secure
      */
-    gameCenterMatchmakingRuleSetsCreateInstance: (
-      data: GameCenterMatchmakingRuleSetCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterMatchmakingRuleSetCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterMatchmakingRuleSetResponse, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingRuleSets`,
         method: "POST",
@@ -42847,7 +42553,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingRuleSets/{id}
      * @secure
      */
-    gameCenterMatchmakingRuleSetsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterMatchmakingRuleSets */
@@ -42915,11 +42621,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterMatchmakingRuleSets/{id}
      * @secure
      */
-    gameCenterMatchmakingRuleSetsUpdateInstance: (
-      id: string,
-      data: GameCenterMatchmakingRuleSetUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterMatchmakingRuleSetUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterMatchmakingRuleSetResponse, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingRuleSets/${id}`,
         method: "PATCH",
@@ -42938,7 +42640,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterMatchmakingRuleSets/{id}
      * @secure
      */
-    gameCenterMatchmakingRuleSetsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingRuleSets/${id}`,
         method: "DELETE",
@@ -42954,7 +42656,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingRuleSets/{id}/matchmakingQueues
      * @secure
      */
-    gameCenterMatchmakingRuleSetsMatchmakingQueuesGetToManyRelated: (
+    matchmakingQueuesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterMatchmakingQueues */
@@ -43001,7 +42703,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingRuleSets/{id}/rules
      * @secure
      */
-    gameCenterMatchmakingRuleSetsRulesGetToManyRelated: (
+    rulesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterMatchmakingRules */
@@ -43038,7 +42740,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingRuleSets/{id}/teams
      * @secure
      */
-    gameCenterMatchmakingRuleSetsTeamsGetToManyRelated: (
+    teamsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type gameCenterMatchmakingTeams */
@@ -43069,10 +42771,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterMatchmakingRules
      * @secure
      */
-    gameCenterMatchmakingRulesCreateInstance: (
-      data: GameCenterMatchmakingRuleCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterMatchmakingRuleCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterMatchmakingRuleResponse, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingRules`,
         method: "POST",
@@ -43091,11 +42790,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterMatchmakingRules/{id}
      * @secure
      */
-    gameCenterMatchmakingRulesUpdateInstance: (
-      id: string,
-      data: GameCenterMatchmakingRuleUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterMatchmakingRuleUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterMatchmakingRuleResponse, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingRules/${id}`,
         method: "PATCH",
@@ -43114,7 +42809,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterMatchmakingRules/{id}
      * @secure
      */
-    gameCenterMatchmakingRulesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingRules/${id}`,
         method: "DELETE",
@@ -43130,7 +42825,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingRules/{id}/metrics/matchmakingBooleanRuleResults
      * @secure
      */
-    gameCenterMatchmakingRulesMatchmakingBooleanRuleResultsGetMetrics: (
+    matchmakingBooleanRuleResultsGetMetrics: (
       id: string,
       query: {
         /**
@@ -43168,7 +42863,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingRules/{id}/metrics/matchmakingNumberRuleResults
      * @secure
      */
-    gameCenterMatchmakingRulesMatchmakingNumberRuleResultsGetMetrics: (
+    matchmakingNumberRuleResultsGetMetrics: (
       id: string,
       query: {
         /**
@@ -43213,7 +42908,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/gameCenterMatchmakingRules/{id}/metrics/matchmakingRuleErrors
      * @secure
      */
-    gameCenterMatchmakingRulesMatchmakingRuleErrorsGetMetrics: (
+    matchmakingRuleErrorsGetMetrics: (
       id: string,
       query: {
         /**
@@ -43250,10 +42945,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterMatchmakingTeams
      * @secure
      */
-    gameCenterMatchmakingTeamsCreateInstance: (
-      data: GameCenterMatchmakingTeamCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterMatchmakingTeamCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterMatchmakingTeamResponse, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingTeams`,
         method: "POST",
@@ -43272,11 +42964,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/gameCenterMatchmakingTeams/{id}
      * @secure
      */
-    gameCenterMatchmakingTeamsUpdateInstance: (
-      id: string,
-      data: GameCenterMatchmakingTeamUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: GameCenterMatchmakingTeamUpdateRequest, params: RequestParams = {}) =>
       this.request<GameCenterMatchmakingTeamResponse, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingTeams/${id}`,
         method: "PATCH",
@@ -43295,7 +42983,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/gameCenterMatchmakingTeams/{id}
      * @secure
      */
-    gameCenterMatchmakingTeamsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/gameCenterMatchmakingTeams/${id}`,
         method: "DELETE",
@@ -43312,10 +43000,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/gameCenterPlayerAchievementSubmissions
      * @secure
      */
-    gameCenterPlayerAchievementSubmissionsCreateInstance: (
-      data: GameCenterPlayerAchievementSubmissionCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: GameCenterPlayerAchievementSubmissionCreateRequest, params: RequestParams = {}) =>
       this.request<GameCenterPlayerAchievementSubmissionResponse, ErrorResponse>({
         path: `/v1/gameCenterPlayerAchievementSubmissions`,
         method: "POST",
@@ -43335,10 +43020,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/inAppPurchaseAppStoreReviewScreenshots
      * @secure
      */
-    inAppPurchaseAppStoreReviewScreenshotsCreateInstance: (
-      data: InAppPurchaseAppStoreReviewScreenshotCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: InAppPurchaseAppStoreReviewScreenshotCreateRequest, params: RequestParams = {}) =>
       this.request<InAppPurchaseAppStoreReviewScreenshotResponse, ErrorResponse>({
         path: `/v1/inAppPurchaseAppStoreReviewScreenshots`,
         method: "POST",
@@ -43357,7 +43039,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/inAppPurchaseAppStoreReviewScreenshots/{id}
      * @secure
      */
-    inAppPurchaseAppStoreReviewScreenshotsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchaseAppStoreReviewScreenshots */
@@ -43395,7 +43077,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/inAppPurchaseAppStoreReviewScreenshots/{id}
      * @secure
      */
-    inAppPurchaseAppStoreReviewScreenshotsUpdateInstance: (
+    updateInstance: (
       id: string,
       data: InAppPurchaseAppStoreReviewScreenshotUpdateRequest,
       params: RequestParams = {},
@@ -43418,7 +43100,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/inAppPurchaseAppStoreReviewScreenshots/{id}
      * @secure
      */
-    inAppPurchaseAppStoreReviewScreenshotsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/inAppPurchaseAppStoreReviewScreenshots/${id}`,
         method: "DELETE",
@@ -43435,10 +43117,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/inAppPurchaseAvailabilities
      * @secure
      */
-    inAppPurchaseAvailabilitiesCreateInstance: (
-      data: InAppPurchaseAvailabilityCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: InAppPurchaseAvailabilityCreateRequest, params: RequestParams = {}) =>
       this.request<InAppPurchaseAvailabilityResponse, ErrorResponse>({
         path: `/v1/inAppPurchaseAvailabilities`,
         method: "POST",
@@ -43457,7 +43136,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/inAppPurchaseAvailabilities/{id}
      * @secure
      */
-    inAppPurchaseAvailabilitiesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchaseAvailabilities */
@@ -43495,7 +43174,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/inAppPurchaseAvailabilities/{id}/availableTerritories
      * @secure
      */
-    inAppPurchaseAvailabilitiesAvailableTerritoriesGetToManyRelated: (
+    availableTerritoriesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type territories */
@@ -43526,7 +43205,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/inAppPurchaseContents/{id}
      * @secure
      */
-    inAppPurchaseContentsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchaseContents */
@@ -43554,10 +43233,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/inAppPurchaseLocalizations
      * @secure
      */
-    inAppPurchaseLocalizationsCreateInstance: (
-      data: InAppPurchaseLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: InAppPurchaseLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<InAppPurchaseLocalizationResponse, ErrorResponse>({
         path: `/v1/inAppPurchaseLocalizations`,
         method: "POST",
@@ -43576,7 +43252,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/inAppPurchaseLocalizations/{id}
      * @secure
      */
-    inAppPurchaseLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchaseLocalizations */
@@ -43603,11 +43279,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/inAppPurchaseLocalizations/{id}
      * @secure
      */
-    inAppPurchaseLocalizationsUpdateInstance: (
-      id: string,
-      data: InAppPurchaseLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: InAppPurchaseLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<InAppPurchaseLocalizationResponse, ErrorResponse>({
         path: `/v1/inAppPurchaseLocalizations/${id}`,
         method: "PATCH",
@@ -43626,7 +43298,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/inAppPurchaseLocalizations/{id}
      * @secure
      */
-    inAppPurchaseLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/inAppPurchaseLocalizations/${id}`,
         method: "DELETE",
@@ -43643,10 +43315,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/inAppPurchasePriceSchedules
      * @secure
      */
-    inAppPurchasePriceSchedulesCreateInstance: (
-      data: InAppPurchasePriceScheduleCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: InAppPurchasePriceScheduleCreateRequest, params: RequestParams = {}) =>
       this.request<InAppPurchasePriceScheduleResponse, ErrorResponse>({
         path: `/v1/inAppPurchasePriceSchedules`,
         method: "POST",
@@ -43665,7 +43334,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/inAppPurchasePriceSchedules/{id}
      * @secure
      */
-    inAppPurchasePriceSchedulesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchasePriceSchedules */
@@ -43718,7 +43387,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/inAppPurchasePriceSchedules/{id}/automaticPrices
      * @secure
      */
-    inAppPurchasePriceSchedulesAutomaticPricesGetToManyRelated: (
+    automaticPricesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'territory' */
@@ -43769,7 +43438,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/inAppPurchasePriceSchedules/{id}/baseTerritory
      * @secure
      */
-    inAppPurchasePriceSchedulesBaseTerritoryGetToOneRelated: (
+    baseTerritoryGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type territories */
@@ -43794,7 +43463,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/inAppPurchasePriceSchedules/{id}/manualPrices
      * @secure
      */
-    inAppPurchasePriceSchedulesManualPricesGetToManyRelated: (
+    manualPricesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'territory' */
@@ -43846,7 +43515,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/inAppPurchaseSubmissions
      * @secure
      */
-    inAppPurchaseSubmissionsCreateInstance: (data: InAppPurchaseSubmissionCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: InAppPurchaseSubmissionCreateRequest, params: RequestParams = {}) =>
       this.request<InAppPurchaseSubmissionResponse, ErrorResponse>({
         path: `/v1/inAppPurchaseSubmissions`,
         method: "POST",
@@ -43867,7 +43536,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    inAppPurchasesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchases */
@@ -43899,7 +43568,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v2/inAppPurchases
      * @secure
      */
-    inAppPurchasesV2CreateInstance: (data: InAppPurchaseV2CreateRequest, params: RequestParams = {}) =>
+    v2CreateInstance: (data: InAppPurchaseV2CreateRequest, params: RequestParams = {}) =>
       this.request<InAppPurchaseV2Response, ErrorResponse>({
         path: `/v2/inAppPurchases`,
         method: "POST",
@@ -43918,7 +43587,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/inAppPurchases/{id}
      * @secure
      */
-    inAppPurchasesV2GetInstance: (
+    v2GetInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchases */
@@ -44027,7 +43696,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v2/inAppPurchases/{id}
      * @secure
      */
-    inAppPurchasesV2UpdateInstance: (id: string, data: InAppPurchaseV2UpdateRequest, params: RequestParams = {}) =>
+    v2UpdateInstance: (id: string, data: InAppPurchaseV2UpdateRequest, params: RequestParams = {}) =>
       this.request<InAppPurchaseV2Response, ErrorResponse>({
         path: `/v2/inAppPurchases/${id}`,
         method: "PATCH",
@@ -44046,7 +43715,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v2/inAppPurchases/{id}
      * @secure
      */
-    inAppPurchasesV2DeleteInstance: (id: string, params: RequestParams = {}) =>
+    v2DeleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v2/inAppPurchases/${id}`,
         method: "DELETE",
@@ -44062,7 +43731,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/inAppPurchases/{id}/appStoreReviewScreenshot
      * @secure
      */
-    inAppPurchasesV2AppStoreReviewScreenshotGetToOneRelated: (
+    v2AppStoreReviewScreenshotGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchaseAppStoreReviewScreenshots */
@@ -44118,7 +43787,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/inAppPurchases/{id}/content
      * @secure
      */
-    inAppPurchasesV2ContentGetToOneRelated: (
+    v2ContentGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchases */
@@ -44163,7 +43832,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/inAppPurchases/{id}/iapPriceSchedule
      * @secure
      */
-    inAppPurchasesV2IapPriceScheduleGetToOneRelated: (
+    v2IapPriceScheduleGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchasePrices */
@@ -44234,7 +43903,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/inAppPurchases/{id}/inAppPurchaseAvailability
      * @secure
      */
-    inAppPurchasesV2InAppPurchaseAvailabilityGetToOneRelated: (
+    v2InAppPurchaseAvailabilityGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchaseAvailabilities */
@@ -44272,7 +43941,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/inAppPurchases/{id}/inAppPurchaseLocalizations
      * @secure
      */
-    inAppPurchasesV2InAppPurchaseLocalizationsGetToManyRelated: (
+    v2InAppPurchaseLocalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type inAppPurchaseLocalizations */
@@ -44322,7 +43991,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/inAppPurchases/{id}/pricePoints
      * @secure
      */
-    inAppPurchasesV2PricePointsGetToManyRelated: (
+    v2PricePointsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'priceTier' */
@@ -44366,7 +44035,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/inAppPurchases/{id}/promotedPurchase
      * @secure
      */
-    inAppPurchasesV2PromotedPurchaseGetToOneRelated: (
+    v2PromotedPurchaseGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type promotedPurchases */
@@ -44459,7 +44128,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    marketplaceDomainsGetCollection: (
+    getCollection: (
       query?: {
         /** the fields to include for returned resources of type marketplaceDomains */
         "fields[marketplaceDomains]"?: ("createdDate" | "domain" | "referenceName")[];
@@ -44489,7 +44158,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    marketplaceDomainsCreateInstance: (data: MarketplaceDomainCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: MarketplaceDomainCreateRequest, params: RequestParams = {}) =>
       this.request<MarketplaceDomainResponse, ErrorResponse>({
         path: `/v1/marketplaceDomains`,
         method: "POST",
@@ -44509,7 +44178,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    marketplaceDomainsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type marketplaceDomains */
@@ -44535,7 +44204,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    marketplaceDomainsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/marketplaceDomains/${id}`,
         method: "DELETE",
@@ -44552,7 +44221,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/marketplaceSearchDetails
      * @secure
      */
-    marketplaceSearchDetailsCreateInstance: (data: MarketplaceSearchDetailCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: MarketplaceSearchDetailCreateRequest, params: RequestParams = {}) =>
       this.request<MarketplaceSearchDetailResponse, ErrorResponse>({
         path: `/v1/marketplaceSearchDetails`,
         method: "POST",
@@ -44571,11 +44240,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/marketplaceSearchDetails/{id}
      * @secure
      */
-    marketplaceSearchDetailsUpdateInstance: (
-      id: string,
-      data: MarketplaceSearchDetailUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: MarketplaceSearchDetailUpdateRequest, params: RequestParams = {}) =>
       this.request<MarketplaceSearchDetailResponse, ErrorResponse>({
         path: `/v1/marketplaceSearchDetails/${id}`,
         method: "PATCH",
@@ -44594,7 +44259,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/marketplaceSearchDetails/{id}
      * @secure
      */
-    marketplaceSearchDetailsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/marketplaceSearchDetails/${id}`,
         method: "DELETE",
@@ -44611,7 +44276,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/marketplaceWebhooks
      * @secure
      */
-    marketplaceWebhooksGetCollection: (
+    getCollection: (
       query?: {
         /** the fields to include for returned resources of type marketplaceWebhooks */
         "fields[marketplaceWebhooks]"?: ("endpointUrl" | "secret")[];
@@ -44640,7 +44305,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/marketplaceWebhooks
      * @secure
      */
-    marketplaceWebhooksCreateInstance: (data: MarketplaceWebhookCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: MarketplaceWebhookCreateRequest, params: RequestParams = {}) =>
       this.request<MarketplaceWebhookResponse, ErrorResponse>({
         path: `/v1/marketplaceWebhooks`,
         method: "POST",
@@ -44659,11 +44324,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/marketplaceWebhooks/{id}
      * @secure
      */
-    marketplaceWebhooksUpdateInstance: (
-      id: string,
-      data: MarketplaceWebhookUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: MarketplaceWebhookUpdateRequest, params: RequestParams = {}) =>
       this.request<MarketplaceWebhookResponse, ErrorResponse>({
         path: `/v1/marketplaceWebhooks/${id}`,
         method: "PATCH",
@@ -44682,7 +44343,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/marketplaceWebhooks/{id}
      * @secure
      */
-    marketplaceWebhooksDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/marketplaceWebhooks/${id}`,
         method: "DELETE",
@@ -44699,7 +44360,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/preReleaseVersions
      * @secure
      */
-    preReleaseVersionsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'builds.expired' */
         filterBuildsExpired?: string[];
@@ -44828,7 +44489,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/preReleaseVersions/{id}
      * @secure
      */
-    preReleaseVersionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type preReleaseVersions */
@@ -44937,7 +44598,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/preReleaseVersions/{id}/app
      * @secure
      */
-    preReleaseVersionsAppGetToOneRelated: (
+    appGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -45010,7 +44671,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/preReleaseVersions/{id}/builds
      * @secure
      */
-    preReleaseVersionsBuildsGetToManyRelated: (
+    buildsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type builds */
@@ -45066,7 +44727,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/profiles
      * @secure
      */
-    profilesGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'name' */
         "filter[name]"?: string[];
@@ -45167,7 +44828,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/profiles
      * @secure
      */
-    profilesCreateInstance: (data: ProfileCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: ProfileCreateRequest, params: RequestParams = {}) =>
       this.request<ProfileResponse, ErrorResponse>({
         path: `/v1/profiles`,
         method: "POST",
@@ -45186,7 +44847,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/profiles/{id}
      * @secure
      */
-    profilesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type profiles */
@@ -45258,7 +44919,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/profiles/{id}
      * @secure
      */
-    profilesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/profiles/${id}`,
         method: "DELETE",
@@ -45274,7 +44935,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/profiles/{id}/bundleId
      * @secure
      */
-    profilesBundleIdGetToOneRelated: (
+    bundleIdGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type bundleIds */
@@ -45307,7 +44968,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/profiles/{id}/certificates
      * @secure
      */
-    profilesCertificatesGetToManyRelated: (
+    certificatesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type certificates */
@@ -45346,7 +45007,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/profiles/{id}/devices
      * @secure
      */
-    profilesDevicesGetToManyRelated: (
+    devicesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type devices */
@@ -45377,7 +45038,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/promotedPurchaseImages
      * @secure
      */
-    promotedPurchaseImagesCreateInstance: (data: PromotedPurchaseImageCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: PromotedPurchaseImageCreateRequest, params: RequestParams = {}) =>
       this.request<PromotedPurchaseImageResponse, ErrorResponse>({
         path: `/v1/promotedPurchaseImages`,
         method: "POST",
@@ -45396,7 +45057,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/promotedPurchaseImages/{id}
      * @secure
      */
-    promotedPurchaseImagesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type promotedPurchaseImages */
@@ -45434,11 +45095,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/promotedPurchaseImages/{id}
      * @secure
      */
-    promotedPurchaseImagesUpdateInstance: (
-      id: string,
-      data: PromotedPurchaseImageUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: PromotedPurchaseImageUpdateRequest, params: RequestParams = {}) =>
       this.request<PromotedPurchaseImageResponse, ErrorResponse>({
         path: `/v1/promotedPurchaseImages/${id}`,
         method: "PATCH",
@@ -45457,7 +45114,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/promotedPurchaseImages/{id}
      * @secure
      */
-    promotedPurchaseImagesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/promotedPurchaseImages/${id}`,
         method: "DELETE",
@@ -45474,7 +45131,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/promotedPurchases
      * @secure
      */
-    promotedPurchasesCreateInstance: (data: PromotedPurchaseCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: PromotedPurchaseCreateRequest, params: RequestParams = {}) =>
       this.request<PromotedPurchaseResponse, ErrorResponse>({
         path: `/v1/promotedPurchases`,
         method: "POST",
@@ -45493,7 +45150,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/promotedPurchases/{id}
      * @secure
      */
-    promotedPurchasesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type promotedPurchases */
@@ -45546,7 +45203,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/promotedPurchases/{id}
      * @secure
      */
-    promotedPurchasesUpdateInstance: (id: string, data: PromotedPurchaseUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: PromotedPurchaseUpdateRequest, params: RequestParams = {}) =>
       this.request<PromotedPurchaseResponse, ErrorResponse>({
         path: `/v1/promotedPurchases/${id}`,
         method: "PATCH",
@@ -45565,7 +45222,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/promotedPurchases/{id}
      * @secure
      */
-    promotedPurchasesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/promotedPurchases/${id}`,
         method: "DELETE",
@@ -45581,7 +45238,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/promotedPurchases/{id}/promotionImages
      * @secure
      */
-    promotedPurchasesPromotionImagesGetToManyRelated: (
+    promotionImagesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type promotedPurchases */
@@ -45635,7 +45292,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/reviewSubmissionItems
      * @secure
      */
-    reviewSubmissionItemsCreateInstance: (data: ReviewSubmissionItemCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: ReviewSubmissionItemCreateRequest, params: RequestParams = {}) =>
       this.request<ReviewSubmissionItemResponse, ErrorResponse>({
         path: `/v1/reviewSubmissionItems`,
         method: "POST",
@@ -45654,11 +45311,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/reviewSubmissionItems/{id}
      * @secure
      */
-    reviewSubmissionItemsUpdateInstance: (
-      id: string,
-      data: ReviewSubmissionItemUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: ReviewSubmissionItemUpdateRequest, params: RequestParams = {}) =>
       this.request<ReviewSubmissionItemResponse, ErrorResponse>({
         path: `/v1/reviewSubmissionItems/${id}`,
         method: "PATCH",
@@ -45677,7 +45330,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/reviewSubmissionItems/{id}
      * @secure
      */
-    reviewSubmissionItemsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/reviewSubmissionItems/${id}`,
         method: "DELETE",
@@ -45694,7 +45347,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/reviewSubmissions
      * @secure
      */
-    reviewSubmissionsGetCollection: (
+    getCollection: (
       query: {
         /** filter by attribute 'platform' */
         "filter[platform]"?: ("IOS" | "MAC_OS" | "TV_OS" | "VISION_OS")[];
@@ -45767,7 +45420,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/reviewSubmissions
      * @secure
      */
-    reviewSubmissionsCreateInstance: (data: ReviewSubmissionCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: ReviewSubmissionCreateRequest, params: RequestParams = {}) =>
       this.request<ReviewSubmissionResponse, ErrorResponse>({
         path: `/v1/reviewSubmissions`,
         method: "POST",
@@ -45786,7 +45439,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/reviewSubmissions/{id}
      * @secure
      */
-    reviewSubmissionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type reviewSubmissions */
@@ -45841,7 +45494,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/reviewSubmissions/{id}
      * @secure
      */
-    reviewSubmissionsUpdateInstance: (id: string, data: ReviewSubmissionUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: ReviewSubmissionUpdateRequest, params: RequestParams = {}) =>
       this.request<ReviewSubmissionResponse, ErrorResponse>({
         path: `/v1/reviewSubmissions/${id}`,
         method: "PATCH",
@@ -45860,7 +45513,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/reviewSubmissions/{id}/items
      * @secure
      */
-    reviewSubmissionsItemsGetToManyRelated: (
+    itemsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appStoreVersionExperiments */
@@ -45973,7 +45626,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/routingAppCoverages
      * @secure
      */
-    routingAppCoveragesCreateInstance: (data: RoutingAppCoverageCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: RoutingAppCoverageCreateRequest, params: RequestParams = {}) =>
       this.request<RoutingAppCoverageResponse, ErrorResponse>({
         path: `/v1/routingAppCoverages`,
         method: "POST",
@@ -45992,7 +45645,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/routingAppCoverages/{id}
      * @secure
      */
-    routingAppCoveragesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type routingAppCoverages */
@@ -46027,11 +45680,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/routingAppCoverages/{id}
      * @secure
      */
-    routingAppCoveragesUpdateInstance: (
-      id: string,
-      data: RoutingAppCoverageUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: RoutingAppCoverageUpdateRequest, params: RequestParams = {}) =>
       this.request<RoutingAppCoverageResponse, ErrorResponse>({
         path: `/v1/routingAppCoverages/${id}`,
         method: "PATCH",
@@ -46050,7 +45699,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/routingAppCoverages/{id}
      * @secure
      */
-    routingAppCoveragesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/routingAppCoverages/${id}`,
         method: "DELETE",
@@ -46067,7 +45716,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/salesReports
      * @secure
      */
-    salesReportsGetCollection: (
+    getCollection: (
       query: {
         /** filter by attribute 'frequency' */
         "filter[frequency]": ("DAILY" | "WEEKLY" | "MONTHLY" | "YEARLY")[];
@@ -46117,7 +45766,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v2/sandboxTesters
      * @secure
      */
-    sandboxTestersV2GetCollection: (
+    v2GetCollection: (
       query?: {
         /** the fields to include for returned resources of type sandboxTesters */
         "fields[sandboxTesters]"?: (
@@ -46154,7 +45803,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v2/sandboxTesters/{id}
      * @secure
      */
-    sandboxTestersV2UpdateInstance: (id: string, data: SandboxTesterV2UpdateRequest, params: RequestParams = {}) =>
+    v2UpdateInstance: (id: string, data: SandboxTesterV2UpdateRequest, params: RequestParams = {}) =>
       this.request<SandboxTesterV2Response, ErrorResponse>({
         path: `/v2/sandboxTesters/${id}`,
         method: "PATCH",
@@ -46174,10 +45823,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v2/sandboxTestersClearPurchaseHistoryRequest
      * @secure
      */
-    sandboxTestersClearPurchaseHistoryRequestV2CreateInstance: (
-      data: SandboxTestersClearPurchaseHistoryRequestV2CreateRequest,
-      params: RequestParams = {},
-    ) =>
+    v2CreateInstance: (data: SandboxTestersClearPurchaseHistoryRequestV2CreateRequest, params: RequestParams = {}) =>
       this.request<SandboxTestersClearPurchaseHistoryRequestV2Response, ErrorResponse>({
         path: `/v2/sandboxTestersClearPurchaseHistoryRequest`,
         method: "POST",
@@ -46197,7 +45843,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/scmGitReferences/{id}
      * @secure
      */
-    scmGitReferencesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type scmGitReferences */
@@ -46225,7 +45871,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/scmProviders
      * @secure
      */
-    scmProvidersGetCollection: (
+    getCollection: (
       query?: {
         /** the fields to include for returned resources of type scmProviders */
         "fields[scmProviders]"?: ("repositories" | "scmProviderType" | "url")[];
@@ -46266,7 +45912,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/scmProviders/{id}
      * @secure
      */
-    scmProvidersGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type scmProviders */
@@ -46303,7 +45949,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/scmProviders/{id}/repositories
      * @secure
      */
-    scmProvidersRepositoriesGetToManyRelated: (
+    repositoriesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) */
@@ -46352,7 +45998,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/scmPullRequests/{id}
      * @secure
      */
-    scmPullRequestsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type scmPullRequests */
@@ -46393,7 +46039,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/scmRepositories
      * @secure
      */
-    scmRepositoriesGetCollection: (
+    getCollection: (
       query?: {
         /** filter by id(s) */
         "filter[id]"?: string[];
@@ -46453,7 +46099,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/scmRepositories/{id}
      * @secure
      */
-    scmRepositoriesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type scmRepositories */
@@ -46507,7 +46153,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/scmRepositories/{id}/gitReferences
      * @secure
      */
-    scmRepositoriesGitReferencesGetToManyRelated: (
+    gitReferencesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type scmGitReferences */
@@ -46551,7 +46197,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/scmRepositories/{id}/pullRequests
      * @secure
      */
-    scmRepositoriesPullRequestsGetToManyRelated: (
+    pullRequestsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type scmPullRequests */
@@ -46609,10 +46255,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionAppStoreReviewScreenshots
      * @secure
      */
-    subscriptionAppStoreReviewScreenshotsCreateInstance: (
-      data: SubscriptionAppStoreReviewScreenshotCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: SubscriptionAppStoreReviewScreenshotCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionAppStoreReviewScreenshotResponse, ErrorResponse>({
         path: `/v1/subscriptionAppStoreReviewScreenshots`,
         method: "POST",
@@ -46631,7 +46274,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionAppStoreReviewScreenshots/{id}
      * @secure
      */
-    subscriptionAppStoreReviewScreenshotsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionAppStoreReviewScreenshots */
@@ -46669,11 +46312,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptionAppStoreReviewScreenshots/{id}
      * @secure
      */
-    subscriptionAppStoreReviewScreenshotsUpdateInstance: (
-      id: string,
-      data: SubscriptionAppStoreReviewScreenshotUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: SubscriptionAppStoreReviewScreenshotUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionAppStoreReviewScreenshotResponse, ErrorResponse>({
         path: `/v1/subscriptionAppStoreReviewScreenshots/${id}`,
         method: "PATCH",
@@ -46692,7 +46331,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/subscriptionAppStoreReviewScreenshots/{id}
      * @secure
      */
-    subscriptionAppStoreReviewScreenshotsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/subscriptionAppStoreReviewScreenshots/${id}`,
         method: "DELETE",
@@ -46709,10 +46348,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionAvailabilities
      * @secure
      */
-    subscriptionAvailabilitiesCreateInstance: (
-      data: SubscriptionAvailabilityCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: SubscriptionAvailabilityCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionAvailabilityResponse, ErrorResponse>({
         path: `/v1/subscriptionAvailabilities`,
         method: "POST",
@@ -46731,7 +46367,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionAvailabilities/{id}
      * @secure
      */
-    subscriptionAvailabilitiesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionAvailabilities */
@@ -46769,7 +46405,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionAvailabilities/{id}/availableTerritories
      * @secure
      */
-    subscriptionAvailabilitiesAvailableTerritoriesGetToManyRelated: (
+    availableTerritoriesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type territories */
@@ -46800,7 +46436,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionGracePeriods/{id}
      * @secure
      */
-    subscriptionGracePeriodsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionGracePeriods */
@@ -46825,11 +46461,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptionGracePeriods/{id}
      * @secure
      */
-    subscriptionGracePeriodsUpdateInstance: (
-      id: string,
-      data: SubscriptionGracePeriodUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: SubscriptionGracePeriodUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionGracePeriodResponse, ErrorResponse>({
         path: `/v1/subscriptionGracePeriods/${id}`,
         method: "PATCH",
@@ -46849,10 +46481,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionGroupLocalizations
      * @secure
      */
-    subscriptionGroupLocalizationsCreateInstance: (
-      data: SubscriptionGroupLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: SubscriptionGroupLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionGroupLocalizationResponse, ErrorResponse>({
         path: `/v1/subscriptionGroupLocalizations`,
         method: "POST",
@@ -46871,7 +46500,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionGroupLocalizations/{id}
      * @secure
      */
-    subscriptionGroupLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionGroupLocalizations */
@@ -46904,11 +46533,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptionGroupLocalizations/{id}
      * @secure
      */
-    subscriptionGroupLocalizationsUpdateInstance: (
-      id: string,
-      data: SubscriptionGroupLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: SubscriptionGroupLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionGroupLocalizationResponse, ErrorResponse>({
         path: `/v1/subscriptionGroupLocalizations/${id}`,
         method: "PATCH",
@@ -46927,7 +46552,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/subscriptionGroupLocalizations/{id}
      * @secure
      */
-    subscriptionGroupLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/subscriptionGroupLocalizations/${id}`,
         method: "DELETE",
@@ -46944,10 +46569,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionGroupSubmissions
      * @secure
      */
-    subscriptionGroupSubmissionsCreateInstance: (
-      data: SubscriptionGroupSubmissionCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: SubscriptionGroupSubmissionCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionGroupSubmissionResponse, ErrorResponse>({
         path: `/v1/subscriptionGroupSubmissions`,
         method: "POST",
@@ -46967,7 +46589,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionGroups
      * @secure
      */
-    subscriptionGroupsCreateInstance: (data: SubscriptionGroupCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: SubscriptionGroupCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionGroupResponse, ErrorResponse>({
         path: `/v1/subscriptionGroups`,
         method: "POST",
@@ -46986,7 +46608,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionGroups/{id}
      * @secure
      */
-    subscriptionGroupsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionGroups */
@@ -47051,7 +46673,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptionGroups/{id}
      * @secure
      */
-    subscriptionGroupsUpdateInstance: (id: string, data: SubscriptionGroupUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: SubscriptionGroupUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionGroupResponse, ErrorResponse>({
         path: `/v1/subscriptionGroups/${id}`,
         method: "PATCH",
@@ -47070,7 +46692,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/subscriptionGroups/{id}
      * @secure
      */
-    subscriptionGroupsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/subscriptionGroups/${id}`,
         method: "DELETE",
@@ -47086,7 +46708,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionGroups/{id}/subscriptionGroupLocalizations
      * @secure
      */
-    subscriptionGroupsSubscriptionGroupLocalizationsGetToManyRelated: (
+    subscriptionGroupLocalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionGroups */
@@ -47126,7 +46748,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionGroups/{id}/subscriptions
      * @secure
      */
-    subscriptionGroupsSubscriptionsGetToManyRelated: (
+    subscriptionsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'name' */
@@ -47309,10 +46931,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionIntroductoryOffers
      * @secure
      */
-    subscriptionIntroductoryOffersCreateInstance: (
-      data: SubscriptionIntroductoryOfferCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: SubscriptionIntroductoryOfferCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionIntroductoryOfferResponse, ErrorResponse>({
         path: `/v1/subscriptionIntroductoryOffers`,
         method: "POST",
@@ -47331,11 +46950,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptionIntroductoryOffers/{id}
      * @secure
      */
-    subscriptionIntroductoryOffersUpdateInstance: (
-      id: string,
-      data: SubscriptionIntroductoryOfferUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: SubscriptionIntroductoryOfferUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionIntroductoryOfferResponse, ErrorResponse>({
         path: `/v1/subscriptionIntroductoryOffers/${id}`,
         method: "PATCH",
@@ -47354,7 +46969,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/subscriptionIntroductoryOffers/{id}
      * @secure
      */
-    subscriptionIntroductoryOffersDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/subscriptionIntroductoryOffers/${id}`,
         method: "DELETE",
@@ -47371,10 +46986,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionLocalizations
      * @secure
      */
-    subscriptionLocalizationsCreateInstance: (
-      data: SubscriptionLocalizationCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: SubscriptionLocalizationCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionLocalizationResponse, ErrorResponse>({
         path: `/v1/subscriptionLocalizations`,
         method: "POST",
@@ -47393,7 +47005,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionLocalizations/{id}
      * @secure
      */
-    subscriptionLocalizationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionLocalizations */
@@ -47420,11 +47032,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptionLocalizations/{id}
      * @secure
      */
-    subscriptionLocalizationsUpdateInstance: (
-      id: string,
-      data: SubscriptionLocalizationUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: SubscriptionLocalizationUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionLocalizationResponse, ErrorResponse>({
         path: `/v1/subscriptionLocalizations/${id}`,
         method: "PATCH",
@@ -47443,7 +47051,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/subscriptionLocalizations/{id}
      * @secure
      */
-    subscriptionLocalizationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/subscriptionLocalizations/${id}`,
         method: "DELETE",
@@ -47460,10 +47068,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionOfferCodeCustomCodes
      * @secure
      */
-    subscriptionOfferCodeCustomCodesCreateInstance: (
-      data: SubscriptionOfferCodeCustomCodeCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: SubscriptionOfferCodeCustomCodeCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionOfferCodeCustomCodeResponse, ErrorResponse>({
         path: `/v1/subscriptionOfferCodeCustomCodes`,
         method: "POST",
@@ -47482,7 +47087,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionOfferCodeCustomCodes/{id}
      * @secure
      */
-    subscriptionOfferCodeCustomCodesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionOfferCodeCustomCodes */
@@ -47516,11 +47121,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptionOfferCodeCustomCodes/{id}
      * @secure
      */
-    subscriptionOfferCodeCustomCodesUpdateInstance: (
-      id: string,
-      data: SubscriptionOfferCodeCustomCodeUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: SubscriptionOfferCodeCustomCodeUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionOfferCodeCustomCodeResponse, ErrorResponse>({
         path: `/v1/subscriptionOfferCodeCustomCodes/${id}`,
         method: "PATCH",
@@ -47540,10 +47141,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionOfferCodeOneTimeUseCodes
      * @secure
      */
-    subscriptionOfferCodeOneTimeUseCodesCreateInstance: (
-      data: SubscriptionOfferCodeOneTimeUseCodeCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: SubscriptionOfferCodeOneTimeUseCodeCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionOfferCodeOneTimeUseCodeResponse, ErrorResponse>({
         path: `/v1/subscriptionOfferCodeOneTimeUseCodes`,
         method: "POST",
@@ -47562,7 +47160,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionOfferCodeOneTimeUseCodes/{id}
      * @secure
      */
-    subscriptionOfferCodeOneTimeUseCodesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionOfferCodeOneTimeUseCodes */
@@ -47596,11 +47194,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptionOfferCodeOneTimeUseCodes/{id}
      * @secure
      */
-    subscriptionOfferCodeOneTimeUseCodesUpdateInstance: (
-      id: string,
-      data: SubscriptionOfferCodeOneTimeUseCodeUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: SubscriptionOfferCodeOneTimeUseCodeUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionOfferCodeOneTimeUseCodeResponse, ErrorResponse>({
         path: `/v1/subscriptionOfferCodeOneTimeUseCodes/${id}`,
         method: "PATCH",
@@ -47619,7 +47213,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionOfferCodeOneTimeUseCodes/{id}/values
      * @secure
      */
-    subscriptionOfferCodeOneTimeUseCodesValuesGetToOneRelated: (id: string, params: RequestParams = {}) =>
+    valuesGetToOneRelated: (id: string, params: RequestParams = {}) =>
       this.request<Csv, ErrorResponse>({
         path: `/v1/subscriptionOfferCodeOneTimeUseCodes/${id}/values`,
         method: "GET",
@@ -47636,7 +47230,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionOfferCodes
      * @secure
      */
-    subscriptionOfferCodesCreateInstance: (data: SubscriptionOfferCodeCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: SubscriptionOfferCodeCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionOfferCodeResponse, ErrorResponse>({
         path: `/v1/subscriptionOfferCodes`,
         method: "POST",
@@ -47655,7 +47249,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionOfferCodes/{id}
      * @secure
      */
-    subscriptionOfferCodesGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionOfferCodes */
@@ -47730,11 +47324,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptionOfferCodes/{id}
      * @secure
      */
-    subscriptionOfferCodesUpdateInstance: (
-      id: string,
-      data: SubscriptionOfferCodeUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: SubscriptionOfferCodeUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionOfferCodeResponse, ErrorResponse>({
         path: `/v1/subscriptionOfferCodes/${id}`,
         method: "PATCH",
@@ -47753,7 +47343,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionOfferCodes/{id}/customCodes
      * @secure
      */
-    subscriptionOfferCodesCustomCodesGetToManyRelated: (
+    customCodesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionOfferCodeCustomCodes */
@@ -47807,7 +47397,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionOfferCodes/{id}/oneTimeUseCodes
      * @secure
      */
-    subscriptionOfferCodesOneTimeUseCodesGetToManyRelated: (
+    oneTimeUseCodesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionOfferCodes */
@@ -47861,7 +47451,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionOfferCodes/{id}/prices
      * @secure
      */
-    subscriptionOfferCodesPricesGetToManyRelated: (
+    pricesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'territory' */
@@ -47907,7 +47497,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionPricePoints/{id}
      * @secure
      */
-    subscriptionPricePointsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionPricePoints */
@@ -47941,7 +47531,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionPricePoints/{id}/equalizations
      * @secure
      */
-    subscriptionPricePointsEqualizationsGetToManyRelated: (
+    equalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'subscription' */
@@ -47987,7 +47577,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionPrices
      * @secure
      */
-    subscriptionPricesCreateInstance: (data: SubscriptionPriceCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: SubscriptionPriceCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionPriceResponse, ErrorResponse>({
         path: `/v1/subscriptionPrices`,
         method: "POST",
@@ -48006,7 +47596,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/subscriptionPrices/{id}
      * @secure
      */
-    subscriptionPricesDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/subscriptionPrices/${id}`,
         method: "DELETE",
@@ -48023,10 +47613,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionPromotionalOffers
      * @secure
      */
-    subscriptionPromotionalOffersCreateInstance: (
-      data: SubscriptionPromotionalOfferCreateRequest,
-      params: RequestParams = {},
-    ) =>
+    createInstance: (data: SubscriptionPromotionalOfferCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionPromotionalOfferResponse, ErrorResponse>({
         path: `/v1/subscriptionPromotionalOffers`,
         method: "POST",
@@ -48045,7 +47632,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionPromotionalOffers/{id}
      * @secure
      */
-    subscriptionPromotionalOffersGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionPromotionalOffers */
@@ -48087,11 +47674,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptionPromotionalOffers/{id}
      * @secure
      */
-    subscriptionPromotionalOffersUpdateInstance: (
-      id: string,
-      data: SubscriptionPromotionalOfferUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: SubscriptionPromotionalOfferUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionPromotionalOfferResponse, ErrorResponse>({
         path: `/v1/subscriptionPromotionalOffers/${id}`,
         method: "PATCH",
@@ -48110,7 +47693,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/subscriptionPromotionalOffers/{id}
      * @secure
      */
-    subscriptionPromotionalOffersDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/subscriptionPromotionalOffers/${id}`,
         method: "DELETE",
@@ -48126,7 +47709,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptionPromotionalOffers/{id}/prices
      * @secure
      */
-    subscriptionPromotionalOffersPricesGetToManyRelated: (
+    pricesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'territory' */
@@ -48172,7 +47755,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptionSubmissions
      * @secure
      */
-    subscriptionSubmissionsCreateInstance: (data: SubscriptionSubmissionCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: SubscriptionSubmissionCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionSubmissionResponse, ErrorResponse>({
         path: `/v1/subscriptionSubmissions`,
         method: "POST",
@@ -48192,7 +47775,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/subscriptions
      * @secure
      */
-    subscriptionsCreateInstance: (data: SubscriptionCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: SubscriptionCreateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionResponse, ErrorResponse>({
         path: `/v1/subscriptions`,
         method: "POST",
@@ -48211,7 +47794,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}
      * @secure
      */
-    subscriptionsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptions */
@@ -48376,7 +47959,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/subscriptions/{id}
      * @secure
      */
-    subscriptionsUpdateInstance: (id: string, data: SubscriptionUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: SubscriptionUpdateRequest, params: RequestParams = {}) =>
       this.request<SubscriptionResponse, ErrorResponse>({
         path: `/v1/subscriptions/${id}`,
         method: "PATCH",
@@ -48395,7 +47978,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/subscriptions/{id}
      * @secure
      */
-    subscriptionsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/subscriptions/${id}`,
         method: "DELETE",
@@ -48411,7 +47994,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/appStoreReviewScreenshot
      * @secure
      */
-    subscriptionsAppStoreReviewScreenshotGetToOneRelated: (
+    appStoreReviewScreenshotGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionAppStoreReviewScreenshots */
@@ -48469,7 +48052,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/relationships/introductoryOffers
      * @secure
      */
-    subscriptionsIntroductoryOffersGetToManyRelationship: (
+    introductoryOffersGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -48497,7 +48080,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/subscriptions/{id}/relationships/introductoryOffers
      * @secure
      */
-    subscriptionsIntroductoryOffersDeleteToManyRelationship: (
+    introductoryOffersDeleteToManyRelationship: (
       id: string,
       data: SubscriptionIntroductoryOffersLinkagesRequest,
       params: RequestParams = {},
@@ -48519,7 +48102,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/introductoryOffers
      * @secure
      */
-    subscriptionsIntroductoryOffersGetToManyRelated: (
+    introductoryOffersGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'territory' */
@@ -48593,7 +48176,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/offerCodes
      * @secure
      */
-    subscriptionsOfferCodesGetToManyRelated: (
+    offerCodesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by territory */
@@ -48695,7 +48278,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/pricePoints
      * @secure
      */
-    subscriptionsPricePointsGetToManyRelated: (
+    pricePointsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'territory' */
@@ -48738,7 +48321,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/relationships/prices
      * @secure
      */
-    subscriptionsPricesGetToManyRelationship: (
+    pricesGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -48766,11 +48349,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/subscriptions/{id}/relationships/prices
      * @secure
      */
-    subscriptionsPricesDeleteToManyRelationship: (
-      id: string,
-      data: SubscriptionPricesLinkagesRequest,
-      params: RequestParams = {},
-    ) =>
+    pricesDeleteToManyRelationship: (id: string, data: SubscriptionPricesLinkagesRequest, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/subscriptions/${id}/relationships/prices`,
         method: "DELETE",
@@ -48788,7 +48367,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/prices
      * @secure
      */
-    subscriptionsPricesGetToManyRelated: (
+    pricesGetToManyRelated: (
       id: string,
       query?: {
         /** filter by id(s) of related 'subscriptionPricePoint' */
@@ -48842,7 +48421,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/promotedPurchase
      * @secure
      */
-    subscriptionsPromotedPurchaseGetToOneRelated: (
+    promotedPurchaseGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type promotedPurchases */
@@ -48933,7 +48512,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/promotionalOffers
      * @secure
      */
-    subscriptionsPromotionalOffersGetToManyRelated: (
+    promotionalOffersGetToManyRelated: (
       id: string,
       query?: {
         /** filter by territory */
@@ -49002,7 +48581,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/subscriptionAvailability
      * @secure
      */
-    subscriptionsSubscriptionAvailabilityGetToOneRelated: (
+    subscriptionAvailabilityGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptionAvailabilities */
@@ -49060,7 +48639,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/subscriptions/{id}/subscriptionLocalizations
      * @secure
      */
-    subscriptionsSubscriptionLocalizationsGetToManyRelated: (
+    subscriptionLocalizationsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type subscriptions */
@@ -49113,7 +48692,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/territories
      * @secure
      */
-    territoriesGetCollection: (
+    getCollection: (
       query?: {
         /** the fields to include for returned resources of type territories */
         "fields[territories]"?: "currency"[];
@@ -49143,11 +48722,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/territoryAvailabilities/{id}
      * @secure
      */
-    territoryAvailabilitiesUpdateInstance: (
-      id: string,
-      data: TerritoryAvailabilityUpdateRequest,
-      params: RequestParams = {},
-    ) =>
+    updateInstance: (id: string, data: TerritoryAvailabilityUpdateRequest, params: RequestParams = {}) =>
       this.request<TerritoryAvailabilityResponse, ErrorResponse>({
         path: `/v1/territoryAvailabilities/${id}`,
         method: "PATCH",
@@ -49167,7 +48742,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/userInvitations
      * @secure
      */
-    userInvitationsGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'email' */
         "filter[email]"?: string[];
@@ -49285,7 +48860,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/userInvitations
      * @secure
      */
-    userInvitationsCreateInstance: (data: UserInvitationCreateRequest, params: RequestParams = {}) =>
+    createInstance: (data: UserInvitationCreateRequest, params: RequestParams = {}) =>
       this.request<UserInvitationResponse, ErrorResponse>({
         path: `/v1/userInvitations`,
         method: "POST",
@@ -49304,7 +48879,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/userInvitations/{id}
      * @secure
      */
-    userInvitationsGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type userInvitations */
@@ -49395,7 +48970,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/userInvitations/{id}
      * @secure
      */
-    userInvitationsDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/userInvitations/${id}`,
         method: "DELETE",
@@ -49411,7 +48986,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/userInvitations/{id}/visibleApps
      * @secure
      */
-    userInvitationsVisibleAppsGetToManyRelated: (
+    visibleAppsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -49490,7 +49065,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/users
      * @secure
      */
-    usersGetCollection: (
+    getCollection: (
       query?: {
         /** filter by attribute 'roles' */
         "filter[roles]"?: (
@@ -49607,7 +49182,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/users/{id}
      * @secure
      */
-    usersGetInstance: (
+    getInstance: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type users */
@@ -49697,7 +49272,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/users/{id}
      * @secure
      */
-    usersUpdateInstance: (id: string, data: UserUpdateRequest, params: RequestParams = {}) =>
+    updateInstance: (id: string, data: UserUpdateRequest, params: RequestParams = {}) =>
       this.request<UserResponse, ErrorResponse>({
         path: `/v1/users/${id}`,
         method: "PATCH",
@@ -49716,7 +49291,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/users/{id}
      * @secure
      */
-    usersDeleteInstance: (id: string, params: RequestParams = {}) =>
+    deleteInstance: (id: string, params: RequestParams = {}) =>
       this.request<void, ErrorResponse>({
         path: `/v1/users/${id}`,
         method: "DELETE",
@@ -49732,7 +49307,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/users/{id}/relationships/visibleApps
      * @secure
      */
-    usersVisibleAppsGetToManyRelationship: (
+    visibleAppsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -49760,7 +49335,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request POST:/v1/users/{id}/relationships/visibleApps
      * @secure
      */
-    usersVisibleAppsCreateToManyRelationship: (
+    visibleAppsCreateToManyRelationship: (
       id: string,
       data: UserVisibleAppsLinkagesRequest,
       params: RequestParams = {},
@@ -49782,7 +49357,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request PATCH:/v1/users/{id}/relationships/visibleApps
      * @secure
      */
-    usersVisibleAppsReplaceToManyRelationship: (
+    visibleAppsReplaceToManyRelationship: (
       id: string,
       data: UserVisibleAppsLinkagesRequest,
       params: RequestParams = {},
@@ -49804,7 +49379,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request DELETE:/v1/users/{id}/relationships/visibleApps
      * @secure
      */
-    usersVisibleAppsDeleteToManyRelationship: (
+    visibleAppsDeleteToManyRelationship: (
       id: string,
       data: UserVisibleAppsLinkagesRequest,
       params: RequestParams = {},
@@ -49826,7 +49401,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/users/{id}/visibleApps
      * @secure
      */
-    usersVisibleAppsGetToManyRelated: (
+    visibleAppsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type apps */
@@ -49905,7 +49480,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/buildBundles/{id}/appClipDomainCacheStatus
      * @secure
      */
-    buildBundlesAppClipDomainCacheStatusGetToOneRelated: (
+    appClipDomainCacheStatusGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClipDomainStatuses */
@@ -49930,7 +49505,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/buildBundles/{id}/appClipDomainDebugStatus
      * @secure
      */
-    buildBundlesAppClipDomainDebugStatusGetToOneRelated: (
+    appClipDomainDebugStatusGetToOneRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type appClipDomainStatuses */
@@ -49955,7 +49530,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/buildBundles/{id}/betaAppClipInvocations
      * @secure
      */
-    buildBundlesBetaAppClipInvocationsGetToManyRelated: (
+    betaAppClipInvocationsGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type betaAppClipInvocations */
@@ -49994,7 +49569,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/buildBundles/{id}/buildBundleFileSizes
      * @secure
      */
-    buildBundlesBuildBundleFileSizesGetToManyRelated: (
+    buildBundleFileSizesGetToManyRelated: (
       id: string,
       query?: {
         /** the fields to include for returned resources of type buildBundleFileSizes */
@@ -50025,7 +49600,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @request GET:/v1/diagnosticSignatures/{id}/logs
      * @secure
      */
-    diagnosticSignaturesLogsGetToManyRelated: (
+    logsGetToManyRelated: (
       id: string,
       query?: {
         /**
@@ -50055,7 +49630,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    gameCenterEnabledVersionsCompatibleVersionsGetToManyRelationship: (
+    compatibleVersionsGetToManyRelationship: (
       id: string,
       query?: {
         /**
@@ -50084,7 +49659,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    gameCenterEnabledVersionsCompatibleVersionsCreateToManyRelationship: (
+    compatibleVersionsCreateToManyRelationship: (
       id: string,
       data: GameCenterEnabledVersionCompatibleVersionsLinkagesRequest,
       params: RequestParams = {},
@@ -50107,7 +49682,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    gameCenterEnabledVersionsCompatibleVersionsReplaceToManyRelationship: (
+    compatibleVersionsReplaceToManyRelationship: (
       id: string,
       data: GameCenterEnabledVersionCompatibleVersionsLinkagesRequest,
       params: RequestParams = {},
@@ -50130,7 +49705,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    gameCenterEnabledVersionsCompatibleVersionsDeleteToManyRelationship: (
+    compatibleVersionsDeleteToManyRelationship: (
       id: string,
       data: GameCenterEnabledVersionCompatibleVersionsLinkagesRequest,
       params: RequestParams = {},
@@ -50153,7 +49728,7 @@ export class AppStoreConnectClient<SecurityDataType extends unknown> extends Htt
      * @deprecated
      * @secure
      */
-    gameCenterEnabledVersionsCompatibleVersionsGetToManyRelated: (
+    compatibleVersionsGetToManyRelated: (
       id: string,
       query?: {
         /** filter by attribute 'platform' */

@@ -9,8 +9,8 @@ async function main() {
     privateKey: 'privateKey',
   });
   const client = new app_store_connect.AppStoreConnectClient(configuration);
-  const response = await client.apps.appsGetInstance('');
-  client.appStoreVersions.appStoreVersionsCreateInstance({
+  const response = await client.apps.getInstance('');
+  client.appStoreVersions.createInstance({
     data: {
       type: 'appStoreVersions',
       attributes: {
