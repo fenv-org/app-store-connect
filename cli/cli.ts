@@ -13,6 +13,7 @@ const API_KEY = Deno.env.get('API_KEY')!;
 const PRIVATE_KEY = Deno.env.get('PRIVATE_KEY')!;
 
 async function main() {
+<<<<<<< HEAD
   setupLogger('app-store-connect', {
     handlers: {
       console: new log.ConsoleHandler('DEBUG', {
@@ -24,6 +25,30 @@ async function main() {
       'app-store-connect': {
         level: 'DEBUG',
         handlers: ['console'],
+=======
+  const configuration = app_store_connect.createConfiguration({
+    issuerId: 'issuerId',
+    apiKey: 'apiKey',
+    privateKey: 'privateKey',
+  });
+  const client = new app_store_connect.AppStoreConnectClient(configuration);
+  const response = await client.apps.getCollection({ limit: 10 });
+  client.appStoreVersions.createInstance({
+    data: {
+      type: 'appStoreVersions',
+      attributes: {
+        platform: app_store_connect.Platform.IOS,
+        versionString: '1.0',
+        releaseType: 'MANUAL',
+      },
+      relationships: {
+        app: {
+          data: {
+            type: 'apps',
+            id: 'appId',
+          },
+        },
+>>>>>>> bf16856 (Shorten expiration time)
       },
     },
   });
