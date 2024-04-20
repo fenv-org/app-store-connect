@@ -1,6 +1,5 @@
-import { writeAll } from 'jsr:@std/io@^0.221.0/write-all';
+import { writeAll, Writer } from 'jsr:@std/io@^0.221.0';
 import { encoder } from './encoder.ts';
-import { Writer } from 'jsr:@std/io@^0.221.0';
 
 export function stdout(
   text: string,
