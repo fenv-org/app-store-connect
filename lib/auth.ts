@@ -8,7 +8,7 @@ const expirationTime = '20m';
 /**
  * Generates a bearer token for the App Store Connect API.
  */
-export async function bearerTokenOf({ issuerId, apiKey, privateKey }: {
+export async function bearerToken({ issuerId, apiKey, privateKey }: {
   issuerId: string;
   apiKey: string;
   privateKey: string;

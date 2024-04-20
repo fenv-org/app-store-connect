@@ -7,13 +7,12 @@
     "semiColons": true,
     "singleQuote": true,
     "exclude": [
-      "generated-src/**/*.ts",
-      "generated-src/**/*.md"
+      "gen/**/*.ts"
     ]
   },
   "lint": {
     "exclude": [
-      "generated-src/**/*.ts"
+      "gen/**/*.ts"
     ]
   },
   "lock": false,
