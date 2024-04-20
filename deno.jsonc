@@ -5,7 +5,18 @@
   },
   "fmt": {
     "semiColons": true,
-    "singleQuote": true
+    "singleQuote": true,
+    "exclude": [
+      "generated-src/**/*.ts"
+    ]
   },
-  "lock": false
+  "lint": {
+    "exclude": [
+      "generated-src/**/*.ts"
+    ]
+  },
+  "lock": false,
+  "imports": {
+    "@david/dax": "jsr:@david/dax@^0.40.1"
+  }
 }
