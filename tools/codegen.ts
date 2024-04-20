@@ -30,6 +30,8 @@ async function main(): Promise<void> {
       '--module-name-index',
       '1',
       '--unwrap-response-data',
+      '--templates',
+      'tools/templates',
     ];
     await $`deno ${args}`;
   } finally {
