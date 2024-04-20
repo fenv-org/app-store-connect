@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "fmt": "deno fmt",
+    "lint": "deno lint"
+  },
+  "fmt": {
+    "semiColons": true,
+    "singleQuote": true
+  }
+}
