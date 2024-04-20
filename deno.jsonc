@@ -6,5 +6,6 @@
   "fmt": {
     "semiColons": true,
     "singleQuote": true
-  }
+  },
+  "lock": false
 }
