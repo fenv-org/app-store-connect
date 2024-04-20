@@ -9,7 +9,7 @@ async function main() {
     privateKey: 'privateKey',
   });
   const client = new app_store_connect.AppStoreConnectClient(configuration);
-  const response = await client.v1.appsGetInstance('id');
+  const response = await client.v1.appsGetCollection();
 }
 
 if (import.meta.main) await main();
