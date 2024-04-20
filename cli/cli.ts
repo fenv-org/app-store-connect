@@ -9,7 +9,25 @@ async function main() {
     privateKey: 'privateKey',
   });
   const client = new app_store_connect.AppStoreConnectClient(configuration);
-  const response = await client.v1.appsGetCollection();
+  const response = await client.apps.appsGetInstance('');
+  client.appStoreVersions.appStoreVersionsCreateInstance({
+    data: {
+      type: 'appStoreVersions',
+      attributes: {
+        platform: app_store_connect.Platform.IOS,
+        versionString: '1.0',
+        releaseType: 'MANUAL',
+      },
+      relationships: {
+        app: {
+          data: {
+            type: 'apps',
+            id: 'appId',
+          },
+        },
+      },
+    },
+  });
 }
 
 if (import.meta.main) await main();

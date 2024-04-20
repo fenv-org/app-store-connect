@@ -2,7 +2,7 @@
 
 import $ from '@david/dax';
 import { join } from 'jsr:@std/path@^0.221.0';
-import { stderr } from '../lib/io/standart_io.ts';
+import { stderr } from '../lib/io/standard_io.ts';
 
 const APP_STORE_CONNECT_OPENAPI_URL =
   'https://developer.apple.com/sample-code/app-store-connect/app-store-connect-openapi-specification.zip';
@@ -27,7 +27,9 @@ async function main(): Promise<void> {
       openApiSpecFilePath,
       '--api-class-name',
       'AppStoreConnectClient',
-      '--route-types',
+      '--module-name-index',
+      '1',
+      '--unwrap-response-data',
     ];
     await $`deno ${args}`;
   } finally {
