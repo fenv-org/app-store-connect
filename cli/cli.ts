@@ -29,7 +29,7 @@ async function main() {
   });
 
   logger.debug('Creating configuration...');
-  const configuration = app_store_connect.createConfiguration({
+  const configuration = app_store_connect.apiConfigOf({
     issuerId: ISSUER_ID,
     keyId: API_KEY,
     privateKey: decoder.decode(decodeBase64(PRIVATE_KEY)),
