@@ -1,7 +1,8 @@
 {
   "tasks": {
     "fmt": "deno fmt",
-    "lint": "deno lint"
+    "lint": "deno lint",
+    "check": "find cli lib -name '*.ts' | xargs deno check"
   },
   "fmt": {
     "semiColons": true,

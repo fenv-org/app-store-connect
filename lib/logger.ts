@@ -5,7 +5,11 @@ const loggerName = 'app-store-connect';
 /**
  * The default logger for the library.
  */
-export let logger = log.getLogger(loggerName);
+export function logger(): log.Logger {
+  return _logger;
+}
+
+let _logger = log.getLogger(loggerName);
 
 /**
  * Sets up the default logger for the library.
@@ -20,12 +24,12 @@ export function setupLogger({ logLevel }: { logLevel?: 'DEBUG' | 'INFO' }) {
         }),
       },
       loggers: {
-        loggerName: {
+        'app-store-connect': {
           level: logLevel,
           handlers: ['console'],
         },
       },
     });
+    _logger = log.getLogger(loggerName);
   }
-  logger = log.getLogger(loggerName);
 }

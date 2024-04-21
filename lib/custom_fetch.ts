@@ -16,7 +16,7 @@ export function customFetchOf(
     let { apiUnauthorizedRetries, apiServerErrorRetries } = retries;
     let response: Response;
     do {
-      logger.debug(`Fetching "${input}"`);
+      logger().debug(`Fetching "${input}"`);
       response = await fetch(input, {
         ...init,
         headers: {
@@ -31,7 +31,7 @@ export function customFetchOf(
       const backoffMs = 2_000;
 
       if (response.status === 401 && apiUnauthorizedRetries > 0) {
-        logger.info('Received 401 Unauthorized, retrying in 2s...');
+        logger().info('Received 401 Unauthorized, retrying in 2s...');
         apiUnauthorizedRetries--;
         await delay(backoffMs);
         return true;
@@ -41,7 +41,7 @@ export function customFetchOf(
         response.status < 600 &&
         apiServerErrorRetries > 0
       ) {
-        logger.info(
+        logger().info(
           `Received ${response.status} Server Error, retrying in 2s...`,
         );
         apiServerErrorRetries--;

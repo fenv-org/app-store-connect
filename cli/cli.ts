@@ -14,7 +14,8 @@ import { rootCommand } from './command/root.ts';
 async function main(args: string[]) {
   await rootCommand.parse(args);
 
-  logger.debug('Creating configuration...');
+  console.log('Hello, world!');
+  logger().debug('Creating configuration...');
   // const configuration = app_store_connect.apiConfigOf({
   //   issuerId: ISSUER_ID,
   //   keyId: API_KEY,
