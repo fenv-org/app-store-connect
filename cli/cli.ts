@@ -1,9 +1,9 @@
 #!/usr/bin/env -S deno run -A
 
-import { decodeBase64 } from 'jsr:@std/encoding/base64';
+import { decodeBase64 } from '@std/encoding/base64';
 import { decoder } from '../lib/io/encoder.ts';
-import * as app_store_connect from '../mod.ts';
 import { stdout } from '../lib/io/standard_io.ts';
+import * as app_store_connect from '../mod.ts';
 
 const ISSUER_ID = Deno.env.get('ISSUER_ID')!;
 const API_KEY = Deno.env.get('API_KEY')!;

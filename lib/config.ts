@@ -1,24 +1,67 @@
 import { ApiConfig } from '../gen/api.ts';
 import { bearerToken } from './auth.ts';
+import { delay } from '@std/async';
 
-export function createConfiguration(
-  options: {
-    issuerId: string;
-    keyId: string;
-    privateKey: string;
-  },
-): ApiConfig {
+export type ApiConfigOptions = {
+  issuerId: string;
+  keyId: string;
+  privateKey: string;
+  /**
+   * The number of times to retry a request if it fails with a 401 Unauthorized
+   * status code. Defaults to 3.
+   */
+  apiUnauthorizedRetries?: number;
+  /**
+   * The number of times to retry a request if it fails with a 5xx Server Error
+   * status code. Defaults to 3.
+   */
+  apiServerErrorRetries?: number;
+};
+
+export function createConfiguration({
+  issuerId,
+  keyId,
+  privateKey,
+  apiUnauthorizedRetries = 3,
+  apiServerErrorRetries = 3,
+}: ApiConfigOptions): ApiConfig {
+  return { customFetch };
+
   async function customFetch(
     input: Request | URL | string,
     init?: RequestInit,
   ): Promise<Response> {
-    return fetch(input, {
-      ...init,
-      headers: {
-        Authorization: `Bearer ${await bearerToken(options)}`,
-        ...init?.headers,
-      },
-    });
+    const token = await bearerToken({ issuerId, keyId, privateKey });
+    let response: Response;
+    do {
+      response = await fetch(input, {
+        ...init,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          ...init?.headers,
+        },
+      });
+    } while (await shouldRetry(response));
+    return response;
   }
-  return { customFetch };
+
+  async function shouldRetry(response: Response): Promise<boolean> {
+    const backoffMs = 2_000;
+
+    if (response.status === 401 && apiUnauthorizedRetries > 0) {
+      apiUnauthorizedRetries--;
+      await delay(backoffMs);
+      return true;
+    }
+    if (
+      response.status >= 500 &&
+      response.status < 600 &&
+      apiServerErrorRetries > 0
+    ) {
+      apiServerErrorRetries--;
+      await delay(backoffMs);
+      return true;
+    }
+    return false;
+  }
 }

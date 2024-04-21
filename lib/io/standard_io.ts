@@ -1,4 +1,4 @@
-import { writeAll, Writer } from 'jsr:@std/io@^0.221.0';
+import { writeAll, Writer } from '@std/io';
 import { encoder } from './encoder.ts';
 
 export function stdout(

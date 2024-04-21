@@ -3,7 +3,7 @@ import { importPKCS8, SignJWT } from 'npm:jose@5.2.4';
 const alg = 'ES256';
 const typ = 'JWT';
 const audience = 'appstoreconnect-v1';
-const expirationTime = '20m';
+const expirationTime = '5m';
 
 /**
  * Generates a bearer token for the App Store Connect API.

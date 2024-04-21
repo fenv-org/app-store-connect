@@ -1,7 +1,7 @@
 #!/usr/bin/env -S deno run -A
 
 import $ from '@david/dax';
-import { join } from 'jsr:@std/path@^0.221.0';
+import { join } from '@std/path';
 import { stderr } from '../lib/io/standard_io.ts';
 
 const APP_STORE_CONNECT_OPENAPI_URL =
