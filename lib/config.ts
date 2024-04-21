@@ -1,4 +1,4 @@
-import { ApiConfig } from '../gen/api.ts';
+import type { ApiConfig } from '../gen/api.ts';
 import { customFetchOf } from './custom_fetch.ts';
 
 export type ApiConfigOptions = {

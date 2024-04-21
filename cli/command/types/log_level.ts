@@ -1,4 +1,4 @@
-import { ArgumentValue } from '@cliffy/command';
+import type { ArgumentValue } from '@cliffy/command';
 
 export function logLevelType(
   { label, name, value }: ArgumentValue,

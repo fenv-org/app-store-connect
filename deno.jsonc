@@ -1,4 +1,7 @@
 {
+  "name": "@fenv-org/app-store-connect",
+  "version": "0.1.0",
+  "exports": "./mod.ts",
   "tasks": {
     "fmt": "deno fmt",
     "lint": "deno lint",
