@@ -35,7 +35,7 @@ async function main() {
     privateKey: decoder.decode(decodeBase64(PRIVATE_KEY)),
   });
   const client = new app_store_connect.AppStoreConnectClient(configuration);
-  const response = await client.apps.getInstance('');
+  const response = await client.apps.getCollection({ limit: 5 });
   stdout(JSON.stringify(response, null, 2));
 }
 
