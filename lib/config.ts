@@ -1,6 +1,7 @@
 import { ApiConfig } from '../gen/api.ts';
 import { bearerToken } from './auth.ts';
 import { delay } from '@std/async';
+import { logger } from './logger.ts';
 
 export type ApiConfigOptions = {
   issuerId: string;
@@ -34,6 +35,7 @@ export function createConfiguration({
     const token = await bearerToken({ issuerId, keyId, privateKey });
     let response: Response;
     do {
+      logger.debug(`Fetching "${input}"`);
       response = await fetch(input, {
         ...init,
         headers: {
@@ -49,6 +51,7 @@ export function createConfiguration({
     const backoffMs = 2_000;
 
     if (response.status === 401 && apiUnauthorizedRetries > 0) {
+      logger.info('Received 401 Unauthorized, retrying in 2s...');
       apiUnauthorizedRetries--;
       await delay(backoffMs);
       return true;
@@ -58,6 +61,9 @@ export function createConfiguration({
       response.status < 600 &&
       apiServerErrorRetries > 0
     ) {
+      logger.info(
+        `Received ${response.status} Server Error, retrying in 2s...`,
+      );
       apiServerErrorRetries--;
       await delay(backoffMs);
       return true;

@@ -21,6 +21,7 @@
     "@std/async": "jsr:@std/async@^0.223.0",
     "@std/encoding": "jsr:@std/encoding@^0.223.0",
     "@std/io": "jsr:@std/io@^0.223.0",
+    "@std/log": "jsr:@std/log@^0.223.0",
     "@std/path": "jsr:@std/path@^0.223.0"
   }
 }

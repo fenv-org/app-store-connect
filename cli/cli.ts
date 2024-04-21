@@ -4,15 +4,31 @@ import { decodeBase64 } from '@std/encoding/base64';
 import { decoder } from '../lib/io/encoder.ts';
 import { stdout } from '../lib/io/standard_io.ts';
 import * as app_store_connect from '../mod.ts';
+import * as log from '@std/log';
+import { setupLogger } from '../lib/logger.ts';
+import { logger } from '../lib/logger.ts';
 
 const ISSUER_ID = Deno.env.get('ISSUER_ID')!;
 const API_KEY = Deno.env.get('API_KEY')!;
 const PRIVATE_KEY = Deno.env.get('PRIVATE_KEY')!;
 
 async function main() {
-  stdout(`ISSUER_ID: ${ISSUER_ID}`);
-  stdout(`API_KEY: ${API_KEY}`);
-  stdout(`PRIVATE_KEY: ${PRIVATE_KEY}`);
+  setupLogger('app-store-connect', {
+    handlers: {
+      console: new log.ConsoleHandler('DEBUG', {
+        formatter: (record) => `[${record.levelName}] ${record.msg}`,
+        useColors: true,
+      }),
+    },
+    loggers: {
+      'app-store-connect': {
+        level: 'DEBUG',
+        handlers: ['console'],
+      },
+    },
+  });
+
+  logger.debug('Creating configuration...');
   const configuration = app_store_connect.createConfiguration({
     issuerId: ISSUER_ID,
     keyId: API_KEY,
