@@ -19,7 +19,24 @@ export function setupLogger({ logLevel }: { logLevel?: 'DEBUG' | 'INFO' }) {
     log.setup({
       handlers: {
         console: new log.ConsoleHandler(logLevel, {
-          formatter: (record) => `[${record.levelName}] ${record.msg}`,
+          formatter: function (record) {
+            const buffer: string[] = [
+              `[${record.levelName}] ${record.msg}`,
+            ];
+            if (record.args) {
+              buffer.push(
+                record.args
+                  .map((arg) => {
+                    if (typeof arg === 'string') {
+                      return arg;
+                    }
+                    return JSON.stringify(arg, null, 2);
+                  })
+                  .join(' '),
+              );
+            }
+            return buffer.join(' ');
+          },
           useColors: true,
         }),
       },
