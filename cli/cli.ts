@@ -1,33 +1,26 @@
 #!/usr/bin/env -S deno run -A
 
+import { decodeBase64 } from 'jsr:@std/encoding/base64';
+import { decoder } from '../lib/io/encoder.ts';
 import * as app_store_connect from '../mod.ts';
+import { stdout } from '../lib/io/standard_io.ts';
+
+const ISSUER_ID = Deno.env.get('ISSUER_ID')!;
+const API_KEY = Deno.env.get('API_KEY')!;
+const PRIVATE_KEY = Deno.env.get('PRIVATE_KEY')!;
 
 async function main() {
+  stdout(`ISSUER_ID: ${ISSUER_ID}`);
+  stdout(`API_KEY: ${API_KEY}`);
+  stdout(`PRIVATE_KEY: ${PRIVATE_KEY}`);
   const configuration = app_store_connect.createConfiguration({
-    issuerId: 'issuerId',
-    apiKey: 'apiKey',
-    privateKey: 'privateKey',
+    issuerId: ISSUER_ID,
+    keyId: API_KEY,
+    privateKey: decoder.decode(decodeBase64(PRIVATE_KEY)),
   });
   const client = new app_store_connect.AppStoreConnectClient(configuration);
   const response = await client.apps.getInstance('');
-  client.appStoreVersions.createInstance({
-    data: {
-      type: 'appStoreVersions',
-      attributes: {
-        platform: app_store_connect.Platform.IOS,
-        versionString: '1.0',
-        releaseType: 'MANUAL',
-      },
-      relationships: {
-        app: {
-          data: {
-            type: 'apps',
-            id: 'appId',
-          },
-        },
-      },
-    },
-  });
+  stdout(JSON.stringify(response, null, 2));
 }
 
 if (import.meta.main) await main();

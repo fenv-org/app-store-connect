@@ -8,14 +8,14 @@ const expirationTime = '20m';
 /**
  * Generates a bearer token for the App Store Connect API.
  */
-export async function bearerToken({ issuerId, apiKey, privateKey }: {
+export async function bearerToken({ issuerId, keyId, privateKey }: {
   issuerId: string;
-  apiKey: string;
+  keyId: string;
   privateKey: string;
 }): Promise<string> {
   const secret = await importPKCS8(privateKey, alg);
   const jwt = await new SignJWT({})
-    .setProtectedHeader({ kid: apiKey, alg, typ })
+    .setProtectedHeader({ kid: keyId, alg, typ })
     .setIssuedAt()
     .setIssuer(issuerId)
     .setAudience(audience)

@@ -4,7 +4,7 @@ import { bearerToken } from './auth.ts';
 export function createConfiguration(
   options: {
     issuerId: string;
-    apiKey: string;
+    keyId: string;
     privateKey: string;
   },
 ): ApiConfig {
