@@ -15,6 +15,14 @@ let _apiClient: AppStoreConnectClient<unknown> | undefined = undefined;
 
 export function setupApiClient(
   apiConfigOptions: ApiConfigOptions & { base64?: true },
-) {
-  _apiClient = new AppStoreConnectClient(apiConfigOf(apiConfigOptions));
+): void {
+  _apiClient = new AppStoreConnectClient(
+    apiConfigOf({
+      issuerId: apiConfigOptions.issuerId,
+      keyId: apiConfigOptions.keyId,
+      privateKey: apiConfigOptions.base64
+        ? atob(apiConfigOptions.privateKey)
+        : apiConfigOptions.privateKey,
+    }),
+  );
 }
