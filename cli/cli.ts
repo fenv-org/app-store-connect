@@ -11,10 +11,9 @@ import { rootCommand } from './command/root.ts';
 // const API_KEY = Deno.env.get('API_KEY')!;
 // const PRIVATE_KEY = Deno.env.get('PRIVATE_KEY')!;
 
-async function main(args: string[]) {
+async function main(args: string[]): Promise<void> {
   await rootCommand.parse(args);
 
-  logger().debug('Creating configuration...');
   // const configuration = app_store_connect.apiConfigOf({
   //   issuerId: ISSUER_ID,
   //   keyId: API_KEY,

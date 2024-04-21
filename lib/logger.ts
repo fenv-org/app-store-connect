@@ -1,4 +1,5 @@
 import * as log from '@std/log';
+import { stderr } from './io/standard_io.ts';
 
 const loggerName = 'app-store-connect';
 
@@ -14,11 +15,13 @@ let _logger = log.getLogger(loggerName);
 /**
  * Sets up the default logger for the library.
  */
-export function setupLogger({ logLevel }: { logLevel?: 'DEBUG' | 'INFO' }) {
+export function setupLogger(
+  { logLevel }: { logLevel?: 'DEBUG' | 'INFO' },
+): void {
   if (logLevel) {
     log.setup({
       handlers: {
-        console: new log.ConsoleHandler(logLevel, {
+        console: new StderrConsoleHandler(logLevel, {
           formatter: function (record) {
             const buffer: string[] = [
               `[${record.levelName}] ${record.msg}`,
@@ -48,5 +51,11 @@ export function setupLogger({ logLevel }: { logLevel?: 'DEBUG' | 'INFO' }) {
       },
     });
     _logger = log.getLogger(loggerName);
+  }
+}
+
+class StderrConsoleHandler extends log.ConsoleHandler {
+  override log(msg: string): void {
+    stderr(msg);
   }
 }
