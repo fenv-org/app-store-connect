@@ -17,6 +17,7 @@
   },
   "lock": false,
   "imports": {
+    "@cliffy/command": "https://deno.land/x/cliffy@v1.0.0-rc.4/command/mod.ts",
     "@david/dax": "jsr:@david/dax@^0.40.1",
     "@std/async": "jsr:@std/async@^0.223.0",
     "@std/encoding": "jsr:@std/encoding@^0.223.0",

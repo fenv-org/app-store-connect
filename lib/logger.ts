@@ -1,16 +1,31 @@
 import * as log from '@std/log';
 
+const loggerName = 'app-store-connect';
+
 /**
  * The default logger for the library.
  */
-export let logger = log.getLogger('app-store-connect');
+export let logger = log.getLogger(loggerName);
 
 /**
  * Sets up the default logger for the library.
- *
- * @param name The name of the logger.
  */
-export function setupLogger(name: string, config: log.LogConfig) {
-  log.setup(config);
-  logger = log.getLogger(name);
+export function setupLogger({ logLevel }: { logLevel?: 'DEBUG' | 'INFO' }) {
+  if (logLevel) {
+    log.setup({
+      handlers: {
+        console: new log.ConsoleHandler(logLevel, {
+          formatter: (record) => `[${record.levelName}] ${record.msg}`,
+          useColors: true,
+        }),
+      },
+      loggers: {
+        loggerName: {
+          level: logLevel,
+          handlers: ['console'],
+        },
+      },
+    });
+  }
+  logger = log.getLogger(loggerName);
 }
