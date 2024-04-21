@@ -93,7 +93,7 @@ const operationName = _.camelCase(removePrefix(route.routeName.usage));
 <%~ routeDocs.lines %>
 
  */
- <%~ operationName %><%~ route.namespace ? ': ' : ' = ' %>(<%~ wrapperArgs %>)<%~ config.toJS ? `: ${describeReturnType()}` : "" %> =>
+ <%~ operationName %><%~ route.namespace ? ': ' : ' = ' %>(<%~ wrapperArgs %>): Promise<<%~ type %>> =>
     <%~ config.singleHttpClient ? 'this.http.request' : 'this.request' %><<%~ type %>, <%~ errorType %>>({
         path: `<%~ path %>`,
         method: '<%~ _.upperCase(method) %>',
