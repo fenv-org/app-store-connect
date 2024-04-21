@@ -42,11 +42,7 @@ export const rootCommand = new Command()
     'Enable logging. Possible values are: debug, info',
   )
   .globalAction(setupGlobal)
-  .command(
-    'apps',
-    appsCommand.action((_) => {
-    }),
-  );
+  .command('apps', appsCommand);
 
 function setupGlobal(options: GlobalOptions) {
   setupLogger(options);
