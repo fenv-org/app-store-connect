@@ -2,6 +2,14 @@
   "name": "@fenv-org/app-store-connect",
   "version": "0.1.2",
   "exports": "./mod.ts",
+  "publish": {
+    "exclude": [
+      ".cspell",
+      ".vscode",
+      "cli",
+      "tools"
+    ]
+  },
   "tasks": {
     "fmt": "deno fmt",
     "lint": "deno lint",
