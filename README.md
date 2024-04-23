@@ -1,3 +1,8 @@
+![deno compatibility](https://shield.deno.dev/deno/^1.42)
+[![JSR](https://jsr.io/badges/@fenv-org/app-store-connect)](https://jsr.io/@fenv-org/app-store-connect)
+[![JSR Score](https://jsr.io/badges/@fenv-org/app-store-connect/score)](https://jsr.io/@fenv-org/app-store-connect)
+[![deno module](https://shield.deno.dev/x/app_store_connect)](https://deno.land/x/app_store_connect)
+
 # app-store-connect
 
 This is a pure typescript package that helps manipulate
