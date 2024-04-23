@@ -9,6 +9,9 @@
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
   "deno.cacheOnSave": true,
   "deno.enable": true,
   "cSpell.customDictionaries": {
