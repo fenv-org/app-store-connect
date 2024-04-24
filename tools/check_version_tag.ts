@@ -2,8 +2,8 @@
 
 import { readDenoJsonc } from './deno_jsonc_utils.ts';
 
-const versionRegex = /^v(\d+\.\d+\.\d+)/;
-const fullRefRegex = /^refs\/tags\/v(\d+\.\d+\.\d+)/;
+const versionRegex = /^(dry-run-)?v(\d+\.\d+\.\d+)/;
+const fullRefRegex = /^refs\/tags\/v(dry-run-)?(\d+\.\d+\.\d+)/;
 
 async function main(args: string[]): Promise<void> {
   if (args.length === 0) {
@@ -13,9 +13,9 @@ async function main(args: string[]): Promise<void> {
 
   let tag = args[0];
   if (versionRegex.test(args[0])) {
-    tag = versionRegex.exec(args[0])![1];
+    tag = versionRegex.exec(args[0])![2];
   } else if (fullRefRegex.test(tag)) {
-    tag = fullRefRegex.exec(tag)![1];
+    tag = fullRefRegex.exec(tag)![2];
   } else {
     console.error(`Invalid tag: ${tag}`);
     Deno.exit(1);
