@@ -27,4 +27,4 @@ jobs:
         run: deno task check
 
       - name: Run format
-        run: deno task format
+        run: deno task fmt:check
