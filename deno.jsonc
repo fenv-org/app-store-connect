@@ -12,6 +12,7 @@
   },
   "tasks": {
     "fmt": "deno fmt",
+    "fmt:check": "deno fmt --check",
     "lint": "deno lint",
     "check": "find cli lib -name '*.ts' | xargs deno check"
   },

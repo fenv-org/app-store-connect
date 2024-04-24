@@ -1,6 +1,6 @@
 import {
   apiConfigOf,
-  ApiConfigOptions,
+  type ApiConfigOptions,
   AppStoreConnectClient,
 } from '../../mod.ts';
 
