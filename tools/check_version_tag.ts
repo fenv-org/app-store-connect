@@ -3,7 +3,7 @@
 import { readDenoJsonc } from './deno_jsonc_utils.ts';
 
 const versionRegex = /^(dry-run-)?v(\d+\.\d+\.\d+)/;
-const fullRefRegex = /^refs\/tags\/v(dry-run-)?(\d+\.\d+\.\d+)/;
+const fullRefRegex = /^refs\/tags\/(dry-run-)?v(\d+\.\d+\.\d+)/;
 
 async function main(args: string[]): Promise<void> {
   if (args.length === 0) {
