@@ -6,7 +6,7 @@ on:
   push:
     tags:
       - v*.*.*
-      - v*.*.*-dry-run
+      - dry-run-v*.*.*
 
 permissions:
   contents: read
@@ -60,9 +60,14 @@ jobs:
         run: tools/check_version_tag.ts "${{ github.ref }}"
 
       - run: |
-          # Is dry-run? True on tags ending with -dry-run
-          dry_run=$(echo "$1" | grep -q -- "-dry-run" && echo true || echo false)
-          echo "DRY_RUN=$dry_run" >> $GITHUB_ENV
+          echo "github.ref=${{ github.ref }}"
+          if echo "${{ github.ref }}" | grep "dry-run"; then
+            echo "Running dry-run"
+            echo "DRY_RUN=true" >> $GITHUB_ENV
+          else
+            echo "Running publish"
+            echo "DRY_RUN=false" >> $GITHUB_ENV
+          fi
 
       - name: Run publish --dry-run
         if: ${{ env.DRY_RUN == 'true' }}
