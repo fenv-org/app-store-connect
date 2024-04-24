@@ -38,7 +38,7 @@ jobs:
 
     needs: validation
 
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
 
     permissions:
       contents: read
