@@ -53,7 +53,7 @@ jobs:
           deno-version: v1.x
 
       - name: Version check
-        run: tools/check_version_tag.ts "{{ github.ref }}"
+        run: tools/check_version_tag.ts "${{ github.ref }}"
 
       - run: |
           # Is dry-run? True on tags ending with -dry-run
